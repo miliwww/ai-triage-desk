@@ -6,7 +6,7 @@ import json
 
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['version']
-NAME = f'alphaess-service-desk-demo-v{VERSION}'
+NAME = f'ai-triage-desk-v{VERSION}'
 OUT = ROOT / 'releases'
 BUILD = ROOT / 'dist' / 'servicedesk' / 'browser'
 ROOT_FILES = {'README.md', 'LICENSE', 'NOTICE.md', 'package.json', 'package-lock.json', 'angular.json',

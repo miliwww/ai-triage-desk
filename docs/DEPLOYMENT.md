@@ -14,8 +14,8 @@ npm run preview
 
 `releases/` 中生成：
 
-- `alphaess-service-desk-demo-v0.1.0-source.zip`：源码、锁文件、模拟数据、测试、截图与说明。
-- `alphaess-service-desk-demo-v0.1.0-static.zip`：编译后的可部署静态资源。
+- `ai-triage-desk-v0.1.0-source.zip`：源码、锁文件、模拟数据、测试、截图与说明。
+- `ai-triage-desk-v0.1.0-static.zip`：编译后的可部署静态资源。
 - `SHA256SUMS.txt`：两个包的校验值。
 
 静态包需由 HTTP 服务提供，直接双击 HTML 无法可靠加载 JSON。解压后进入包含 `index.html` 的目录，可使用 `python -m http.server 4173 --bind 127.0.0.1`，再访问上述预览地址。

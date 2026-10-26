@@ -59,6 +59,10 @@ npm run package        # 生成源码包、静态包与 SHA-256 清单
 
 ![分诊建议与人工复核](docs/screenshots/02-triage-review.png)
 
+复核通过后进入派工：只有地区、技能与语言匹配且当前可用的成员能被选择，确认后写入负责人与分派记录。
+
+![人工派工](docs/screenshots/03-dispatch.png)
+
 ### 2. 风险工单：接管与缓解分别确认
 
 从首页“暴雨积水，需要人工接管”进入 `WO-0150`。
