@@ -9,9 +9,9 @@ VERSION = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['versi
 NAME = f'alphaess-service-desk-demo-v{VERSION}'
 OUT = ROOT / 'releases'
 BUILD = ROOT / 'dist' / 'servicedesk' / 'browser'
-ROOT_FILES = {'README.md', 'NOTICE.md', 'package.json', 'package-lock.json', 'angular.json',
-              'tsconfig.json', 'tsconfig.app.json', 'tsconfig.spec.json', '.gitignore',
-              '.editorconfig', '.prettierrc', '.nvmrc'}
+ROOT_FILES = {'README.md', 'LICENSE', 'NOTICE.md', 'package.json', 'package-lock.json', 'angular.json',
+              'tsconfig.json', 'tsconfig.app.json', 'tsconfig.spec.json', '.gitignore', '.gitattributes',
+              '.editorconfig', '.prettierrc', '.prettierignore', '.nvmrc'}
 DIRS = {'src', 'public', 'data', 'docs', 'scripts', '.github'}
 EXCLUDED_PARTS = {'__pycache__', 'node_modules', '.agents', '.git', 'demo截图'}
 EXCLUDED_FILES = {'简历作品优化计划-讨论稿.md', '求职材料.md', '.DS_Store', 'Thumbs.db'}

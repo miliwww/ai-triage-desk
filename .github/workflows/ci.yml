@@ -15,6 +15,7 @@ jobs:
       - run: npm run format:check
       - run: npm run test:ci
       - run: python3 data/scripts/validate_dataset.py
+      - run: python3 scripts/eval_rule_baseline.py --check
       - run: npm run build:pages
       - uses: actions/upload-artifact@v7
         with:

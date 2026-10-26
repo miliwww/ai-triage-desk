@@ -11,6 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "validate:data": "python data/scripts/validate_dataset.py",
+    "evaluate": "python scripts/eval_rule_baseline.py --check",
     "package": "python scripts/package_release.py",
     "release": "npm run test:ci && npm run validate:data && npm run build:pages && npm run package",
     "watch": "ng build --watch --configuration development",
