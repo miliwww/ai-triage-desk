@@ -1,0 +1,48 @@
+{
+  "as_of": "2026-10-24T04:00:00Z",
+  "is_synthetic": true,
+  "total_tickets": 492,
+  "status_counts": {
+    "new": 28,
+    "awaiting_review": 37,
+    "assigned": 27,
+    "in_progress": 27,
+    "resolved": 28,
+    "closed": 28,
+    "waiting_visit": 26,
+    "reopened": 29,
+    "cancelled": 27,
+    "waiting_parts": 13,
+    "waiting_customer": 180,
+    "escalated": 30,
+    "merged": 12
+  },
+  "priority_counts": {
+    "P2": 245,
+    "P3": 104,
+    "P1": 113,
+    "P0": 30
+  },
+  "language_counts": {
+    "de": 60,
+    "nl": 60,
+    "es": 60,
+    "en": 130,
+    "zh": 62,
+    "fr": 60,
+    "it": 60
+  },
+  "country_counts": {
+    "DE": 60,
+    "NL": 60,
+    "ES": 60,
+    "GB": 64,
+    "AU": 66,
+    "CN": 62,
+    "FR": 60,
+    "IT": 60
+  },
+  "open_count": 397,
+  "unresolved_response_overdue_count": 87,
+  "simulation_notice": "仅为演示统计，不是沃太真实经营或服务指标。"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "SIM-CORRUPT",
+    "availability": "corrupt",
+    "expected": "human_review_or_request_reupload",
+    "has_local_file": false
+  },
+  {
+    "id": "SIM-MISSING",
+    "availability": "missing",
+    "expected": "do_not_hallucinate_attachment_content",
+    "has_local_file": false
+  },
+  {
+    "id": "SIM-OCR-LOW",
+    "availability": "metadata_only",
+    "ocr_confidence": 0.33,
+    "ocr_text": "D?M0-42",
+    "expected": "request_confirmation_not_exact_code_match",
+    "has_local_file": false
+  }
+]

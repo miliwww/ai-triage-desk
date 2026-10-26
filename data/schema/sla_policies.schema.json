@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/sla_policies.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "calendar": {
+      "type": "string"
+    },
+    "clock_start": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "notice": {
+      "type": "string"
+    },
+    "pause_statuses": {
+      "type": "array",
+      "items": {}
+    },
+    "priorities": {
+      "type": "object",
+      "properties": {
+        "P0": {
+          "type": "object",
+          "properties": {
+            "first_response_minutes": {
+              "type": "integer"
+            },
+            "label": {
+              "type": "string"
+            },
+            "resolution_target_minutes": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "first_response_minutes",
+            "label",
+            "resolution_target_minutes"
+          ],
+          "additionalProperties": false
+        },
+        "P1": {
+          "type": "object",
+          "properties": {
+            "first_response_minutes": {
+              "type": "integer"
+            },
+            "label": {
+              "type": "string"
+            },
+            "resolution_target_minutes": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "first_response_minutes",
+            "label",
+            "resolution_target_minutes"
+          ],
+          "additionalProperties": false
+        },
+        "P2": {
+          "type": "object",
+          "properties": {
+            "first_response_minutes": {
+              "type": "integer"
+            },
+            "label": {
+              "type": "string"
+            },
+            "resolution_target_minutes": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "first_response_minutes",
+            "label",
+            "resolution_target_minutes"
+          ],
+          "additionalProperties": false
+        },
+        "P3": {
+          "type": "object",
+          "properties": {
+            "first_response_minutes": {
+              "type": "integer"
+            },
+            "label": {
+              "type": "string"
+            },
+            "resolution_target_minutes": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "first_response_minutes",
+            "label",
+            "resolution_target_minutes"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "additionalProperties": false
+    },
+    "reminder_offsets_minutes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "resolution_end": {
+      "type": "string"
+    },
+    "response_end": {
+      "type": "string"
+    },
+    "timezone_basis": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "calendar",
+    "clock_start",
+    "id",
+    "is_synthetic",
+    "notice",
+    "pause_statuses",
+    "priorities",
+    "reminder_offsets_minutes",
+    "resolution_end",
+    "response_end",
+    "timezone_basis"
+  ],
+  "additionalProperties": false
+}

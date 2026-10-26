@@ -1,0 +1,90 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "DE",
+    "country_zh": "德国",
+    "default_language": "de",
+    "timezone": "Europe/Berlin",
+    "city_zh": "柏林",
+    "service_area": "EMEA",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "NL",
+    "country_zh": "荷兰",
+    "default_language": "nl",
+    "timezone": "Europe/Amsterdam",
+    "city_zh": "乌得勒支",
+    "service_area": "EMEA",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "ES",
+    "country_zh": "西班牙",
+    "default_language": "es",
+    "timezone": "Europe/Madrid",
+    "city_zh": "马德里",
+    "service_area": "EMEA",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "GB",
+    "country_zh": "英国",
+    "default_language": "en",
+    "timezone": "Europe/London",
+    "city_zh": "曼彻斯特",
+    "service_area": "EMEA",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "AU",
+    "country_zh": "澳大利亚",
+    "default_language": "en",
+    "timezone": "Australia/Sydney",
+    "city_zh": "悉尼",
+    "service_area": "APAC",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "CN",
+    "country_zh": "中国",
+    "default_language": "zh",
+    "timezone": "Asia/Shanghai",
+    "city_zh": "苏州",
+    "service_area": "APAC",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "FR",
+    "country_zh": "法国",
+    "default_language": "fr",
+    "timezone": "Europe/Paris",
+    "city_zh": "里昂",
+    "service_area": "EMEA",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "IT",
+    "country_zh": "意大利",
+    "default_language": "it",
+    "timezone": "Europe/Rome",
+    "city_zh": "米兰",
+    "service_area": "EMEA",
+    "coverage_status": "demo_only",
+    "clock_policy": "24x7_elapsed_utc_no_pause"
+  }
+]

@@ -1,0 +1,332 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/tickets.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "assigned_agent_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "assigned_team_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "category_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "channel": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "device_id": {
+      "type": "string"
+    },
+    "duplicate_of_ticket_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "external_reference": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "zh",
+        "en",
+        "de",
+        "nl",
+        "es",
+        "fr",
+        "it"
+      ]
+    },
+    "missing_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priority": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "enum": [
+        null,
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "case_origin": {
+          "type": "string"
+        },
+        "human_root_cause_confirmed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "case_origin",
+        "human_root_cause_confirmed"
+      ],
+      "additionalProperties": false
+    },
+    "related_ticket_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reported": {
+      "type": "object",
+      "properties": {
+        "error_code_literal": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "occurred_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "purchase_proof": {
+          "type": [
+            "null",
+            "object"
+          ]
+        },
+        "serial_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "symptom_description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "error_code_literal",
+        "model",
+        "occurred_at",
+        "purchase_proof",
+        "serial_number",
+        "symptom_description"
+      ],
+      "additionalProperties": false
+    },
+    "safety_flag": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "sla": {
+      "type": "object",
+      "properties": {
+        "applied_priority": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string"
+        },
+        "clock_start_at": {
+          "type": "string"
+        },
+        "cycle": {
+          "type": "integer"
+        },
+        "excluded": {
+          "type": "boolean"
+        },
+        "first_response_at": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "first_response_breached": {
+          "type": "boolean"
+        },
+        "first_response_due_at": {
+          "type": "string"
+        },
+        "policy_id": {
+          "type": "string"
+        },
+        "previous_cycle": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "first_response_at": {
+              "type": "string"
+            },
+            "first_response_breached": {
+              "type": "boolean"
+            },
+            "resolution_breached": {
+              "type": "boolean"
+            },
+            "resolved_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first_response_at",
+            "first_response_breached",
+            "resolution_breached",
+            "resolved_at"
+          ],
+          "additionalProperties": false
+        },
+        "resolution_breached": {
+          "type": "boolean"
+        },
+        "resolution_due_at": {
+          "type": "string"
+        },
+        "resolved_at": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "applied_priority",
+        "as_of",
+        "clock_start_at",
+        "cycle",
+        "excluded",
+        "first_response_at",
+        "first_response_breached",
+        "first_response_due_at",
+        "policy_id",
+        "previous_cycle",
+        "resolution_breached",
+        "resolution_due_at",
+        "resolved_at"
+      ],
+      "additionalProperties": false
+    },
+    "source_context_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "awaiting_review",
+        "waiting_customer",
+        "assigned",
+        "in_progress",
+        "waiting_parts",
+        "waiting_visit",
+        "escalated",
+        "resolved",
+        "closed",
+        "cancelled",
+        "merged",
+        "reopened"
+      ]
+    },
+    "summary_zh": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "warranty_status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "assigned_agent_id",
+    "assigned_team_id",
+    "category_id",
+    "channel",
+    "country_code",
+    "created_at",
+    "customer_id",
+    "device_id",
+    "duplicate_of_ticket_id",
+    "external_reference",
+    "id",
+    "is_synthetic",
+    "language",
+    "missing_fields",
+    "priority",
+    "product_id",
+    "quality",
+    "related_ticket_ids",
+    "reported",
+    "safety_flag",
+    "site_id",
+    "sla",
+    "source_context_ids",
+    "status",
+    "summary_zh",
+    "tags",
+    "tenant_id",
+    "title",
+    "updated_at",
+    "warranty_status"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/roles.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "can": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cannot": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "required": [
+    "can",
+    "cannot",
+    "id",
+    "is_synthetic"
+  ],
+  "additionalProperties": false
+}

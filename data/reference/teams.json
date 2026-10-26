@@ -1,0 +1,659 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "TEAM-DE-TECHNICAL",
+    "name_zh": "演示DE区域technical组",
+    "country_codes": [
+      "DE"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-DE-CLOUD",
+    "name_zh": "演示DE区域cloud组",
+    "country_codes": [
+      "DE"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-DE-WARRANTY",
+    "name_zh": "演示DE区域warranty组",
+    "country_codes": [
+      "DE"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-NL-TECHNICAL",
+    "name_zh": "演示NL区域technical组",
+    "country_codes": [
+      "NL"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-NL-CLOUD",
+    "name_zh": "演示NL区域cloud组",
+    "country_codes": [
+      "NL"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-NL-WARRANTY",
+    "name_zh": "演示NL区域warranty组",
+    "country_codes": [
+      "NL"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-ES-TECHNICAL",
+    "name_zh": "演示ES区域technical组",
+    "country_codes": [
+      "ES"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-ES-CLOUD",
+    "name_zh": "演示ES区域cloud组",
+    "country_codes": [
+      "ES"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-ES-WARRANTY",
+    "name_zh": "演示ES区域warranty组",
+    "country_codes": [
+      "ES"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-GB-TECHNICAL",
+    "name_zh": "演示GB区域technical组",
+    "country_codes": [
+      "GB"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-GB-CLOUD",
+    "name_zh": "演示GB区域cloud组",
+    "country_codes": [
+      "GB"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-GB-WARRANTY",
+    "name_zh": "演示GB区域warranty组",
+    "country_codes": [
+      "GB"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-AU-TECHNICAL",
+    "name_zh": "演示AU区域technical组",
+    "country_codes": [
+      "AU"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-AU-CLOUD",
+    "name_zh": "演示AU区域cloud组",
+    "country_codes": [
+      "AU"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-AU-WARRANTY",
+    "name_zh": "演示AU区域warranty组",
+    "country_codes": [
+      "AU"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-CN-TECHNICAL",
+    "name_zh": "演示CN区域technical组",
+    "country_codes": [
+      "CN"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-CN-CLOUD",
+    "name_zh": "演示CN区域cloud组",
+    "country_codes": [
+      "CN"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-CN-WARRANTY",
+    "name_zh": "演示CN区域warranty组",
+    "country_codes": [
+      "CN"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-FR-TECHNICAL",
+    "name_zh": "演示FR区域technical组",
+    "country_codes": [
+      "FR"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-FR-CLOUD",
+    "name_zh": "演示FR区域cloud组",
+    "country_codes": [
+      "FR"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-FR-WARRANTY",
+    "name_zh": "演示FR区域warranty组",
+    "country_codes": [
+      "FR"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-IT-TECHNICAL",
+    "name_zh": "演示IT区域technical组",
+    "country_codes": [
+      "IT"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "languages": [
+      "it",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-IT-CLOUD",
+    "name_zh": "演示IT区域cloud组",
+    "country_codes": [
+      "IT"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "languages": [
+      "it",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-IT-WARRANTY",
+    "name_zh": "演示IT区域warranty组",
+    "country_codes": [
+      "IT"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "languages": [
+      "it",
+      "en"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-GLOBAL-SAFETY",
+    "name_zh": "演示全球safety组",
+    "country_codes": [
+      "*"
+    ],
+    "skills": [
+      "safety"
+    ],
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-GLOBAL-GLOBAL",
+    "name_zh": "演示全球global组",
+    "country_codes": [
+      "*"
+    ],
+    "skills": [
+      "global"
+    ],
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEAM-GLOBAL-QUALITY",
+    "name_zh": "演示全球quality组",
+    "country_codes": [
+      "*"
+    ],
+    "skills": [
+      "quality"
+    ],
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "supported_segments": [
+      "balcony",
+      "commercial",
+      "ev_charger",
+      "residential",
+      "utility"
+    ],
+    "coverage": "demo_24x7",
+    "requires_human_assignment_approval": true
+  }
+]

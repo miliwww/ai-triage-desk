@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/spares.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "available_quantity": {
+      "type": "integer"
+    },
+    "compatible_product_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "name_zh": {
+      "type": "string"
+    },
+    "notice": {
+      "type": "string"
+    },
+    "replenishment_eta": {
+      "type": "string"
+    },
+    "warehouse_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "available_quantity",
+    "compatible_product_ids",
+    "id",
+    "is_synthetic",
+    "name_zh",
+    "notice",
+    "replenishment_eta",
+    "warehouse_id"
+  ],
+  "additionalProperties": false
+}

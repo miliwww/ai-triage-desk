@@ -1,0 +1,147 @@
+[
+  {
+    "data_file": "reference/products.json",
+    "schema_file": "schema/products.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/regions.json",
+    "schema_file": "schema/regions.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/categories.json",
+    "schema_file": "schema/categories.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/customers.json",
+    "schema_file": "schema/customers.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/sites.json",
+    "schema_file": "schema/sites.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/devices.json",
+    "schema_file": "schema/devices.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/sla_policies.json",
+    "schema_file": "schema/sla_policies.schema.json",
+    "mode": "object"
+  },
+  {
+    "data_file": "reference/workflow.json",
+    "schema_file": "schema/workflow.schema.json",
+    "mode": "object"
+  },
+  {
+    "data_file": "reference/routing_rules.json",
+    "schema_file": "schema/routing_rules.schema.json",
+    "mode": "object"
+  },
+  {
+    "data_file": "reference/roles.json",
+    "schema_file": "schema/roles.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/spares.json",
+    "schema_file": "schema/spares.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/teams.json",
+    "schema_file": "schema/teams.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "reference/agents.json",
+    "schema_file": "schema/agents.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/tickets.json",
+    "schema_file": "schema/tickets.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/messages.json",
+    "schema_file": "schema/messages.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/events.json",
+    "schema_file": "schema/events.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/assignments.json",
+    "schema_file": "schema/assignments.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/attachments.json",
+    "schema_file": "schema/attachments.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/telemetry.json",
+    "schema_file": "schema/telemetry.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/ai_suggestions.json",
+    "schema_file": "schema/ai_suggestions.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/notifications.json",
+    "schema_file": "schema/notifications.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/csat.json",
+    "schema_file": "schema/csat.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/duplicate_candidates.json",
+    "schema_file": "schema/duplicate_candidates.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/rma_requests.json",
+    "schema_file": "schema/rma_requests.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/visits.json",
+    "schema_file": "schema/visits.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "seed/part_requests.json",
+    "schema_file": "schema/part_requests.schema.json",
+    "mode": "array"
+  },
+  {
+    "data_file": "evaluation/inputs.jsonl",
+    "schema_file": "schema/inputs.schema.json",
+    "mode": "jsonl"
+  },
+  {
+    "data_file": "evaluation/example_agent_outputs.jsonl",
+    "schema_file": "schema/example_agent_outputs.schema.json",
+    "mode": "jsonl"
+  },
+  {
+    "data_file": "reference/knowledge_base.json",
+    "schema_file": "schema/knowledge_base.schema.json",
+    "mode": "array"
+  }
+]

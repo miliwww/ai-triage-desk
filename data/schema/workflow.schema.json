@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/workflow.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "actions_requiring_approval": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "agent_autonomy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_autonomy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "reopen_rule": {
+      "type": "string"
+    },
+    "statuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label_zh": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label_zh"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "terminal_statuses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from_status": {
+            "type": "string"
+          },
+          "requires_human": {
+            "type": "boolean"
+          },
+          "to_status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "from_status",
+          "requires_human",
+          "to_status"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "actions_requiring_approval",
+    "agent_autonomy",
+    "blocked_autonomy",
+    "is_synthetic",
+    "reopen_rule",
+    "statuses",
+    "terminal_statuses",
+    "transitions"
+  ],
+  "additionalProperties": false
+}

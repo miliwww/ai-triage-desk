@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/visits.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "approved_by": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "notice": {
+      "type": "string"
+    },
+    "proposed_start": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "technician_id": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "approved_by",
+    "id",
+    "is_synthetic",
+    "notice",
+    "proposed_start",
+    "site_id",
+    "status",
+    "technician_id",
+    "ticket_id",
+    "timezone"
+  ],
+  "additionalProperties": false
+}

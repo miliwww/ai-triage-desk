@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/assignments.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "approved_by": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "assigned_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assignee_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "rule_version": {
+      "type": "string"
+    },
+    "team_id": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "approved_by",
+    "assigned_at",
+    "assignee_id",
+    "decision",
+    "id",
+    "is_synthetic",
+    "rule_version",
+    "team_id",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

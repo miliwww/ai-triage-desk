@@ -1,0 +1,98 @@
+{
+  "is_synthetic": true,
+  "id": "ROUTE-DEMO-V1",
+  "precedence": [
+    "safety_override",
+    "information_sufficiency",
+    "category_skill",
+    "device_site_country",
+    "language",
+    "availability",
+    "capacity"
+  ],
+  "safety_override": {
+    "team_id": "TEAM-GLOBAL-SAFETY",
+    "priority": "P0",
+    "requires_human": true,
+    "missing_fields_must_not_delay_escalation": true
+  },
+  "rules": [
+    {
+      "category_id": "connectivity",
+      "skill": "cloud",
+      "team_pattern": "TEAM-{site.country_code}-CLOUD"
+    },
+    {
+      "category_id": "charging",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "monitoring",
+      "skill": "cloud",
+      "team_pattern": "TEAM-{site.country_code}-CLOUD"
+    },
+    {
+      "category_id": "backup",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "commissioning",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "alarm",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "performance",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "account",
+      "skill": "cloud",
+      "team_pattern": "TEAM-{site.country_code}-CLOUD"
+    },
+    {
+      "category_id": "warranty",
+      "skill": "warranty",
+      "team_pattern": "TEAM-{site.country_code}-WARRANTY"
+    },
+    {
+      "category_id": "cooling",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "dispatch",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "ev",
+      "skill": "technical",
+      "team_pattern": "TEAM-{site.country_code}-TECHNICAL"
+    },
+    {
+      "category_id": "safety",
+      "skill": "safety",
+      "team_pattern": "TEAM-GLOBAL-SAFETY"
+    },
+    {
+      "category_id": "unknown",
+      "skill": "global",
+      "team_pattern": "TEAM-GLOBAL-GLOBAL"
+    }
+  ],
+  "confidence_threshold": 0.8,
+  "low_confidence_action": "human_review",
+  "unknown_country_fallback": "TEAM-GLOBAL-GLOBAL",
+  "no_capacity_action": "queue_and_escalate_to_dispatcher",
+  "language_fallback": "translator_draft_and_human_review",
+  "merge_rule": "同SN/同现象/未解决/相近时间仅作为候选；人工确认后合并。安全新证据不可自动合并隐藏。",
+  "installer_rule": "安装调试优先协同安装商，工单仍由服务团队负责闭环。"
+}

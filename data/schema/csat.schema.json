@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/csat.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "comment_zh": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_simulated_metric": {
+      "type": "boolean"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "score_1_to_5": {
+      "type": "integer"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "comment_zh",
+    "customer_id",
+    "id",
+    "is_simulated_metric",
+    "is_synthetic",
+    "score_1_to_5",
+    "submitted_at",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

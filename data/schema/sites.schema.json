@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/sites.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "address_label": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "installer_customer_id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "segment": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "address_label",
+    "country_code",
+    "customer_id",
+    "id",
+    "installer_customer_id",
+    "is_synthetic",
+    "name",
+    "segment",
+    "tenant_id",
+    "timezone"
+  ],
+  "additionalProperties": false
+}

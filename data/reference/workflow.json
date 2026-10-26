@@ -1,0 +1,195 @@
+{
+  "is_synthetic": true,
+  "statuses": [
+    {
+      "id": "new",
+      "label_zh": "新建"
+    },
+    {
+      "id": "awaiting_review",
+      "label_zh": "待人工复核"
+    },
+    {
+      "id": "waiting_customer",
+      "label_zh": "待客户补充"
+    },
+    {
+      "id": "assigned",
+      "label_zh": "已分派"
+    },
+    {
+      "id": "in_progress",
+      "label_zh": "处理中"
+    },
+    {
+      "id": "waiting_parts",
+      "label_zh": "待备件"
+    },
+    {
+      "id": "waiting_visit",
+      "label_zh": "待上门"
+    },
+    {
+      "id": "escalated",
+      "label_zh": "已升级"
+    },
+    {
+      "id": "resolved",
+      "label_zh": "已解决待确认"
+    },
+    {
+      "id": "closed",
+      "label_zh": "已关闭"
+    },
+    {
+      "id": "cancelled",
+      "label_zh": "已取消"
+    },
+    {
+      "id": "merged",
+      "label_zh": "已合并"
+    },
+    {
+      "id": "reopened",
+      "label_zh": "重新打开"
+    }
+  ],
+  "transitions": [
+    {
+      "from_status": "assigned",
+      "to_status": "escalated",
+      "requires_human": true
+    },
+    {
+      "from_status": "assigned",
+      "to_status": "in_progress",
+      "requires_human": true
+    },
+    {
+      "from_status": "awaiting_review",
+      "to_status": "assigned",
+      "requires_human": true
+    },
+    {
+      "from_status": "awaiting_review",
+      "to_status": "cancelled",
+      "requires_human": true
+    },
+    {
+      "from_status": "awaiting_review",
+      "to_status": "merged",
+      "requires_human": true
+    },
+    {
+      "from_status": "awaiting_review",
+      "to_status": "waiting_customer",
+      "requires_human": true
+    },
+    {
+      "from_status": "closed",
+      "to_status": "reopened",
+      "requires_human": true
+    },
+    {
+      "from_status": "escalated",
+      "to_status": "in_progress",
+      "requires_human": true
+    },
+    {
+      "from_status": "escalated",
+      "to_status": "resolved",
+      "requires_human": true
+    },
+    {
+      "from_status": "in_progress",
+      "to_status": "resolved",
+      "requires_human": true
+    },
+    {
+      "from_status": "in_progress",
+      "to_status": "waiting_parts",
+      "requires_human": true
+    },
+    {
+      "from_status": "in_progress",
+      "to_status": "waiting_visit",
+      "requires_human": true
+    },
+    {
+      "from_status": "new",
+      "to_status": "awaiting_review",
+      "requires_human": true
+    },
+    {
+      "from_status": "reopened",
+      "to_status": "assigned",
+      "requires_human": true
+    },
+    {
+      "from_status": "reopened",
+      "to_status": "in_progress",
+      "requires_human": true
+    },
+    {
+      "from_status": "resolved",
+      "to_status": "closed",
+      "requires_human": true
+    },
+    {
+      "from_status": "waiting_customer",
+      "to_status": "awaiting_review",
+      "requires_human": true
+    },
+    {
+      "from_status": "waiting_parts",
+      "to_status": "escalated",
+      "requires_human": true
+    },
+    {
+      "from_status": "waiting_parts",
+      "to_status": "in_progress",
+      "requires_human": true
+    },
+    {
+      "from_status": "waiting_visit",
+      "to_status": "escalated",
+      "requires_human": true
+    },
+    {
+      "from_status": "waiting_visit",
+      "to_status": "in_progress",
+      "requires_human": true
+    }
+  ],
+  "terminal_statuses": [
+    "closed",
+    "cancelled",
+    "merged"
+  ],
+  "actions_requiring_approval": [
+    "assign",
+    "merge",
+    "close",
+    "warranty_decision",
+    "rma",
+    "onsite_booking",
+    "device_control"
+  ],
+  "agent_autonomy": [
+    "extract_information",
+    "ask_for_missing_information_draft",
+    "suggest_category",
+    "suggest_priority",
+    "suggest_team",
+    "flag_risk",
+    "draft_reply",
+    "sla_reminder"
+  ],
+  "blocked_autonomy": [
+    "operate_device",
+    "approve_compensation",
+    "grant_account_access",
+    "diagnose_root_cause_without_evidence"
+  ],
+  "reopen_rule": "新证据重开后重新计算响应/解决目标；保留旧周期结果，不能覆盖历史超时。"
+}

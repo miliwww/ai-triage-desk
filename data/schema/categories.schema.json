@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/categories.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "name_zh": {
+      "type": "string"
+    },
+    "required_intake_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_skill": {
+      "type": "string"
+    },
+    "unknown_code_policy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "is_synthetic",
+    "name_zh",
+    "required_intake_fields",
+    "required_skill",
+    "unknown_code_policy"
+  ],
+  "additionalProperties": false
+}

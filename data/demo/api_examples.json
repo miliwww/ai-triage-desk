@@ -1,0 +1,66 @@
+{
+  "notice": "仅定义本地Demo交互建议，不是沃太官方API。写操作在开发时需实现权限和人工确认。",
+  "list_tickets": {
+    "method": "GET",
+    "path": "/api/tickets?status=waiting_customer&page=1&page_size=20",
+    "response_shape": {
+      "items": [
+        "seed/tickets.json中的工单对象"
+      ],
+      "total": "integer",
+      "page": 1,
+      "page_size": 20
+    }
+  },
+  "suggest": {
+    "method": "POST",
+    "path": "/api/tickets/{id}/triage",
+    "request": {
+      "input_ref": "evaluation/inputs.jsonl",
+      "rule_version": "ROUTE-DEMO-V1"
+    },
+    "response_ref": "evaluation/example_agent_outputs.jsonl"
+  },
+  "confirm_assignment": {
+    "method": "POST",
+    "path": "/api/tickets/{id}/assign",
+    "request": {
+      "team_id": "TEAM-DE-TECHNICAL",
+      "assignee_id": "从该团队的online专员中选择",
+      "human_confirmed": true,
+      "idempotency_key": "unique-value"
+    },
+    "expected_effect": "写入assignment及event，更新工单；重复幂等键不得重复派工"
+  },
+  "supplement": {
+    "method": "POST",
+    "path": "/api/tickets/{id}/messages",
+    "request": {
+      "body": "补充SN和发生时间",
+      "sender_type": "customer"
+    },
+    "expected_effect": "保留原消息，追加新消息并重新分诊"
+  },
+  "errors": [
+    {
+      "status": 400,
+      "code": "INVALID_INPUT"
+    },
+    {
+      "status": 403,
+      "code": "TENANT_ACCESS_DENIED"
+    },
+    {
+      "status": 409,
+      "code": "INVALID_TRANSITION"
+    },
+    {
+      "status": 409,
+      "code": "HUMAN_CONFIRMATION_REQUIRED"
+    },
+    {
+      "status": 422,
+      "code": "ASSIGNEE_UNAVAILABLE"
+    }
+  ]
+}

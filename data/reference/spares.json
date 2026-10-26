@@ -1,0 +1,69 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "PART-01",
+    "name_zh": "演示备件类别1",
+    "compatible_product_ids": [
+      "PRD-01",
+      "PRD-02",
+      "PRD-03",
+      "PRD-04",
+      "PRD-05"
+    ],
+    "warehouse_id": "DEMO-WH-1",
+    "available_quantity": 2,
+    "replenishment_eta": "2026-10-28",
+    "notice": "虚构备件类别，无真实料号或替代料建议"
+  },
+  {
+    "is_synthetic": true,
+    "id": "PART-02",
+    "name_zh": "演示备件类别2",
+    "compatible_product_ids": [
+      "PRD-06",
+      "PRD-07",
+      "PRD-08",
+      "PRD-09"
+    ],
+    "warehouse_id": "DEMO-WH-2",
+    "available_quantity": 8,
+    "replenishment_eta": "2026-10-28",
+    "notice": "虚构备件类别，无真实料号或替代料建议"
+  },
+  {
+    "is_synthetic": true,
+    "id": "PART-03",
+    "name_zh": "演示备件类别3",
+    "compatible_product_ids": [
+      "PRD-10"
+    ],
+    "warehouse_id": "DEMO-WH-3",
+    "available_quantity": 0,
+    "replenishment_eta": "2026-10-28",
+    "notice": "虚构备件类别，无真实料号或替代料建议"
+  },
+  {
+    "is_synthetic": true,
+    "id": "PART-04",
+    "name_zh": "演示备件类别4",
+    "compatible_product_ids": [
+      "PRD-11"
+    ],
+    "warehouse_id": "DEMO-WH-4",
+    "available_quantity": 2,
+    "replenishment_eta": "2026-10-28",
+    "notice": "虚构备件类别，无真实料号或替代料建议"
+  },
+  {
+    "is_synthetic": true,
+    "id": "PART-05",
+    "name_zh": "演示备件类别5",
+    "compatible_product_ids": [
+      "PRD-12"
+    ],
+    "warehouse_id": "DEMO-WH-5",
+    "available_quantity": 8,
+    "replenishment_eta": "2026-10-28",
+    "notice": "虚构备件类别，无真实料号或替代料建议"
+  }
+]

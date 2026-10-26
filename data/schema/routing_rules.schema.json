@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/routing_rules.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "confidence_threshold": {
+      "type": "number"
+    },
+    "id": {
+      "type": "string"
+    },
+    "installer_rule": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "language_fallback": {
+      "type": "string"
+    },
+    "low_confidence_action": {
+      "type": "string"
+    },
+    "merge_rule": {
+      "type": "string"
+    },
+    "no_capacity_action": {
+      "type": "string"
+    },
+    "precedence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "skill": {
+            "type": "string"
+          },
+          "team_pattern": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "category_id",
+          "skill",
+          "team_pattern"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "safety_override": {
+      "type": "object",
+      "properties": {
+        "missing_fields_must_not_delay_escalation": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "string"
+        },
+        "requires_human": {
+          "type": "boolean"
+        },
+        "team_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "missing_fields_must_not_delay_escalation",
+        "priority",
+        "requires_human",
+        "team_id"
+      ],
+      "additionalProperties": false
+    },
+    "unknown_country_fallback": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "confidence_threshold",
+    "id",
+    "installer_rule",
+    "is_synthetic",
+    "language_fallback",
+    "low_confidence_action",
+    "merge_rule",
+    "no_capacity_action",
+    "precedence",
+    "rules",
+    "safety_override",
+    "unknown_country_fallback"
+  ],
+  "additionalProperties": false
+}

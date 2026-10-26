@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/regions.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "city_zh": {
+      "type": "string"
+    },
+    "clock_policy": {
+      "type": "string"
+    },
+    "country_zh": {
+      "type": "string"
+    },
+    "coverage_status": {
+      "type": "string"
+    },
+    "default_language": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "service_area": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "city_zh",
+    "clock_policy",
+    "country_zh",
+    "coverage_status",
+    "default_language",
+    "id",
+    "is_synthetic",
+    "service_area",
+    "timezone"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "CMP-01",
+    "name": "Tesla Powerwall",
+    "overlap": "户用储能与数字化服务",
+    "observed": "自助问题入口衔接技术支持和必要的现场服务",
+    "design_inference": "区分信息收集、人工诊断和现场预约状态",
+    "source_ids": [
+      "SRC-09",
+      "SRC-10"
+    ]
+  },
+  {
+    "id": "CMP-02",
+    "name": "BYD Battery-Box",
+    "overlap": "户用及部分工商业电池储能",
+    "observed": "区域服务合作伙伴；按产品和地区提供服务及保修文档",
+    "design_inference": "路由需考虑设备所在地；保修规则需匹配地区和文档版本",
+    "source_ids": [
+      "SRC-11",
+      "SRC-12"
+    ]
+  },
+  {
+    "id": "CMP-03",
+    "name": "Sungrow 阳光电源",
+    "overlap": "户用、工商业及大型储能相关场景",
+    "observed": "安装商入口提供资料、技术支持和远程/现场服务资源",
+    "design_inference": "安装商是独立服务角色，远程处理与上门需区分",
+    "source_ids": [
+      "SRC-13"
+    ]
+  }
+]

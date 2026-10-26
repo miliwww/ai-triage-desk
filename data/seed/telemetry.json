@@ -1,0 +1,1304 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "TEL-0001",
+    "ticket_id": "WO-0004",
+    "device_id": "DEV-080",
+    "sampled_at": "2026-10-23T12:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 37,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0002",
+    "ticket_id": "WO-0008",
+    "device_id": "DEV-184",
+    "sampled_at": "2026-10-22T23:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 24,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0003",
+    "ticket_id": "WO-0012",
+    "device_id": "DEV-054",
+    "sampled_at": "2026-10-22T10:34:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 54,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0004",
+    "ticket_id": "WO-0016",
+    "device_id": "DEV-158",
+    "sampled_at": "2026-10-21T21:26:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 17,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0005",
+    "ticket_id": "WO-0020",
+    "device_id": "DEV-050",
+    "sampled_at": "2026-10-23T15:33:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 39,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0006",
+    "ticket_id": "WO-0024",
+    "device_id": "DEV-132",
+    "sampled_at": "2026-10-20T19:10:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 82,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0007",
+    "ticket_id": "WO-0028",
+    "device_id": "DEV-048",
+    "sampled_at": "2026-10-20T06:02:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 22,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0008",
+    "ticket_id": "WO-0032",
+    "device_id": "DEV-106",
+    "sampled_at": "2026-10-19T16:54:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 26,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0009",
+    "ticket_id": "WO-0036",
+    "device_id": "DEV-018",
+    "sampled_at": "2026-10-19T03:46:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 58,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0010",
+    "ticket_id": "WO-0040",
+    "device_id": "DEV-100",
+    "sampled_at": "2026-10-18T14:38:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 80,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0011",
+    "ticket_id": "WO-0044",
+    "device_id": "DEV-184",
+    "sampled_at": "2026-10-18T01:30:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 79,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0012",
+    "ticket_id": "WO-0048",
+    "device_id": "DEV-080",
+    "sampled_at": "2026-10-17T12:22:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 59,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0013",
+    "ticket_id": "WO-0052",
+    "device_id": "DEV-158",
+    "sampled_at": "2026-10-16T23:14:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 66,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0014",
+    "ticket_id": "WO-0056",
+    "device_id": "DEV-054",
+    "sampled_at": "2026-10-16T10:06:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 79,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0015",
+    "ticket_id": "WO-0060",
+    "device_id": "DEV-158",
+    "sampled_at": "2026-10-15T20:58:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 35,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0016",
+    "ticket_id": "WO-0064",
+    "device_id": "DEV-044",
+    "sampled_at": "2026-10-15T07:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 37,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0017",
+    "ticket_id": "WO-0068",
+    "device_id": "DEV-128",
+    "sampled_at": "2026-10-14T18:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 75,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0018",
+    "ticket_id": "WO-0072",
+    "device_id": "DEV-018",
+    "sampled_at": "2026-10-14T05:34:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 70,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0019",
+    "ticket_id": "WO-0076",
+    "device_id": "DEV-104",
+    "sampled_at": "2026-10-13T16:26:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 77,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0020",
+    "ticket_id": "WO-0080",
+    "device_id": "DEV-016",
+    "sampled_at": "2026-10-13T03:18:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 49,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0021",
+    "ticket_id": "WO-0084",
+    "device_id": "DEV-074",
+    "sampled_at": "2026-10-12T14:10:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 47,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0022",
+    "ticket_id": "WO-0088",
+    "device_id": "DEV-178",
+    "sampled_at": "2026-10-12T01:02:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 62,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0023",
+    "ticket_id": "WO-0092",
+    "device_id": "DEV-070",
+    "sampled_at": "2026-10-11T11:54:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": null,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0024",
+    "ticket_id": "WO-0096",
+    "device_id": "DEV-150",
+    "sampled_at": "2026-10-10T22:46:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 57,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0025",
+    "ticket_id": "WO-0100",
+    "device_id": "DEV-062",
+    "sampled_at": "2026-10-10T09:38:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 51,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0026",
+    "ticket_id": "WO-0104",
+    "device_id": "DEV-140",
+    "sampled_at": "2026-10-09T20:30:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 24,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0027",
+    "ticket_id": "WO-0108",
+    "device_id": "DEV-044",
+    "sampled_at": "2026-10-09T07:22:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 20,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0028",
+    "ticket_id": "WO-0112",
+    "device_id": "DEV-112",
+    "sampled_at": "2026-10-08T18:14:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 68,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0029",
+    "ticket_id": "WO-0116",
+    "device_id": "DEV-014",
+    "sampled_at": "2026-10-08T05:06:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 22,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0030",
+    "ticket_id": "WO-0120",
+    "device_id": "DEV-108",
+    "sampled_at": "2026-10-07T15:58:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 33,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0031",
+    "ticket_id": "WO-0124",
+    "device_id": "DEV-190",
+    "sampled_at": "2026-10-07T02:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": null,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0032",
+    "ticket_id": "WO-0128",
+    "device_id": "DEV-094",
+    "sampled_at": "2026-10-06T13:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": null,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0033",
+    "ticket_id": "WO-0132",
+    "device_id": "DEV-150",
+    "sampled_at": "2026-10-24T02:41:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 54,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0034",
+    "ticket_id": "WO-0136",
+    "device_id": "DEV-062",
+    "sampled_at": "2026-10-24T02:37:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 79,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0035",
+    "ticket_id": "WO-0140",
+    "device_id": "DEV-166",
+    "sampled_at": "2026-10-24T02:33:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": null,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0036",
+    "ticket_id": "WO-0144",
+    "device_id": "DEV-036",
+    "sampled_at": "2026-10-24T02:29:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 35,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0037",
+    "ticket_id": "WO-0148",
+    "device_id": "DEV-140",
+    "sampled_at": "2026-10-24T02:25:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 32,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0038",
+    "ticket_id": "WO-0152",
+    "device_id": "DEV-014",
+    "sampled_at": "2026-10-03T06:54:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 49,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0039",
+    "ticket_id": "WO-0156",
+    "device_id": "DEV-098",
+    "sampled_at": "2026-10-23T21:41:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 26,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0040",
+    "ticket_id": "WO-0160",
+    "device_id": "DEV-010",
+    "sampled_at": "2026-10-02T04:38:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 62,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0041",
+    "ticket_id": "WO-0272",
+    "device_id": "DEV-114",
+    "sampled_at": "2026-10-21T14:14:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 45,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0042",
+    "ticket_id": "WO-0276",
+    "device_id": "DEV-006",
+    "sampled_at": "2026-10-21T01:06:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 19,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0043",
+    "ticket_id": "WO-0280",
+    "device_id": "DEV-110",
+    "sampled_at": "2026-10-20T11:58:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 54,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0044",
+    "ticket_id": "WO-0284",
+    "device_id": "DEV-172",
+    "sampled_at": "2026-10-19T22:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 55,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0045",
+    "ticket_id": "WO-0288",
+    "device_id": "DEV-084",
+    "sampled_at": "2026-10-19T09:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 73,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0046",
+    "ticket_id": "WO-0292",
+    "device_id": "DEV-162",
+    "sampled_at": "2026-10-18T20:34:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 22,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0047",
+    "ticket_id": "WO-0296",
+    "device_id": "DEV-052",
+    "sampled_at": "2026-10-18T07:26:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 19,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0048",
+    "ticket_id": "WO-0300",
+    "device_id": "DEV-156",
+    "sampled_at": "2026-10-17T18:18:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 66,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0049",
+    "ticket_id": "WO-0304",
+    "device_id": "DEV-028",
+    "sampled_at": "2026-10-17T05:10:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 39,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0050",
+    "ticket_id": "WO-0308",
+    "device_id": "DEV-132",
+    "sampled_at": "2026-10-16T16:02:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 25,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0051",
+    "ticket_id": "WO-0312",
+    "device_id": "DEV-006",
+    "sampled_at": "2026-10-16T02:54:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 78,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0052",
+    "ticket_id": "WO-0316",
+    "device_id": "DEV-110",
+    "sampled_at": "2026-10-15T13:46:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 77,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0053",
+    "ticket_id": "WO-0320",
+    "device_id": "DEV-002",
+    "sampled_at": "2026-10-15T00:38:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 29,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0054",
+    "ticket_id": "WO-0324",
+    "device_id": "DEV-084",
+    "sampled_at": "2026-10-14T11:30:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 83,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0055",
+    "ticket_id": "WO-0328",
+    "device_id": "DEV-188",
+    "sampled_at": "2026-10-13T22:22:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 21,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0056",
+    "ticket_id": "WO-0332",
+    "device_id": "DEV-058",
+    "sampled_at": "2026-10-13T09:14:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 78,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0057",
+    "ticket_id": "WO-0336",
+    "device_id": "DEV-162",
+    "sampled_at": "2026-10-12T20:06:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 38,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0058",
+    "ticket_id": "WO-0340",
+    "device_id": "DEV-054",
+    "sampled_at": "2026-10-12T06:58:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 60,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0059",
+    "ticket_id": "WO-0344",
+    "device_id": "DEV-130",
+    "sampled_at": "2026-10-11T17:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 46,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0060",
+    "ticket_id": "WO-0348",
+    "device_id": "DEV-042",
+    "sampled_at": "2026-10-11T04:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 16,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0061",
+    "ticket_id": "WO-0352",
+    "device_id": "DEV-110",
+    "sampled_at": "2026-10-10T15:34:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 22,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0062",
+    "ticket_id": "WO-0356",
+    "device_id": "DEV-002",
+    "sampled_at": "2026-10-23T18:21:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 82,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0063",
+    "ticket_id": "WO-0360",
+    "device_id": "DEV-106",
+    "sampled_at": "2026-10-09T13:18:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 15,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0064",
+    "ticket_id": "WO-0364",
+    "device_id": "DEV-192",
+    "sampled_at": "2026-10-09T00:10:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 67,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0065",
+    "ticket_id": "WO-0368",
+    "device_id": "DEV-080",
+    "sampled_at": "2026-10-08T11:02:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 24,
+      "network_status": "offline",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0066",
+    "ticket_id": "WO-0372",
+    "device_id": "DEV-162",
+    "sampled_at": "2026-10-07T21:54:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 51,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0067",
+    "ticket_id": "WO-0376",
+    "device_id": "DEV-054",
+    "sampled_at": "2026-10-07T08:46:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 81,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0068",
+    "ticket_id": "WO-0380",
+    "device_id": "DEV-158",
+    "sampled_at": "2026-10-06T19:38:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 37,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0069",
+    "ticket_id": "WO-0384",
+    "device_id": "DEV-028",
+    "sampled_at": "2026-10-06T06:30:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 36,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0070",
+    "ticket_id": "WO-0388",
+    "device_id": "DEV-132",
+    "sampled_at": "2026-10-05T17:22:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 22,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0071",
+    "ticket_id": "WO-0392",
+    "device_id": "DEV-018",
+    "sampled_at": "2026-10-24T02:09:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 74,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0072",
+    "ticket_id": "WO-0396",
+    "device_id": "DEV-114",
+    "sampled_at": "2026-10-04T15:06:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 81,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0073",
+    "ticket_id": "WO-0400",
+    "device_id": "DEV-018",
+    "sampled_at": "2026-10-04T01:58:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 37,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0074",
+    "ticket_id": "WO-0404",
+    "device_id": "DEV-096",
+    "sampled_at": "2026-10-03T12:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 48,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0075",
+    "ticket_id": "WO-0408",
+    "device_id": "DEV-176",
+    "sampled_at": "2026-10-02T23:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 67,
+      "network_status": "online",
+      "data_freshness_minutes": 180
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0076",
+    "ticket_id": "WO-0412",
+    "device_id": "DEV-064",
+    "sampled_at": "2026-10-02T10:34:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 28,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0077",
+    "ticket_id": "WO-0416",
+    "device_id": "DEV-158",
+    "sampled_at": "2026-10-01T21:26:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 44,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0078",
+    "ticket_id": "WO-0420",
+    "device_id": "DEV-060",
+    "sampled_at": "2026-10-01T08:18:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 53,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0079",
+    "ticket_id": "WO-0424",
+    "device_id": "DEV-140",
+    "sampled_at": "2026-09-30T19:10:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 38,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0080",
+    "ticket_id": "WO-0428",
+    "device_id": "DEV-028",
+    "sampled_at": "2026-09-30T06:02:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 45,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0081",
+    "ticket_id": "WO-0432",
+    "device_id": "DEV-098",
+    "sampled_at": "2026-09-29T16:54:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 21,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0082",
+    "ticket_id": "WO-0436",
+    "device_id": "DEV-010",
+    "sampled_at": "2026-09-29T03:46:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 85,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0083",
+    "ticket_id": "WO-0440",
+    "device_id": "DEV-114",
+    "sampled_at": "2026-09-28T14:38:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 84,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0084",
+    "ticket_id": "WO-0444",
+    "device_id": "DEV-192",
+    "sampled_at": "2026-09-28T01:30:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 33,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0085",
+    "ticket_id": "WO-0448",
+    "device_id": "DEV-080",
+    "sampled_at": "2026-09-27T12:22:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 72,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0086",
+    "ticket_id": "WO-0452",
+    "device_id": "DEV-158",
+    "sampled_at": "2026-09-26T23:14:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 67,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0087",
+    "ticket_id": "WO-0456",
+    "device_id": "DEV-050",
+    "sampled_at": "2026-10-23T16:41:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 48,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0088",
+    "ticket_id": "WO-0460",
+    "device_id": "DEV-154",
+    "sampled_at": "2026-09-25T20:58:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 51,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0089",
+    "ticket_id": "WO-0464",
+    "device_id": "DEV-028",
+    "sampled_at": "2026-09-25T07:50:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 31,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0090",
+    "ticket_id": "WO-0468",
+    "device_id": "DEV-132",
+    "sampled_at": "2026-09-24T18:42:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 42,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0091",
+    "ticket_id": "WO-0472",
+    "device_id": "DEV-018",
+    "sampled_at": "2026-09-24T05:34:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 32,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0092",
+    "ticket_id": "WO-0476",
+    "device_id": "DEV-102",
+    "sampled_at": "2026-09-23T16:26:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 81,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  },
+  {
+    "is_synthetic": true,
+    "id": "TEL-0093",
+    "ticket_id": "WO-0480",
+    "device_id": "DEV-014",
+    "sampled_at": "2026-09-23T03:18:00Z",
+    "source": "synthetic_read_only_snapshot",
+    "fields": {
+      "soc_percent": 83,
+      "network_status": "online",
+      "data_freshness_minutes": 2
+    },
+    "interpretation": "只读样本，不能仅凭该快照判断根因；不提供远程控制指令。"
+  }
+]

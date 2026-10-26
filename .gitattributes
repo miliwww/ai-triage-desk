@@ -1,0 +1,11 @@
+# Normalize line endings so Windows and Linux checkouts produce identical bytes.
+* text=auto eol=lf
+
+# Binary assets keep their original bytes.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.zip binary
+*.woff binary
+*.woff2 binary

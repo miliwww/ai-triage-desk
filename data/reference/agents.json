@@ -1,0 +1,992 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "USR-001",
+    "display_name": "演示专员001",
+    "team_id": "TEAM-DE-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 8,
+    "email": "agent-001@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-002",
+    "display_name": "演示专员002",
+    "team_id": "TEAM-DE-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-002@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-003",
+    "display_name": "演示专员003",
+    "team_id": "TEAM-DE-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 3,
+    "email": "agent-003@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-004",
+    "display_name": "演示专员004",
+    "team_id": "TEAM-DE-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-004@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-005",
+    "display_name": "演示专员005",
+    "team_id": "TEAM-DE-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-005@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-006",
+    "display_name": "演示专员006",
+    "team_id": "TEAM-DE-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-006@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-007",
+    "display_name": "演示专员007",
+    "team_id": "TEAM-NL-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 9,
+    "email": "agent-007@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-008",
+    "display_name": "演示专员008",
+    "team_id": "TEAM-NL-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-008@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-009",
+    "display_name": "演示专员009",
+    "team_id": "TEAM-NL-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-009@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-010",
+    "display_name": "演示专员010",
+    "team_id": "TEAM-NL-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-010@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-011",
+    "display_name": "演示专员011",
+    "team_id": "TEAM-NL-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-011@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-012",
+    "display_name": "演示专员012",
+    "team_id": "TEAM-NL-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-012@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-013",
+    "display_name": "演示专员013",
+    "team_id": "TEAM-ES-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 8,
+    "email": "agent-013@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-014",
+    "display_name": "演示专员014",
+    "team_id": "TEAM-ES-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-014@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-015",
+    "display_name": "演示专员015",
+    "team_id": "TEAM-ES-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 5,
+    "email": "agent-015@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-016",
+    "display_name": "演示专员016",
+    "team_id": "TEAM-ES-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-016@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-017",
+    "display_name": "演示专员017",
+    "team_id": "TEAM-ES-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-017@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-018",
+    "display_name": "演示专员018",
+    "team_id": "TEAM-ES-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-018@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-019",
+    "display_name": "演示专员019",
+    "team_id": "TEAM-GB-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 17,
+    "current_open_ticket_count": 15,
+    "email": "agent-019@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-020",
+    "display_name": "演示专员020",
+    "team_id": "TEAM-GB-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-020@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-021",
+    "display_name": "演示专员021",
+    "team_id": "TEAM-GB-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 9,
+    "email": "agent-021@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-022",
+    "display_name": "演示专员022",
+    "team_id": "TEAM-GB-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-022@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-023",
+    "display_name": "演示专员023",
+    "team_id": "TEAM-GB-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-023@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-024",
+    "display_name": "演示专员024",
+    "team_id": "TEAM-GB-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-024@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-025",
+    "display_name": "演示专员025",
+    "team_id": "TEAM-AU-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 15,
+    "current_open_ticket_count": 13,
+    "email": "agent-025@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-026",
+    "display_name": "演示专员026",
+    "team_id": "TEAM-AU-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-026@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-027",
+    "display_name": "演示专员027",
+    "team_id": "TEAM-AU-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 3,
+    "email": "agent-027@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-028",
+    "display_name": "演示专员028",
+    "team_id": "TEAM-AU-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-028@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-029",
+    "display_name": "演示专员029",
+    "team_id": "TEAM-AU-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-029@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-030",
+    "display_name": "演示专员030",
+    "team_id": "TEAM-AU-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-030@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-031",
+    "display_name": "演示专员031",
+    "team_id": "TEAM-CN-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 8,
+    "email": "agent-031@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-032",
+    "display_name": "演示专员032",
+    "team_id": "TEAM-CN-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-032@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-033",
+    "display_name": "演示专员033",
+    "team_id": "TEAM-CN-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-033@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-034",
+    "display_name": "演示专员034",
+    "team_id": "TEAM-CN-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-034@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-035",
+    "display_name": "演示专员035",
+    "team_id": "TEAM-CN-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-035@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-036",
+    "display_name": "演示专员036",
+    "team_id": "TEAM-CN-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-036@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-037",
+    "display_name": "演示专员037",
+    "team_id": "TEAM-FR-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 10,
+    "email": "agent-037@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-038",
+    "display_name": "演示专员038",
+    "team_id": "TEAM-FR-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-038@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-039",
+    "display_name": "演示专员039",
+    "team_id": "TEAM-FR-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 4,
+    "email": "agent-039@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-040",
+    "display_name": "演示专员040",
+    "team_id": "TEAM-FR-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-040@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-041",
+    "display_name": "演示专员041",
+    "team_id": "TEAM-FR-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-041@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-042",
+    "display_name": "演示专员042",
+    "team_id": "TEAM-FR-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-042@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-043",
+    "display_name": "演示专员043",
+    "team_id": "TEAM-IT-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "it",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "online",
+    "capacity": 22,
+    "current_open_ticket_count": 20,
+    "email": "agent-043@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-044",
+    "display_name": "演示专员044",
+    "team_id": "TEAM-IT-TECHNICAL",
+    "role": "specialist",
+    "languages": [
+      "it",
+      "en"
+    ],
+    "skills": [
+      "technical"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-044@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-045",
+    "display_name": "演示专员045",
+    "team_id": "TEAM-IT-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "it",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 7,
+    "email": "agent-045@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-046",
+    "display_name": "演示专员046",
+    "team_id": "TEAM-IT-CLOUD",
+    "role": "specialist",
+    "languages": [
+      "it",
+      "en"
+    ],
+    "skills": [
+      "cloud"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-046@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-047",
+    "display_name": "演示专员047",
+    "team_id": "TEAM-IT-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "it",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-047@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-048",
+    "display_name": "演示专员048",
+    "team_id": "TEAM-IT-WARRANTY",
+    "role": "specialist",
+    "languages": [
+      "it",
+      "en"
+    ],
+    "skills": [
+      "warranty"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-048@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-049",
+    "display_name": "演示专员049",
+    "team_id": "TEAM-GLOBAL-SAFETY",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "skills": [
+      "safety"
+    ],
+    "availability": "online",
+    "capacity": 32,
+    "current_open_ticket_count": 30,
+    "email": "agent-049@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-050",
+    "display_name": "演示专员050",
+    "team_id": "TEAM-GLOBAL-SAFETY",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "skills": [
+      "safety"
+    ],
+    "availability": "busy",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-050@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-051",
+    "display_name": "演示专员051",
+    "team_id": "TEAM-GLOBAL-GLOBAL",
+    "role": "supervisor",
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "skills": [
+      "global"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-051@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-052",
+    "display_name": "演示专员052",
+    "team_id": "TEAM-GLOBAL-GLOBAL",
+    "role": "supervisor",
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "skills": [
+      "global"
+    ],
+    "availability": "offline",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-052@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-053",
+    "display_name": "演示专员053",
+    "team_id": "TEAM-GLOBAL-QUALITY",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "skills": [
+      "quality"
+    ],
+    "availability": "online",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-053@example.invalid"
+  },
+  {
+    "is_synthetic": true,
+    "id": "USR-054",
+    "display_name": "演示专员054",
+    "team_id": "TEAM-GLOBAL-QUALITY",
+    "role": "specialist",
+    "languages": [
+      "zh",
+      "en",
+      "de",
+      "nl",
+      "es",
+      "fr",
+      "it"
+    ],
+    "skills": [
+      "quality"
+    ],
+    "availability": "leave",
+    "capacity": 12,
+    "current_open_ticket_count": 0,
+    "email": "agent-054@example.invalid"
+  }
+]

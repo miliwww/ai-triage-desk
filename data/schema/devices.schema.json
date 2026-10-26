@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/devices.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "customer_id": {
+      "type": "string"
+    },
+    "firmware_version": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "installed_on": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "model_market_pairing": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "serial_format": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "warranty_status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer_id",
+    "firmware_version",
+    "id",
+    "installed_on",
+    "is_synthetic",
+    "model_market_pairing",
+    "product_id",
+    "serial_format",
+    "serial_number",
+    "site_id",
+    "warranty_status"
+  ],
+  "additionalProperties": false
+}

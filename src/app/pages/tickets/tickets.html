@@ -1,0 +1,179 @@
+<div class="page-head">
+  <div>
+    <div class="page-kicker">{{ i18n.t('portfolio.workspace') }}</div>
+    <h1 class="page-title">{{ i18n.t('tickets.title') }}</h1>
+    <p class="page-desc">{{ i18n.t('tickets.desc') }}</p>
+  </div>
+  <div class="row gap-8">
+    <span class="badge grey"><i class="dot"></i>共 {{ filtered().length }} 条结果</span>
+    <button class="btn" type="button" (click)="clearAll()">{{ i18n.t('common.clearAll') }}</button>
+  </div>
+</div>
+
+<section class="panel">
+  <div class="toolbar">
+    <input class="input search" type="search" [placeholder]="i18n.t('shell.searchPlaceholder')" aria-label="搜索工单" name="ticket-search" [value]="q()" (input)="onSearch($any($event.target).value)" />
+    <select class="select" aria-label="状态" name="status-filter" [value]="status()" (change)="set(status, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allStatus') }}</option>
+      @for (s of statuses(); track s.id) { <option [value]="s.id" [selected]="s.id === status()">{{ i18n.status(s.id) }}</option> }
+    </select>
+    <select class="select" aria-label="优先级" name="priority-filter" [value]="priority()" (change)="set(priority, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allPriority') }}</option>
+      <option value="P0">{{ i18n.priority('P0') }}</option>
+      <option value="P1">{{ i18n.priority('P1') }}</option>
+      <option value="P2">{{ i18n.priority('P2') }}</option>
+      <option value="P3">{{ i18n.priority('P3') }}</option>
+      <option value="none">{{ i18n.priority('none') }}</option>
+    </select>
+    <select class="select" aria-label="类别" name="category-filter" [value]="category()" (change)="set(category, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allCategory') }}</option>
+      @for (c of store.categories(); track c.id) { <option [value]="c.id" [selected]="c.id === category()">{{ i18n.categoryName(c.id) }}</option> }
+      <option value="unconfirmed">{{ i18n.priority('none') }}</option>
+    </select>
+    <select class="select" aria-label="国家" name="country-filter" [value]="country()" (change)="set(country, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allCountry') }}</option>
+      @for (r of store.regions(); track r.id) { <option [value]="r.id" [selected]="r.id === country()">{{ i18n.countryName(r.id) }} · {{ r.id }}</option> }
+    </select>
+    <select class="select" aria-label="语言" name="language-filter" [value]="language()" (change)="set(language, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allLanguage') }}</option>
+      @for (l of languageOptions(); track l.code) { <option [value]="l.code" [selected]="l.code === language()">{{ l.label }}</option> }
+    </select>
+    <select class="select" aria-label="负责团队" name="team-filter" [value]="team()" (change)="set(team, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allTeam') }}</option>
+      @for (t of store.teams(); track t.id) { <option [value]="t.id" [selected]="t.id === team()">{{ t.name_zh }}</option> }
+      <option value="none">未分配团队</option>
+    </select>
+    <select class="select" aria-label="风险" name="risk-filter" [value]="risk()" (change)="set(risk, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allRisk') }}</option>
+      <option value="open">{{ i18n.t('dash.riskOpen') }}</option>
+      <option value="pending">{{ i18n.t('risk.queued') }}</option>
+    </select>
+    <select class="select" aria-label="时效" name="overdue-filter" [value]="overdue()" (change)="set(overdue, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allTime') }}</option>
+      <option value="first">{{ i18n.t('nav.firstOverdue') }}</option>
+      <option value="resolution">{{ i18n.t('riskPage.viewResolution') }}</option>
+    </select>
+    <select class="select" aria-label="范围" name="scope-filter" [value]="scope()" (change)="set(scope, $any($event.target).value)">
+      <option value="">{{ i18n.t('common.allScope') }}</option>
+      <option value="unresolved">仅未解决</option>
+    </select>
+    <span class="grow"></span>
+    <label class="row gap-4 small muted">{{ i18n.t('common.sort') }}
+      <select class="select" name="sort" [value]="sort()" (change)="sortBy($any($event.target).value)">
+        <option value="focus">{{ i18n.t('common.sortFocus') }}</option>
+        <option value="newest">{{ i18n.t('common.sortNewest') }}</option>
+        <option value="oldest">{{ i18n.t('common.sortOldest') }}</option>
+        <option value="priority">{{ i18n.t('common.sortPriority') }}</option>
+        <option value="due">{{ i18n.t('common.sortDue') }}</option>
+      </select>
+    </label>
+    <button class="btn sm" type="button" (click)="expanded.set(!expanded())">{{ i18n.t('common.fieldHelp') }}</button>
+  </div>
+
+  @if (expanded()) {
+    <div class="field-help">{{ i18n.t('tickets.fieldHelp') }}</div>
+  }
+
+  <div class="chips-row">
+    <span class="filter-count">{{ i18n.t('tickets.filters') }}</span>
+    @for (chip of activeChips(); track chip.key) {
+      <span class="chip">{{ chip.label }}<button type="button" aria-label="移除筛选" (click)="chip.clear(); page.set(1)">×</button></span>
+    } @empty {
+      <span class="faint small">{{ i18n.t('tickets.noFilters', { n: store.tickets().length }) }}</span>
+    }
+    <span class="grow"></span>
+    <span class="filter-count">{{ i18n.t('common.page') }} {{ page() }} / {{ totalPages() }} · {{ i18n.t('common.perPage') }}</span>
+    <select class="select sm" name="page-size" [value]="pageSize()" (change)="size($any($event.target).value)">
+      <option value="20">20</option>
+      <option value="40">40</option>
+      <option value="60">60</option>
+    </select>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data tickets-table">
+      <thead>
+        <tr>
+          <th style="width:128px">{{ i18n.t('col.ticket') }}</th>
+          <th>{{ i18n.t('col.summaryCustomer') }}</th>
+          <th style="width:96px">{{ i18n.t('col.countryLang') }}</th>
+          <th style="width:128px">{{ i18n.t('col.category') }}</th>
+          <th style="width:66px">{{ i18n.t('col.priority') }}</th>
+          <th style="width:104px">{{ i18n.t('col.status') }}</th>
+          <th style="width:128px">{{ i18n.t('col.owner') }}</th>
+          <th style="width:118px">{{ i18n.t('col.missing') }}</th>
+          <th style="width:142px">{{ i18n.t('col.firstResponse') }}</th>
+          <th style="width:92px">{{ i18n.t('col.updated') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (t of paged(); track t.id) {
+          <tr class="clickable" [class.risk-row]="t.riskPending" (click)="open(t.id)">
+            <td class="id">
+              <a [routerLink]="['/tickets', t.id]" (click)="$event.stopPropagation()">{{ t.id }}</a>
+              <span class="sub">{{ t.external_reference }}</span>
+              @if (t.riskPending) { <span class="badge red mt-4"><i class="dot"></i>待接管</span> }
+            </td>
+            <td>
+              <span class="ticket-title">{{ t.summary_zh }}</span>
+              <span class="sub">{{ t.title }}</span>
+              <span class="sub">{{ t.customer?.name }} · {{ CHANNEL_LABEL[t.channel] ?? t.channel }}</span>
+            </td>
+            <td class="nowrap">{{ t.country_code }} · {{ i18n.languageName(t.language) }}</td>
+            <td>{{ t.category_id ? i18n.categoryName(t.category_id) : i18n.priority('none') }}</td>
+            <td><app-priority-badge [priority]="t.priority" /></td>
+            <td><app-status-badge [status]="t.status" /> @if (t.risk) { <app-risk-badge [status]="t.risk.status" /> }</td>
+            <td>
+              @if (t.agent) {
+                {{ t.agent.display_name }}<span class="sub">{{ t.team?.name_zh }}</span>
+              } @else if (t.team) {
+                待确认人员<span class="sub">{{ t.team.name_zh }}</span>
+              } @else {
+                <span class="faint">未分配</span>
+              }
+            </td>
+            <td>
+              @if (t.missing_fields.length) {
+                <span class="badge orange"><i class="dot"></i>{{ t.missing_fields.length }} 项</span>
+                <span class="sub">{{ missingLabel(t.missing_fields[0]) }}等</span>
+              } @else {
+                <span class="badge green"><i class="dot"></i>{{ i18n.t('common.complete') }}</span>
+              }
+            </td>
+            <td>
+              @if (t.sla.first_response_at) {
+                <span class="badge green"><i class="dot"></i>已首响</span>
+                <span class="sub">{{ fmtDateTime(t.sla.first_response_at) }}</span>
+              } @else if (t.firstResponseOverdue) {
+                <span class="badge red"><i class="dot"></i>超时 {{ overdueMinutes(t.sla.first_response_due_at) }} 分</span>
+                <span class="sub">到期 {{ fmtDateTime(t.sla.first_response_due_at) }}</span>
+              } @else {
+                <span class="badge grey"><i class="dot"></i>待首响</span>
+                <span class="sub">到期 {{ fmtDateTime(t.sla.first_response_due_at) }}</span>
+              }
+            </td>
+            <td class="num">{{ i18n.ago(t.updated_at) }}</td>
+          </tr>
+        } @empty {
+          <tr><td colspan="10">
+            <app-empty [title]="i18n.t('tickets.emptyTitle')" [hint]="i18n.t('tickets.emptyHint')" />
+            <div class="center mb-16"><button class="btn" type="button" (click)="clearAll()">{{ i18n.t('common.clearAll') }}</button></div>
+          </td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pager">
+    <span class="small muted">{{ i18n.t('tickets.showing', { n: paged().length, total: filtered().length }) }}</span>
+    <div class="pages">
+      <button type="button" [disabled]="page() === 1" (click)="pageTo(1)">«</button>
+      <button type="button" [disabled]="page() === 1" (click)="pageTo(page() - 1)">‹</button>
+      @for (n of pageNumbers(); track n) {
+        <button type="button" [class.on]="n === page()" (click)="pageTo(n)">{{ n }}</button>
+      }
+      <button type="button" [disabled]="page() >= totalPages()" (click)="pageTo(page() + 1)">›</button>
+      <button type="button" [disabled]="page() >= totalPages()" (click)="pageTo(totalPages())">»</button>
+    </div>
+  </div>
+</section>

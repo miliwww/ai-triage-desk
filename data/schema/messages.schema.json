@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/messages.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attachment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "body": {
+      "type": "string"
+    },
+    "body_zh": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "language": {
+      "type": "string"
+    },
+    "sender_id": {
+      "type": "string"
+    },
+    "sender_type": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    },
+    "translation_status": {
+      "type": "string"
+    },
+    "visibility": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "at",
+    "attachment_ids",
+    "body",
+    "body_zh",
+    "id",
+    "is_synthetic",
+    "language",
+    "sender_id",
+    "sender_type",
+    "ticket_id",
+    "translation_status",
+    "visibility"
+  ],
+  "additionalProperties": false
+}

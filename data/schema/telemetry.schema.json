@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/telemetry.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "device_id": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "object",
+      "properties": {
+        "data_freshness_minutes": {
+          "type": "integer"
+        },
+        "network_status": {
+          "type": "string"
+        },
+        "soc_percent": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "data_freshness_minutes",
+        "network_status",
+        "soc_percent"
+      ],
+      "additionalProperties": false
+    },
+    "id": {
+      "type": "string"
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "sampled_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "device_id",
+    "fields",
+    "id",
+    "interpretation",
+    "is_synthetic",
+    "sampled_at",
+    "source",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

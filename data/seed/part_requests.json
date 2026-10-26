@@ -1,0 +1,132 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0019",
+    "ticket_id": "WO-0019",
+    "part_id": "PART-05",
+    "quantity": 1,
+    "status": "pending_human_confirmation",
+    "requested_at": "2026-10-22T23:01:39Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0028",
+    "ticket_id": "WO-0028",
+    "part_id": "PART-05",
+    "quantity": 1,
+    "status": "pending_human_confirmation",
+    "requested_at": "2026-10-22T09:43:48Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0064",
+    "ticket_id": "WO-0064",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-20T04:32:24Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0110",
+    "ticket_id": "WO-0110",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-17T08:34:30Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0128",
+    "ticket_id": "WO-0128",
+    "part_id": "PART-04",
+    "quantity": 1,
+    "status": "pending_human_confirmation",
+    "requested_at": "2026-10-16T05:58:48Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0155",
+    "ticket_id": "WO-0155",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-14T14:05:15Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0337",
+    "ticket_id": "WO-0337",
+    "part_id": "PART-05",
+    "quantity": 1,
+    "status": "pending_human_confirmation",
+    "requested_at": "2026-10-19T00:10:57Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0355",
+    "ticket_id": "WO-0355",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-17T21:35:15Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0373",
+    "ticket_id": "WO-0373",
+    "part_id": "PART-05",
+    "quantity": 1,
+    "status": "pending_human_confirmation",
+    "requested_at": "2026-10-16T18:59:33Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0382",
+    "ticket_id": "WO-0382",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-16T05:41:42Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0391",
+    "ticket_id": "WO-0391",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-15T16:23:51Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0455",
+    "ticket_id": "WO-0455",
+    "part_id": "PART-03",
+    "quantity": 1,
+    "status": "awaiting_stock",
+    "requested_at": "2026-10-11T17:50:15Z",
+    "approved_by": null
+  },
+  {
+    "is_synthetic": true,
+    "id": "PREQ-0473",
+    "ticket_id": "WO-0473",
+    "part_id": "PART-05",
+    "quantity": 1,
+    "status": "pending_human_confirmation",
+    "requested_at": "2026-10-10T15:14:33Z",
+    "approved_by": null
+  }
+]

@@ -1,0 +1,621 @@
+@let t = ticket();
+@if (!t) {
+  <div class="panel"><app-empty title="未找到工单" hint="请从工单中心重新选择，或在地址栏核对工单编号。" /></div>
+} @else {
+<div class="page-head detail-head">
+  <div>
+    <div class="crumb"><a routerLink="/tickets">{{ i18n.t('nav.tickets') }}</a><span>/</span><b>{{ t.id }}</b></div>
+    <h1 class="page-title detail-title">{{ t.title }}</h1>
+    <div class="row wrap gap-8 mt-8">
+      <app-status-badge [status]="t.status" />
+      <app-priority-badge [priority]="t.priority" />
+      @if (t.risk) { <app-risk-badge [status]="t.risk.status" /> }
+      @if (t.safety_flag === 'reported_risk') { <span class="badge red"><i class="dot"></i>客户报告疑似安全风险</span> }
+      <span class="badge grey"><i class="dot"></i>{{ t.country_code }} · {{ i18n.languageName(t.language) }}</span>
+      <span class="badge grey">{{ i18n.t('channel.' + t.channel) }}</span>
+      <span class="badge grey">{{ t.external_reference }}</span>
+    </div>
+    <p class="page-desc">{{ i18n.t('col.customer') }}: {{ t.customer?.name }} · {{ t.site?.name }} · {{ i18n.t('col.owner') }}: {{ t.agent?.display_name ?? '—' }} · {{ i18n.t('detail.nextAction') }}: {{ t.nextActionZh }}</p>
+  </div>
+  <div class="row wrap gap-8">
+    <a class="btn" routerLink="/tickets">{{ i18n.t('detail.back') }}</a>
+    <button class="btn danger" type="button" [disabled]="isTerminal()" (click)="selectTab('handling')">{{ i18n.t('detail.escalate') }}</button>
+    @if (canReopen()) { <button class="btn" type="button" (click)="selectTab('handling')">{{ i18n.t('detail.closeReopen') }}</button> }
+  </div>
+</div>
+
+@if (!['cancelled', 'merged'].includes(t.status)) {
+  <app-workflow-guide [ticket]="t" (navigate)="navigateGuide($event)" />
+}
+
+@if (t.risk && t.risk.status !== 'mitigated') {
+  <div class="risk-banner mb-16">
+    <div class="grow">
+      <div class="title">安全风险待处理 · {{ t.risk.status === 'queued' ? '尚无接管记录' : (t.risk.status === 'taken_over' ? '已由人工接管' : '已记录缓解') }}</div>
+      <div class="small muted mt-4">{{ t.risk.reason_zh }}</div>
+      <div class="small mt-4">
+        发现 {{ fmtDateTime(t.risk.detected_at) }}
+        @if (t.risk.taken_over_at) { · 接管 {{ fmtDateTime(t.risk.taken_over_at) }}（{{ agentName(t.risk.taken_over_by) }}） }
+        @if (t.risk.next_update_at) { · 下次更新 {{ fmtDateTime(t.risk.next_update_at) }} }
+      </div>
+    </div>
+    <button class="btn danger sm" type="button" (click)="navigateGuide('handling')">{{ riskPending() ? '立即确认接管' : '记录后续处理' }}</button>
+  </div>
+}
+
+<div class="detail-grid">
+  <div class="stack">
+    <section class="panel">
+      <div class="tabs">
+        @for (tab of tabs; track tab.id) {
+          <button type="button" [class.on]="tab.id === this.tab()" (click)="selectTab(tab.id)">
+            {{ i18n.t(tab.labelKey) }}
+            @if (tab.id === 'conversation') { <span class="tab-count">{{ messages().length }}</span> }
+            @if (tab.id === 'review' && ai()?.review?.status === 'pending') { <span class="tab-count alert">{{ i18n.t('detail.tabBadgeReview') }}</span> }
+            @if (tab.id === 'dispatch' && !t.assigned_agent_id) { <span class="tab-count alert">{{ i18n.t('detail.tabBadgeDispatch') }}</span> }
+          </button>
+        }
+      </div>
+
+      @switch (tab()) {
+        @case ('overview') {
+          <div class="panel-body">
+            <div class="two-col">
+              <div class="col">
+                <h3 class="sec-title">{{ i18n.t('detail.originalFeedback') }}</h3>
+                <div class="facts">
+                  <div><span>问题摘要</span><b>{{ t.summary_zh }}</b></div>
+                  <div><span>产品 / 型号</span><b>{{ t.product?.model ?? '—' }} · {{ t.device?.serial_number ?? '未提供 SN' }}</b></div>
+                  <div><span>发生时间</span><b>{{ fmtDateTime(t.reported.occurred_at) }}</b></div>
+                  <div><span>错误码原文</span><b>{{ t.reported.error_code_literal ?? '未提供' }}</b></div>
+                  <div><span>客户描述语言</span><b>{{ i18n.languageName(t.language) }}</b></div>
+                  <div><span>缺失资料</span><b>{{ t.missing_fields.length ? t.missing_fields.map(missingLabel).join('、') : '无' }}</b></div>
+                </div>
+                <div class="original mt-8">{{ t.reported.symptom_description }}</div>
+              </div>
+              <div class="col">
+                <h3 class="sec-title">AI 分诊建议 <span class="badge orange"><i class="dot"></i>{{ i18n.t('detail.preset') }}</span></h3>
+                @if (ai(); as ai) {
+                  <div class="facts">
+                    <div><span>{{ i18n.t('detail.aiCategory') }}</span><b>{{ i18n.categoryName(ai.proposal.category_id) }}</b></div>
+                    <div><span>{{ i18n.t('detail.aiPriority') }}</span><b>{{ i18n.priority(ai.proposal.priority) }}</b></div>
+                    <div><span>{{ i18n.t('detail.aiTeam') }}</span><b>{{ teamName(ai.proposal.team_id) }}</b></div>
+                    <div><span>建议置信度</span><b>{{ ai.proposal.confidence }} · {{ confidenceLabel(ai.proposal.confidence) }}</b></div>
+                    <div><span>缺失项</span><b>{{ ai.proposal.missing_fields.length ? ai.proposal.missing_fields.map(missingLabel).join('、') : '无' }}</b></div>
+                    <div><span>复核状态</span><b>{{ ai.review.status === 'pending' ? '待人工复核' : (ai.review.status === 'corrected' ? '已人工更正' : '已人工确认') }}</b></div>
+                  </div>
+                  <div class="quote mt-8">{{ ai.proposal.evidence_spans[0] ?? '无可用证据片段' }}</div>
+                  <div class="small muted mt-4">依据：{{ ai.proposal.rationale_zh }}</div>
+                  <button class="btn primary sm mt-8" type="button" (click)="selectTab('review')">{{ i18n.t('detail.reviewBtn') }}</button>
+                }
+              </div>
+            </div>
+
+            <div class="two-col mt-16">
+              <div>
+                <div class="row-between"><h3 class="sec-title">{{ i18n.t('detail.recent') }}</h3><button class="link-btn" type="button" (click)="selectTab('conversation')">全部 {{ messages().length }} 条</button></div>
+                <div class="col gap-8">
+                  @for (m of messages().slice(-3); track m.id) {
+                    <div class="msg" [class.customer]="m.sender_type === 'customer'" [class.internal]="m.visibility === 'internal'">
+                      <div class="msg-head"><span>{{ m.sender_type === 'customer' ? '客户' : (m.visibility === 'internal' ? '内部备注' : '客服回复') }}</span><span class="mono">{{ fmtDateTime(m.at) }}</span><span class="badge {{ m.visibility === 'internal' ? 'orange' : 'green' }}">{{ m.visibility === 'internal' ? '内部' : '客户可见' }}</span></div>
+                      <div class="msg-body">{{ m.body.slice(0, 220) }}{{ m.body.length > 220 ? '…' : '' }}</div>
+                    </div>
+                  } @empty { <div class="faint small">暂无消息</div> }
+                </div>
+              </div>
+              <div>
+                <h3 class="sec-title">{{ i18n.t('detail.outcome') }}</h3>
+                @if (outcome(); as o) {
+                  <div class="note">
+                    <b>处理结果：</b>{{ o.resultZh }}<br />
+                    <b>验证依据：</b>{{ o.basisZh || '待补充' }}<br />
+                    <b>关闭依据：</b>{{ o.closeBasisZh || '尚未关闭' }}<br />
+                    <span class="faint">记录人：{{ o.by }} · {{ fmtDateTime(o.resolvedAt) }}</span>
+                  </div>
+                } @else if (t.status === 'resolved' || t.status === 'closed') {
+                  <div class="note warn">演示旧记录未采集处理结果与关闭依据（GAP06）。关闭或重开前需人工补充依据，不能用模拟满意度倒推已确认。</div>
+                } @else {
+                  <div class="note warn">尚未记录处理结果。标记解决与关闭是两个动作；关闭前必须有客户确认依据。</div>
+                }
+                @if (t.missing_fields.length) {
+                  <div class="note warn mt-8">待补充资料：{{ t.missing_fields.map(missingLabel).join('、') }}。资料不足时不生成故障根因或保修结论。</div>
+                }
+                <div class="note teal mt-8">状态含义：回复、接管、修复是三件事。当前状态“{{ STATUS_LABEL[t.status] }}”不自动等价于客户问题已修复。</div>
+              </div>
+            </div>
+          </div>
+        }
+
+        @case ('conversation') {
+          <div class="panel-body">
+            <div class="row-between mb-12">
+              <div class="small muted">保留原文与译文，不覆盖客户原始描述；内部备注客户视图不可见。</div>
+              <div class="seg">
+                <button type="button" [class.on]="showInternal()" (click)="showInternal.set(true)">全部记录</button>
+                <button type="button" [class.on]="!showInternal()" (click)="showInternal.set(false)">仅客户可见</button>
+              </div>
+            </div>
+            <div class="col gap-10">
+              @for (m of messages(); track m.id) {
+                <div class="msg" [class.customer]="m.sender_type === 'customer'" [class.internal]="m.visibility === 'internal'" [class.service_agent]="m.sender_type === 'service_agent'">
+                  <div class="msg-head">
+                    <b>{{ m.sender_type === 'customer' ? '客户来件' : (m.sender_type === 'system' ? '系统记录' : '客服') }}</b>
+                    <span class="badge {{ m.visibility === 'internal' ? 'orange' : 'green' }}"><i class="dot"></i>{{ m.visibility === 'internal' ? '内部备注' : '客户可见' }}</span>
+                    <span class="mono">{{ fmtDateTime(m.at) }}</span>
+                    <span class="faint">{{ LANG_LABEL[m.language] ?? m.language }}</span>
+                  </div>
+                  <div class="msg-body">{{ m.body }}</div>
+                  @if (m.body_zh && m.body_zh !== m.body) {
+                    <div class="msg-trans"><span class="faint">中文参考 · 合成译文：</span>{{ m.body_zh }}</div>
+                  }
+                  @if (!m.body_zh && m.language !== 'zh') {
+                    <div class="msg-trans faint">该来件的中文参考未采集。</div>
+                  }
+                </div>
+              } @empty {
+                <app-empty title="无消息记录" hint="客户补充或内部记录会追加在此，不覆盖原文。" />
+              }
+            </div>
+
+            <div class="composer mt-16">
+              <div class="row-between mb-8">
+                <b>记录一条沟通</b>
+                <div class="seg">
+                  <button type="button" [class.on]="msgScope() === 'internal'" (click)="msgScope.set('internal')">内部备注</button>
+                  <button type="button" [class.on]="msgScope() === 'customer'" (click)="msgScope.set('customer')">客户可见回复</button>
+                </div>
+              </div>
+              <textarea class="textarea" rows="3" [value]="msgBody()" (input)="msgBody.set($any($event.target).value)" name="message-body" aria-label="沟通内容" placeholder="内部备注：记录排查动作、交接说明；客户可见回复：说明当前进展与下一步。演示环境不会真实发送邮件或短信。"></textarea>
+              <div class="row-between mt-8">
+                <span class="hint">
+                  {{ msgScope() === 'internal' ? '仅内部可见，不计入首次人工响应。' : '将计入客户视图；首次客户可见人工回复会被记为首次响应。' }}
+                </span>
+                <button class="btn primary" type="button" [disabled]="!msgBody().trim()" (click)="sendMessage()">{{ msgScope() === 'internal' ? '保存内部备注' : '记录客户可见回复' }}</button>
+              </div>
+            </div>
+          </div>
+        }
+
+        @case ('review') {
+          @if (ai(); as ai) {
+            <div class="panel-body">
+              <div class="row-between mb-12">
+                <div>
+                  <h3 class="sec-title">{{ i18n.t('detail.reviewTitle') }}</h3>
+                  <div class="small muted">{{ i18n.t('detail.reviewIntro') }}</div>
+                </div>
+                <span class="badge orange"><i class="dot"></i>{{ i18n.t('detail.preset') }}</span>
+              </div>
+
+              <div class="two-col">
+                <div>
+                  <div class="facts">
+                    <div><span>{{ i18n.t('detail.aiCategory') }}</span><b>{{ i18n.categoryName(ai.proposal.category_id) }}</b></div>
+                    <div><span>{{ i18n.t('detail.aiPriority') }}</span><b>{{ i18n.priority(ai.proposal.priority) }}</b></div>
+                    <div><span>{{ i18n.t('detail.aiTeam') }}</span><b>{{ teamName(ai.proposal.team_id) }}</b></div>
+                    <div><span>{{ i18n.t('detail.confidence') }}</span><b><span class="badge {{ confidenceTone(ai.proposal.confidence) }}">{{ ai.proposal.confidence }}</span></b></div>
+                    <div><span>{{ i18n.t('detail.riskEscalation') }}</span><b>{{ ai.proposal.escalation_required ? i18n.t('risk.queued') : '—' }}</b></div>
+                    <div><span>{{ i18n.t('detail.evidenceCount') }}</span><b>{{ ai.proposal.evidence_spans.length }}</b></div>
+                  </div>
+
+                  <div class="label mt-12">{{ i18n.t('detail.evidence') }}</div>
+                  @for (e of ai.proposal.evidence_spans; track $index) {
+                    <div class="quote mt-4">{{ e }}</div>
+                  } @empty { <div class="faint small">未采集到证据片段，需人工核对原文。</div> }
+
+                  <div class="label mt-12">{{ i18n.t('detail.knowledge') }}</div>
+                  <div class="row wrap gap-4">
+                    @for (k of store.knowledgeOf(ai.proposal.knowledge_ids); track k.id) {
+                      <span class="chip" [title]="k.content_zh">{{ k.id }} · {{ k.title_zh }}</span>
+                    } @empty { <span class="faint small">无引用资料</span> }
+                  </div>
+                  <div class="small muted mt-8">{{ ai.proposal.rationale_zh }}</div>
+
+                  <div class="label mt-12">{{ i18n.t('detail.manualReview') }}</div>
+                  @if (ai.review.status === 'pending') {
+                    <div class="note warn">{{ i18n.t('detail.reviewPending') }}</div>
+                  } @else {
+                    <div class="note">
+                      {{ ai.review.status === 'corrected' ? i18n.t('detail.reviewCorrected') : i18n.t('detail.reviewAccepted') }} ·
+                      {{ fmtDateTime(ai.review.reviewed_at) }} · {{ agentName(ai.review.reviewer_id) }}<br />
+                      最终类别：{{ categoryName(ai.review.final_category_id) }} / 最终团队：{{ teamName(ai.review.final_team_id) }}<br />
+                      说明：{{ ai.review.note_zh }}
+                    </div>
+                  }
+                </div>
+
+                @if (!isTerminal()) {
+                <div class="review-form">
+                  <h3 class="sec-title">{{ i18n.t('detail.reviewForm') }}</h3>
+                  <div class="form-grid">
+                    <div class="field">
+                      <label>{{ i18n.t('detail.formCategory') }}</label>
+                      <select class="select" name="review-category" aria-label="问题类别" [value]="rvCategory()" (change)="rvCategory.set($any($event.target).value)">
+                        @for (c of store.categories(); track c.id) { <option [value]="c.id" [selected]="c.id === rvCategory()">{{ i18n.categoryName(c.id) }}</option> }
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label>{{ i18n.t('detail.formPriority') }}</label>
+                      <select class="select" name="review-priority" aria-label="优先级" [value]="rvPriority()" (change)="rvPriority.set($any($event.target).value)">
+                        <option value="P0" [selected]="rvPriority() === 'P0'">{{ i18n.priority('P0') }}</option>
+                        <option value="P1" [selected]="rvPriority() === 'P1'">{{ i18n.priority('P1') }}</option>
+                        <option value="P2" [selected]="rvPriority() === 'P2'">{{ i18n.priority('P2') }}</option>
+                        <option value="P3" [selected]="rvPriority() === 'P3'">{{ i18n.priority('P3') }}</option>
+                      </select>
+                    </div>
+                    <div class="field full">
+                      <label>{{ i18n.t('detail.formTeam') }}</label>
+                      <select class="select" name="review-team" aria-label="建议负责团队" [value]="rvTeam()" (change)="rvTeam.set($any($event.target).value)">
+                        @for (tm of store.teams(); track tm.id) { <option [value]="tm.id" [selected]="tm.id === rvTeam()">{{ tm.name_zh }} · {{ tm.country_codes.join('/') }}</option> }
+                      </select>
+                    </div>
+                    <div class="field full">
+                      <label>{{ i18n.t('detail.formMissing') }}</label>
+                      <div class="row wrap gap-8">
+                        @for (f of missingOptions(); track f) {
+                          <label class="check"><input type="checkbox" [checked]="rvMissing().includes(f)" (change)="toggleMissing(f, $any($event.target).checked)" /> {{ missingLabel(f) }}</label>
+                        } @empty { <span class="faint small">所需资料齐全</span> }
+                      </div>
+                    </div>
+                    <div class="field full">
+                      <label>{{ i18n.t('detail.formNote') }}</label>
+                      <textarea class="textarea" rows="2" [value]="rvNote()" (input)="rvNote.set($any($event.target).value)" name="review-note" aria-label="复核说明" placeholder="例如：客户描述为充放电问题，原建议偏向监控数据，改为充放电并要求技术支持。"></textarea>
+                    </div>
+                  </div>
+                  @if (reviewChanged()) {
+                    <div class="note warn mt-8">{{ i18n.t('detail.reviewChanged') }}</div>
+                  }
+                  <div class="row wrap gap-8 mt-12">
+                    <button class="btn teal" type="button" (click)="saveReview(true)">{{ i18n.t('detail.confirmReview') }}</button>
+                    <button class="btn primary" type="button" [disabled]="reviewNoteRequired()" (click)="saveReview(false)">{{ i18n.t('detail.saveCorrection') }}</button>
+                    <button class="btn" type="button" (click)="selectTab('handling')">{{ i18n.t('detail.toHuman') }}</button>
+                  </div>
+                  <div class="hint mt-8">确认后会写入“待派工”，但不会自动选择负责人；派工需在「派工与协同」中再次人工确认。</div>
+                </div>
+                } @else {
+                  <div class="review-form"><div class="note warn">该工单当前为「{{ STATUS_LABEL[t.status] }}」，不可再复核修改；原始建议与人工复核记录保留。如需重新分诊，请在「处理与结案」中重开。</div></div>
+                }
+              </div>
+            </div>
+          } @else {
+            <app-empty title="暂无分诊建议" hint="可人工填写类别与优先级，或先登记为无法判断并转人工。" />
+          }
+        }
+
+        @case ('dispatch') {
+          <div class="panel-body">
+            <div class="row-between mb-12">
+              <div>
+                <h3 class="sec-title">{{ i18n.t('detail.dispatchHeading') }}</h3>
+                <div class="small muted">{{ i18n.t('detail.dispatchIntro') }}</div>
+              </div>
+              @if (t.assigned_agent_id) { <span class="badge blue"><i class="dot"></i>当前负责人 {{ agentName(t.assigned_agent_id) }}</span> }
+            </div>
+
+            <div class="two-col">
+              @if (!isTerminal()) {
+              <div>
+                <div class="label">{{ i18n.t('detail.candidateTeams') }}</div>
+                <table class="data compact mt-4">
+                  <thead><tr><th>团队</th><th>覆盖 / 语言</th><th>技能</th><th style="width:56px"></th></tr></thead>
+                  <tbody>
+                    @for (team of candidateTeams(); track team.id) {
+                      <tr class="clickable" [class.selected]="dispatchTeam() === team.id" (click)="onTeamChange(team.id)">
+                        <td>
+                          {{ team.name_zh }}
+                          @if (effectiveTeam() === team.id) { <span class="badge teal"><i class="dot"></i>建议</span> }
+                        </td>
+                        <td class="small">{{ team.country_codes.join('/') }} · {{ team.languages.join('/') }}</td>
+                        <td class="small">{{ team.skills.join('/') }}</td>
+                        <td><button class="btn sm" type="button" (click)="$event.stopPropagation(); onTeamChange(team.id)">{{ dispatchTeam() === team.id ? '已选' : '选择' }}</button></td>
+                      </tr>
+                    } @empty { <tr><td colspan="4" class="faint">无匹配团队，请进入人工调度队列</td></tr> }
+                  </tbody>
+                </table>
+
+                <div class="label mt-12">{{ i18n.t('detail.agentsLoad') }}</div>
+                <table class="data compact mt-4">
+                  <thead><tr><th>人员</th><th>{{ i18n.t('detail.availability') }}</th><th>{{ i18n.t('detail.load') }}</th><th>语言</th><th style="width:52px"></th></tr></thead>
+                  <tbody>
+                    @for (a of teamAgents(); track a.id) {
+                      <tr class="clickable" [class.selected]="dispatchAgent() === a.id" (click)="store.agentAvailable(a) && dispatchAgent.set(a.id)">
+                        <td>{{ a.display_name }}<span class="sub">{{ a.id }} · {{ a.role }}</span></td>
+                        <td>
+                          <span class="badge {{ a.availability === 'online' ? 'green' : (a.availability === 'busy' ? 'orange' : 'grey') }}">{{ store.agentReason(a) }}</span>
+                        </td>
+                        <td><app-load-bar [current]="a.current_open_ticket_count" [capacity]="a.capacity" /> <span class="mono tiny">{{ a.current_open_ticket_count }}/{{ a.capacity }}</span></td>
+                        <td class="small">{{ a.languages.join('/') }}</td>
+                        <td><button class="btn sm" type="button" [disabled]="!store.agentAvailable(a)" (click)="$event.stopPropagation(); dispatchAgent.set(a.id)">{{ dispatchAgent() === a.id ? '已选' : '选择' }}</button></td>
+                      </tr>
+                    } @empty { <tr><td colspan="5" class="faint">请选择团队</td></tr> }
+                  </tbody>
+                </table>
+
+                <div class="mt-12">
+                  <div class="label">{{ i18n.t('detail.handoverNote') }}</div>
+                  <textarea class="textarea mt-4" rows="2" [value]="dispatchNote()" (input)="dispatchNote.set($any($event.target).value)" name="dispatch-note" aria-label="交接说明" placeholder="例如：客户已提供 SN 与发生时间；需优先确认逆变器通信与固件版本。"></textarea>
+                </div>
+                <div class="row-between mt-8">
+                  <span class="small muted">
+                    @if (selectedAgent(); as a) { 将交给 {{ teamName(dispatchTeam()) }} / {{ a.display_name }}（{{ store.agentReason(a) }}） } @else { 请选择负责人 }
+                  </span>
+                  <button class="btn primary" type="button" [disabled]="!dispatchTeam() || !dispatchAgent()" (click)="confirmDispatch()">{{ t.assigned_agent_id ? i18n.t('detail.btnReassign') : i18n.t('detail.btnConfirmDispatch') }}</button>
+                </div>
+              </div>
+              } @else {
+                <div><div class="note warn">该工单当前为「{{ STATUS_LABEL[t.status] }}」，不可再确认派工；如需重新处理请先重开。分派历史仍在右侧保留。</div></div>
+              }
+
+              <div>
+                <h3 class="sec-title">{{ i18n.t('detail.dispatchHistory') }}</h3>
+                @for (a of assignmentHistory(); track a.id) {
+                  <div class="history-item">
+                    <div class="row-between"><b>{{ teamName(a.team_id) }} · {{ agentName(a.assignee_id) }}</b><span class="mono tiny">{{ fmtDateTime(a.assigned_at) }}</span></div>
+                    <div class="small muted">{{ a.decision === 'human_reassigned' ? '人工改派' : '人工确认派工' }} · 审批 {{ agentName(a.approved_by) }}<span class="sub">{{ a.note_zh }}</span></div>
+                  </div>
+                } @empty { <div class="note warn">尚无确认派工记录。列表中的建议团队不是正式负责人。</div> }
+
+                <h3 class="sec-title mt-16">{{ i18n.t('detail.resources') }}</h3>
+                @for (p of parts(); track p.id) {
+                  <div class="history-item">
+                    <div class="row-between"><b>备件需求 {{ p.part_id }}</b><span class="badge orange">{{ p.status === 'pending_human_confirmation' ? '待人工确认' : p.status }}</span></div>
+                    <div class="small muted">数量 {{ p.quantity }} · 申请 {{ fmtDateTime(p.requested_at) }} · 未确认不代表已批准或已发货</div>
+                  </div>
+                }
+                @for (v of visits(); track v.id) {
+                  <div class="history-item">
+                    <div class="row-between"><b>上门预约提案</b><span class="badge orange">{{ v.status === 'proposal_pending_confirmation' ? '待确认' : v.status }}</span></div>
+                    <div class="small muted">{{ fmtDateTime(v.proposed_start) }} · {{ v.timezone }} · 未来提案，不是已确认服务承诺</div>
+                  </div>
+                }
+                @if (!parts().length && !visits().length) { <div class="faint small">{{ i18n.t('detail.noResources') }}</div> }
+              </div>
+            </div>
+          </div>
+        }
+
+        @case ('handling') {
+          <div class="panel-body">
+            <div class="status-strip">
+              <span>{{ i18n.t('detail.statusLabel') }}</span><app-status-badge [status]="t.status" />
+              <span class="faint">{{ i18n.t('detail.nextAction') }}: {{ t.nextActionZh }}</span>
+            </div>
+
+            <div class="two-col mt-12">
+              <div class="col gap-16">
+                <section>
+                  <h3 class="sec-title">{{ i18n.t('detail.progressSection') }}</h3>
+                  <textarea class="textarea" rows="2" [value]="handlingNote()" (input)="handlingNote.set($any($event.target).value)" name="handling-note" aria-label="处理动作或等待原因" placeholder="处理动作或等待原因（等待状态必填，例如：已远程核对，等待客户提供安装位置照片）"></textarea>
+                  <div class="row wrap gap-8 mt-8">
+                    <button class="btn primary sm" type="button" [disabled]="!canStart()" (click)="start()">{{ i18n.t('detail.btnStart') }}</button>
+                    <button class="btn sm" type="button" [disabled]="!canWait()" (click)="wait('waiting_customer')">{{ i18n.t('detail.btnWaitCustomer') }}</button>
+                    <button class="btn sm" type="button" [disabled]="!canWait()" (click)="wait('waiting_parts')">{{ i18n.t('detail.btnWaitParts') }}</button>
+                    <button class="btn sm" type="button" [disabled]="!canWait()" (click)="wait('waiting_visit')">{{ i18n.t('detail.btnWaitVisit') }}</button>
+                  </div>
+                  @if (!t.assigned_agent_id) { <div class="note warn mt-8">尚无确认负责人，不能开始处理或标记解决。请先在「派工与协同」确认负责人。</div> }
+                  @if (t.status === 'waiting_customer') { <div class="note mt-8">等待客户补充时保留原负责人；补充到达后重新复核，不清空派工。</div> }
+                </section>
+
+                <section>
+                  <h3 class="sec-title">{{ i18n.t('detail.resolveSection') }}</h3>
+                  <div class="form-grid">
+                    <div class="field full">
+                      <label>处理结果（人工填写，AI 不能代替）</label>
+                      <textarea class="textarea" rows="2" [value]="resultText()" (input)="resultText.set($any($event.target).value)" name="resolution-result" aria-label="处理结果" placeholder="例如：远程核对发现路由器更换导致内网地址变化，已引导客户重新绑定，设备恢复在线。"></textarea>
+                    </div>
+                    <div class="field full">
+                      <label>恢复 / 验证依据</label>
+                      <input class="input" [value]="basisText()" (input)="basisText.set($any($event.target).value)" name="resolution-basis" aria-label="恢复或验证依据" placeholder="例如：客户确认 App 已显示在线，遥测恢复。" />
+                    </div>
+                  </div>
+                  <div class="row wrap gap-8 mt-8">
+                    <button class="btn teal sm" type="button" [disabled]="!canResolve() || !resultText().trim()" (click)="resolve()">{{ i18n.t('detail.btnResolve') }}</button>
+                  </div>
+                  @if (canClose()) {
+                    <div class="close-box mt-8">
+                      <div class="label">客户确认依据（关闭必填）</div>
+                      <input class="input mt-4" [value]="closeBasis()" (input)="closeBasis.set($any($event.target).value)" name="close-basis" aria-label="客户确认依据" placeholder="例如：客户 2026-10-24 电话确认问题已恢复。" />
+                      <button class="btn primary sm mt-8" type="button" [disabled]="!closeBasis().trim()" (click)="close()">{{ i18n.t('detail.btnClose') }}</button>
+                    </div>
+                  }
+                  @if (outcome(); as o) {
+                    <div class="note mt-8">结果：{{ o.resultZh }}<br />依据：{{ o.basisZh || '待补充' }}<br />关闭：{{ o.closedAt ? fmtDateTime(o.closedAt) + ' · ' + o.closeBasisZh : '尚未关闭' }}</div>
+                  }
+                </section>
+
+                <section>
+                  <h3 class="sec-title">{{ i18n.t('detail.duplicateSection') }}</h3>
+                  @if (mergeOptions().length && t.status !== 'merged') {
+                    <div class="row gap-8">
+                      <select class="select" name="merge-target" aria-label="选择关联工单" [value]="mergeTarget()" (change)="mergeTarget.set($any($event.target).value)">
+                        <option value="">选择关联工单</option>
+                        @for (m of mergeOptions(); track m.id) { <option [value]="m.id" [selected]="m.id === mergeTarget()">{{ m.id }} · {{ m.summary_zh }}</option> }
+                      </select>
+                      <button class="btn sm" type="button" [disabled]="!mergeTarget()" (click)="merge()">{{ i18n.t('detail.btnMerge') }}</button>
+                    </div>
+                    <div class="hint mt-4">合并保留两条来件与编号；不同设备或危险新证据不得自动合并。</div>
+                  } @else {
+                    <div class="hint">没有重复候选。跨渠道重复来件会在工单关联中提示，由人工核对后决定。</div>
+                  }
+                  @if (canReopen()) {
+                    <div class="mt-8">
+                      <div class="label">复发证据（重开将建立新周期，旧周期保留）</div>
+                      <textarea class="textarea mt-4" rows="2" [value]="reopenEvidence()" (input)="reopenEvidence.set($any($event.target).value)" name="reopen-evidence" aria-label="复发证据" placeholder="例如：客户反馈关闭后同一现象再次出现，设备再次离线。"></textarea>
+                      <button class="btn sm mt-8" type="button" [disabled]="!reopenEvidence().trim()" (click)="reopen()">{{ i18n.t('detail.btnReopen') }}</button>
+                    </div>
+                  }
+                </section>
+              </div>
+
+              <div class="col gap-16">
+                <section id="risk-actions">
+                  <h3 class="sec-title">{{ i18n.t('detail.riskSection') }}</h3>
+                  @if (risk(); as rk) {
+                    <div class="risk-card">
+                      <div class="row-between"><b>风险记录</b><app-risk-badge [status]="rk.status" /></div>
+                      <div class="small mt-4">{{ rk.reason_zh }}</div>
+                      <div class="small muted mt-4">发现 {{ fmtDateTime(rk.detected_at) }} · 来源 {{ rk.source === 'seed_flag' ? '种子安全标记' : '人工升级' }}</div>
+                      @if (rk.taken_over_at) {
+                        <div class="small mt-4"><b>接管人：</b>{{ agentName(rk.taken_over_by) }} · {{ fmtDateTime(rk.taken_over_at) }}<br /><b>接管说明：</b>{{ rk.takeover_note_zh }}<br /><b>下次更新：</b>{{ fmtDateTime(rk.next_update_at) }}</div>
+                      } @else {
+                        <div class="note warn mt-8">尚无人工接管记录，不能显示“已接管”。</div>
+                      }
+                      @if (rk.status === 'mitigated') {
+                        <div class="note green mt-8">缓解依据：{{ rk.mitigation_note_zh }}（{{ fmtDateTime(rk.mitigated_at) }}）；不等于设备已修复。</div>
+                      }
+                    </div>
+                    @if (riskPending()) {
+                      <div class="label mt-8">接管说明（必填）</div>
+                      <textarea class="textarea mt-4" rows="2" [value]="takeoverNote()" (input)="takeoverNote.set($any($event.target).value)" name="takeover-note" aria-label="接管说明" placeholder="例如：已电话联系现场，确认人员安全并远离设备；安排当地服务商上门检查。"></textarea>
+                      <div class="row gap-8 mt-8">
+                        <select class="select" name="next-update-hours" aria-label="下次更新时间" [value]="nextUpdateHours()" (change)="nextUpdateHours.set(+$any($event.target).value)">
+                          <option [value]="1" [selected]="nextUpdateHours() === 1">1 小时内更新</option>
+                          <option [value]="4" [selected]="nextUpdateHours() === 4">4 小时内更新</option>
+                          <option [value]="24" [selected]="nextUpdateHours() === 24">24 小时内更新</option>
+                        </select>
+                        <button class="btn danger sm" type="button" [disabled]="!takeoverNote().trim()" (click)="takeOver()">{{ i18n.t('detail.btnTakeover') }}</button>
+                      </div>
+                    }
+                    @if (riskTaken()) {
+                      <div class="label mt-8">风险缓解依据</div>
+                      <textarea class="textarea mt-4" rows="2" [value]="mitigateNote()" (input)="mitigateNote.set($any($event.target).value)" name="mitigate-note" aria-label="风险缓解依据" placeholder="例如：现场确认无烟雾与异味，设备已断电隔离，风险暂时解除。"></textarea>
+                      <button class="btn teal sm mt-8" type="button" [disabled]="!mitigateNote().trim()" (click)="mitigate()">{{ i18n.t('detail.btnMitigate') }}</button>
+                    }
+                  } @else {
+                    <div class="note warn">当前没有独立风险记录。若客户报告烟雾、焦糊味、进水等疑似危险，请立即转人工，不以普通分诊等待。</div>
+                    <div class="label mt-8">升级原因</div>
+                    <textarea class="textarea mt-4" rows="2" [value]="escalateReason()" (input)="escalateReason.set($any($event.target).value)" name="escalate-reason" aria-label="升级原因" placeholder="填写客户原话或新证据，例如：客户补充闻到焦糊味。"></textarea>
+                    <label class="check mt-8"><input type="checkbox" [checked]="makeP0()" (change)="makeP0.set($any($event.target).checked)" /> 按 P0 安全紧急处理（缺 SN 不阻塞）</label>
+                    <button class="btn danger sm mt-8" type="button" [disabled]="!escalateReason().trim()" (click)="escalate()">{{ i18n.t('detail.btnEscalate') }}</button>
+                  }
+                </section>
+
+                <section>
+                  <h3 class="sec-title">{{ i18n.t('detail.relatedTickets') }}</h3>
+                  @if (t.duplicate_of_ticket_id) {
+                    <div class="small">已合并至原单 <a [routerLink]="['/tickets', t.duplicate_of_ticket_id]">{{ t.duplicate_of_ticket_id }}</a>，原文与编号保留。</div>
+                  }
+                  @for (d of duplicateCandidates(); track d.id) {
+                    <div class="history-item">
+                      <div class="row-between"><b>{{ d.ticket_id === t.id ? d.candidate_ticket_id : d.ticket_id }}</b><span class="mono tiny">相似度 {{ d.similarity_score }}</span></div>
+                      <div class="small muted">{{ d.decision === 'human_confirmed_merge' ? '已人工确认合并' : '重复候选，待人工核对' }} · {{ d.match_reasons.join(' / ') }}</div>
+                    </div>
+                  } @empty { <div class="faint small">无重复候选。</div> }
+                  @if (t.related_ticket_ids.length) {
+                    <div class="small mt-4">关联：@for (id of t.related_ticket_ids; track id) { <a [routerLink]="['/tickets', id]">{{ id }}</a>&nbsp; }</div>
+                  }
+                </section>
+              </div>
+            </div>
+          </div>
+        }
+
+        @case ('timeline') {
+          <div class="panel-body">
+            <div class="row-between mb-12">
+              <h3 class="sec-title">{{ i18n.t('detail.timelineHeading') }}</h3>
+              <span class="small muted">{{ i18n.t('detail.timelineHint') }}</span>
+            </div>
+            <div class="timeline">
+              @for (e of events(); track e.id) {
+                <div class="tl-item" [class.human]="e.actor_type === 'human'" [class.risk]="e.type.startsWith('risk')">
+                  <div class="tl-time">{{ fmtDateTime(e.at) }} · {{ e.actor_type === 'human' ? '人工' : '系统' }}</div>
+                  <div class="tl-title">{{ eventLabel(e.type) }}
+                    @if (e.from_status || e.to_status) { <span class="faint">· {{ statusLabel(e.from_status) }} → {{ statusLabel(e.to_status) }}</span> }
+                  </div>
+                  <div class="tl-desc">{{ e.reason_zh }}</div>
+                </div>
+              } @empty { <app-empty title="暂无事件" hint="操作后会产生可追踪的事件记录。" /> }
+            </div>
+          </div>
+        }
+      }
+    </section>
+  </div>
+
+  <aside class="rail">
+    <section class="panel">
+      <div class="panel-head"><div class="panel-title">{{ i18n.t('rail.sla') }}</div></div>
+      <div class="panel-body">
+        <dl class="kv">
+          <dt>SLA</dt><dd>{{ t.sla.policy_id }} · #{{ t.sla.cycle }}</dd>
+          <dt>{{ i18n.t('rail.start') }}</dt><dd>{{ fmtDateTime(t.sla.clock_start_at) }}</dd>
+          <dt>{{ i18n.t('rail.firstDue') }}</dt><dd>{{ fmtDateTime(t.sla.first_response_due_at) }}</dd>
+          <dt>{{ i18n.t('rail.firstRecord') }}</dt><dd>{{ t.sla.first_response_at ? fmtDateTime(t.sla.first_response_at) : i18n.t('rail.noFirstResponse') }}</dd>
+          <dt>{{ i18n.t('rail.resolutionDue') }}</dt><dd>{{ fmtDateTime(t.sla.resolution_due_at) }}</dd>
+          <dt>{{ i18n.t('rail.wait') }}</dt><dd>{{ i18n.duration(t.waitingMinutes) }}</dd>
+        </dl>
+        <div class="row wrap gap-4 mt-8">
+          @if (t.firstResponseOverdue) { <span class="badge red"><i class="dot"></i>{{ i18n.t('sla.firstOverdueMin', { n: overdueMinutes(t.sla.first_response_due_at) }) }}</span> }
+          @if (t.sla.first_response_at && !t.sla.first_response_breached) { <span class="badge green"><i class="dot"></i>{{ i18n.t('sla.hit') }}</span> }
+          @if (t.firstResponseOverdue || (t.sla.first_response_at && t.sla.first_response_breached)) { <span class="badge orange">{{ i18n.t('sla.missed') }}</span> }
+          @if (t.resolutionOverdue) { <span class="badge red"><i class="dot"></i>{{ i18n.t('sla.resolutionOverdue') }}</span> }
+          @if (t.sla.excluded) { <span class="badge grey">{{ i18n.t('sla.excluded') }}</span> }
+        </div>
+        @if (t.sla.previous_cycle) {
+          <div class="note warn mt-8">旧周期：首响 {{ fmtDateTime(t.sla.previous_cycle.first_response_at) }}，解决 {{ fmtDateTime(t.sla.previous_cycle.resolved_at) }}；历史超时记录保留。</div>
+        }
+        <div class="hint mt-8">{{ i18n.t('rail.slaNote') }}</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div class="panel-title">{{ i18n.t('rail.deviceCustomer') }}</div></div>
+      <div class="panel-body">
+        <dl class="kv">
+          <dt>{{ i18n.t('rail.product') }}</dt><dd>{{ t.product?.brand }} {{ t.product?.model }}</dd>
+          <dt>{{ i18n.t('rail.sn') }}</dt><dd class="mono">{{ t.device?.serial_number ?? '未提供' }}</dd>
+          <dt>{{ i18n.t('rail.deviceId') }}</dt><dd class="mono">{{ t.device_id }}</dd>
+          <dt>{{ i18n.t('rail.installed') }}</dt><dd>{{ t.device?.installed_on ?? '—' }}</dd>
+          <dt>{{ i18n.t('rail.customer') }}</dt><dd>{{ t.customer?.name }}<span class="sub">{{ t.customer?.type }} · {{ t.customer?.contact_name }}</span></dd>
+          <dt>{{ i18n.t('rail.site') }}</dt><dd>{{ t.site?.name }}<span class="sub">{{ t.site?.address_label }}</span></dd>
+          <dt>{{ i18n.t('rail.timezone') }}</dt><dd>{{ t.site?.timezone }}</dd>
+          <dt>{{ i18n.t('rail.warranty') }}</dt><dd>{{ t.warranty_status === 'pending_manual_review' ? '待人工审核' : t.warranty_status }}</dd>
+          <dt>{{ i18n.t('rail.contact') }}</dt><dd>{{ t.customer?.email }}</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div class="panel-title">{{ i18n.t('rail.responsibility') }}</div></div>
+      <div class="panel-body">
+        <dl class="kv">
+          <dt>{{ i18n.t('rail.team') }}</dt><dd>{{ t.team?.name_zh ?? '待确认' }}</dd>
+          <dt>{{ i18n.t('rail.agent') }}</dt><dd>{{ t.agent?.display_name ?? '待确认' }}</dd>
+          <dt>{{ i18n.t('rail.contactInfo') }}</dt><dd>{{ t.agent?.email ?? '—' }}</dd>
+          <dt>{{ i18n.t('rail.load') }}</dt><dd>@if (t.agent) { <app-load-bar [current]="t.agent.current_open_ticket_count" [capacity]="t.agent.capacity" /> {{ t.agent.current_open_ticket_count }}/{{ t.agent.capacity }} } @else { — }</dd>
+        </dl>
+        <button class="btn sm mt-8" type="button" (click)="selectTab('dispatch')">{{ i18n.t('rail.changeOwner') }}</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div class="panel-title">{{ i18n.t('rail.missingData') }}</div></div>
+      <div class="panel-body">
+        @if (t.missing_fields.length) {
+          <div class="row wrap gap-4">
+            @for (f of t.missing_fields; track f) { <span class="badge orange"><i class="dot"></i>{{ missingLabel(f) }}</span> }
+          </div>
+          <div class="hint mt-8">按当前类别的最小必要字段追问，不从相似工单抄写未知值。</div>
+        } @else {
+          <div class="badge green"><i class="dot"></i>{{ i18n.t('rail.allPresent') }}</div>
+        }
+      </div>
+    </section>
+
+    @if (t.risk) {
+      <section class="panel">
+        <div class="panel-head"><div class="panel-title">{{ i18n.t('rail.riskRecord') }}</div><app-risk-badge [status]="t.risk.status" /></div>
+        <div class="panel-body">
+          <div class="small">{{ t.risk.reason_zh }}</div>
+          <dl class="kv mt-8">
+            <dt>{{ i18n.t('rail.detectedAt') }}</dt><dd>{{ fmtDateTime(t.risk.detected_at) }}</dd>
+            <dt>{{ i18n.t('rail.takeoverBy') }}</dt><dd>{{ t.risk.taken_over_by ? agentName(t.risk.taken_over_by) : i18n.t('rail.notTakenOver') }}</dd>
+            <dt>下次更新</dt><dd>{{ fmtDateTime(t.risk.next_update_at) }}</dd>
+          </dl>
+        </div>
+      </section>
+    }
+  </aside>
+</div>
+}

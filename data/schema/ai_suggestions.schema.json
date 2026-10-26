@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/ai_suggestions.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "proposal": {
+      "type": "object",
+      "properties": {
+        "category_id": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "escalation_required": {
+          "type": "boolean"
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "knowledge_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "priority": {
+          "type": "string"
+        },
+        "rationale_zh": {
+          "type": "string"
+        },
+        "summary_zh": {
+          "type": "string"
+        },
+        "team_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category_id",
+        "confidence",
+        "escalation_required",
+        "evidence_spans",
+        "knowledge_ids",
+        "missing_fields",
+        "priority",
+        "rationale_zh",
+        "summary_zh",
+        "team_id"
+      ],
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "final_category_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "final_team_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "note_zh": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "reviewer_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "final_category_id",
+        "final_team_id",
+        "note_zh",
+        "reviewed_at",
+        "reviewer_id",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "generated_at",
+    "id",
+    "is_synthetic",
+    "proposal",
+    "review",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

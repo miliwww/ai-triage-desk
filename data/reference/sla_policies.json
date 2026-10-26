@@ -1,0 +1,38 @@
+{
+  "is_synthetic": true,
+  "id": "SLA-DEMO-V1",
+  "timezone_basis": "UTC",
+  "calendar": "24x7",
+  "pause_statuses": [],
+  "clock_start": "ticket.created_at",
+  "response_end": "first customer-visible human message",
+  "resolution_end": "resolved_at; terminal cancellation/merge excluded",
+  "reminder_offsets_minutes": [
+    60,
+    15,
+    0
+  ],
+  "priorities": {
+    "P0": {
+      "label": "安全紧急",
+      "first_response_minutes": 15,
+      "resolution_target_minutes": 30
+    },
+    "P1": {
+      "label": "高优先级",
+      "first_response_minutes": 60,
+      "resolution_target_minutes": 240
+    },
+    "P2": {
+      "label": "一般故障",
+      "first_response_minutes": 240,
+      "resolution_target_minutes": 1440
+    },
+    "P3": {
+      "label": "普通咨询",
+      "first_response_minutes": 1440,
+      "resolution_target_minutes": 4320
+    }
+  },
+  "notice": "演示假设，绝非沃太官方服务承诺；P0处理完成目标只为测时，不能替代应急处置。"
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "PRD-01",
+    "brand": "AlphaESS",
+    "model": "SMILE5",
+    "segment": "residential",
+    "nominal_power_kw": 5,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-02",
+    "brand": "AlphaESS",
+    "model": "SMILE-G3-S5",
+    "segment": "residential",
+    "nominal_power_kw": 5,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-05"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-03",
+    "brand": "AlphaESS",
+    "model": "SMILE-G3-T10",
+    "segment": "residential",
+    "nominal_power_kw": 10,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-04",
+    "brand": "AlphaESS",
+    "model": "SMILE-S6-HV",
+    "segment": "residential",
+    "nominal_power_kw": 6,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-05",
+    "brand": "AlphaESS",
+    "model": "SMILE-T10-HV",
+    "segment": "residential",
+    "nominal_power_kw": 10,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-06",
+    "brand": "AlphaESS",
+    "model": "STORION-H30-G3",
+    "segment": "commercial",
+    "nominal_power_kw": 30,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-07",
+    "brand": "AlphaESS",
+    "model": "STORION-H50-G3",
+    "segment": "commercial",
+    "nominal_power_kw": 50,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-08",
+    "brand": "AlphaESS",
+    "model": "StaX-M50",
+    "segment": "commercial",
+    "nominal_power_kw": 50,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-06"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-09",
+    "brand": "AlphaESS",
+    "model": "星跃261",
+    "segment": "commercial",
+    "nominal_power_kw": null,
+    "nominal_capacity_kwh": 261,
+    "source_ids": [
+      "SRC-08"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-10",
+    "brand": "AlphaESS",
+    "model": "曜方5000 2.0",
+    "segment": "utility",
+    "nominal_power_kw": null,
+    "nominal_capacity_kwh": 5000,
+    "source_ids": [
+      "SRC-07"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-11",
+    "brand": "AlphaESS",
+    "model": "SMILE-G3-EVCT11",
+    "segment": "ev_charger",
+    "nominal_power_kw": 11,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  },
+  {
+    "id": "PRD-12",
+    "brand": "AlphaESS",
+    "model": "VitaPower VT1000",
+    "segment": "balcony",
+    "nominal_power_kw": 1,
+    "nominal_capacity_kwh": null,
+    "source_ids": [
+      "SRC-02"
+    ],
+    "fact_status": "public_product_reference",
+    "field_provenance": {
+      "model": "public",
+      "segment": "public",
+      "nominal_power_kw": "public_or_null",
+      "nominal_capacity_kwh": "public_or_null",
+      "id": "synthetic"
+    },
+    "warranty_policy": "requires_region_and_document_review",
+    "caution": "名称及标称值来自公开资料；模拟部署不表示当地在售或获准。null表示此数据集未核实，不表示零。"
+  }
+]

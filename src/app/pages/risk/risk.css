@@ -1,0 +1,9 @@
+.risk-layout { display: grid; grid-template-columns: minmax(0, 1fr) 392px; gap: 14px; align-items: start; }
+.risk-layout aside { position: sticky; top: 66px; }
+.risk-evidence { font-size: 12px; line-height: 1.45; }
+.risk-table td:nth-child(2) { max-width: 360px; }
+.escalate-panel { border-left: 3px solid var(--red); }
+@media (max-width: 1180px) {
+  .risk-layout { grid-template-columns: 1fr; }
+  .risk-layout aside { position: static; }
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "connectivity",
+    "name_zh": "设备联网与离线",
+    "required_skill": "cloud",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "charging",
+    "name_zh": "无法充电或放电",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "monitoring",
+    "name_zh": "数据展示与统计异常",
+    "required_skill": "cloud",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "backup",
+    "name_zh": "备用供电问题",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "commissioning",
+    "name_zh": "安装与调试",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "alarm",
+    "name_zh": "设备告警待排查",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "performance",
+    "name_zh": "运行效果与收益疑问",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "account",
+    "name_zh": "账号与授权",
+    "required_skill": "cloud",
+    "required_intake_fields": [
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "warranty",
+    "name_zh": "保修与退换咨询",
+    "required_skill": "warranty",
+    "required_intake_fields": [
+      "serial_number",
+      "symptom_description",
+      "purchase_proof"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "cooling",
+    "name_zh": "工商业温控问题",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "dispatch",
+    "name_zh": "项目通信与调度",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "ev",
+    "name_zh": "充电桩问题",
+    "required_skill": "technical",
+    "required_intake_fields": [
+      "serial_number",
+      "occurred_at",
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "safety",
+    "name_zh": "安全风险报告",
+    "required_skill": "safety",
+    "required_intake_fields": [
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  },
+  {
+    "is_synthetic": true,
+    "id": "unknown",
+    "name_zh": "无法判断，需要人工",
+    "required_skill": "global",
+    "required_intake_fields": [
+      "symptom_description"
+    ],
+    "unknown_code_policy": "retain_literal_do_not_infer_root_cause"
+  }
+]

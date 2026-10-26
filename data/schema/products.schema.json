@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/products.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "brand": {
+      "type": "string"
+    },
+    "caution": {
+      "type": "string"
+    },
+    "fact_status": {
+      "type": "string"
+    },
+    "field_provenance": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "nominal_capacity_kwh": {
+          "type": "string"
+        },
+        "nominal_power_kw": {
+          "type": "string"
+        },
+        "segment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "model",
+        "nominal_capacity_kwh",
+        "nominal_power_kw",
+        "segment"
+      ],
+      "additionalProperties": false
+    },
+    "id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "nominal_capacity_kwh": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "nominal_power_kw": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "segment": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warranty_policy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "brand",
+    "caution",
+    "fact_status",
+    "field_provenance",
+    "id",
+    "model",
+    "nominal_capacity_kwh",
+    "nominal_power_kw",
+    "segment",
+    "source_ids",
+    "warranty_policy"
+  ],
+  "additionalProperties": false
+}

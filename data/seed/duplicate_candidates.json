@@ -1,0 +1,182 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "DUP-001",
+    "ticket_id": "WO-0481",
+    "candidate_ticket_id": "WO-0004",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-002",
+    "ticket_id": "WO-0482",
+    "candidate_ticket_id": "WO-0013",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-003",
+    "ticket_id": "WO-0483",
+    "candidate_ticket_id": "WO-0022",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-004",
+    "ticket_id": "WO-0484",
+    "candidate_ticket_id": "WO-0031",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-005",
+    "ticket_id": "WO-0485",
+    "candidate_ticket_id": "WO-0040",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-006",
+    "ticket_id": "WO-0486",
+    "candidate_ticket_id": "WO-0049",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-007",
+    "ticket_id": "WO-0487",
+    "candidate_ticket_id": "WO-0058",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-008",
+    "ticket_id": "WO-0488",
+    "candidate_ticket_id": "WO-0068",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-009",
+    "ticket_id": "WO-0489",
+    "candidate_ticket_id": "WO-0076",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-010",
+    "ticket_id": "WO-0490",
+    "candidate_ticket_id": "WO-0085",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-011",
+    "ticket_id": "WO-0491",
+    "candidate_ticket_id": "WO-0104",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  },
+  {
+    "is_synthetic": true,
+    "id": "DUP-012",
+    "ticket_id": "WO-0492",
+    "candidate_ticket_id": "WO-0112",
+    "match_reasons": [
+      "same_device",
+      "same_symptom",
+      "open_original",
+      "cross_channel"
+    ],
+    "similarity_score": 0.98,
+    "decision": "human_confirmed_merge",
+    "approved_by": "USR-051"
+  }
+]

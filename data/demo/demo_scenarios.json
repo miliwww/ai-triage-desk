@@ -1,0 +1,80 @@
+[
+  {
+    "id": "DEMO-01",
+    "title_zh": "新工单待分诊",
+    "ticket_id": "WO-0001",
+    "interaction_zh": "查看原始描述→运行AI建议→人工确认"
+  },
+  {
+    "id": "DEMO-02",
+    "title_zh": "缺少设备序列号",
+    "ticket_id": "WO-0161",
+    "interaction_zh": "查看缺失字段→编辑追问草稿"
+  },
+  {
+    "id": "DEMO-03",
+    "title_zh": "安全风险优先升级",
+    "ticket_id": "WO-0131",
+    "interaction_zh": "突出风险→人工应急接管；不等待补齐SN"
+  },
+  {
+    "id": "DEMO-04",
+    "title_zh": "客户催促不等于安全紧急",
+    "ticket_id": "WO-0331",
+    "interaction_zh": "对照客户原话和优先级依据"
+  },
+  {
+    "id": "DEMO-05",
+    "title_zh": "否定烟雾避免误报",
+    "ticket_id": "WO-0151",
+    "interaction_zh": "理解否定表达，不按关键词误报P0"
+  },
+  {
+    "id": "DEMO-06",
+    "title_zh": "人工更正AI分类",
+    "ticket_id": "WO-0015",
+    "interaction_zh": "查看原建议、人工更正和留痕"
+  },
+  {
+    "id": "DEMO-07",
+    "title_zh": "待备件",
+    "ticket_id": "WO-0019",
+    "interaction_zh": "查看备件申请、库存和待确认操作"
+  },
+  {
+    "id": "DEMO-08",
+    "title_zh": "待上门",
+    "ticket_id": "WO-0007",
+    "interaction_zh": "查看预约提案与客户确认入口"
+  },
+  {
+    "id": "DEMO-09",
+    "title_zh": "超时提醒",
+    "ticket_id": "WO-0002",
+    "interaction_zh": "查看固定演示时钟和提醒"
+  },
+  {
+    "id": "DEMO-10",
+    "title_zh": "跨渠道合并",
+    "ticket_id": "WO-0481",
+    "interaction_zh": "查看重复候选和人工合并记录"
+  },
+  {
+    "id": "DEMO-11",
+    "title_zh": "重开保留旧周期",
+    "ticket_id": "WO-0008",
+    "interaction_zh": "展示旧周期结果与新周期计时"
+  },
+  {
+    "id": "DEMO-12",
+    "title_zh": "保修待人工审核",
+    "ticket_id": "WO-0091",
+    "interaction_zh": "查看缺失材料，不自动承诺免费更换"
+  },
+  {
+    "id": "DEMO-13",
+    "title_zh": "已关闭与满意度",
+    "ticket_id": "WO-0006",
+    "interaction_zh": "查看完整流转和模拟评价"
+  }
+]

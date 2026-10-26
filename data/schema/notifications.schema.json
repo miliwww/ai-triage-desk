@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/notifications.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dedupe_key": {
+      "type": "string"
+    },
+    "delivery_mode": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "recipient_team_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "created_at",
+    "dedupe_key",
+    "delivery_mode",
+    "id",
+    "is_synthetic",
+    "recipient_team_id",
+    "status",
+    "ticket_id",
+    "type"
+  ],
+  "additionalProperties": false
+}

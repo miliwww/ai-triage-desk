@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/knowledge_base.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "applies_to": {
+      "type": "string"
+    },
+    "approved_for": {
+      "type": "string"
+    },
+    "content_type": {
+      "type": "string"
+    },
+    "content_zh": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "not_a_repair_manual": {
+      "type": "boolean"
+    },
+    "recommended_actions_zh": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "title_zh": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "applies_to",
+    "approved_for",
+    "content_type",
+    "content_zh",
+    "id",
+    "not_a_repair_manual",
+    "recommended_actions_zh",
+    "source_ids",
+    "title_zh",
+    "version"
+  ],
+  "additionalProperties": false
+}

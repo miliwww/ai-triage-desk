@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "evaluation/inputs.jsonl单条记录契约",
+  "type": "object",
+  "properties": {
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "mime_type": {
+            "type": "string"
+          },
+          "relative_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "mime_type",
+          "relative_path"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "authorized_context": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "type": "string"
+        },
+        "device_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "site_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_id",
+        "device_id",
+        "site_id"
+      ],
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "online_service_center",
+        "email",
+        "phone_transcript",
+        "installer_portal",
+        "app_feedback"
+      ]
+    },
+    "customer_country_code": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "language_hint": {
+      "type": "string"
+    },
+    "occurred_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "purchase_proof_present": {
+      "type": "boolean"
+    },
+    "reported_error_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "reported_model": {
+      "type": "string"
+    },
+    "reported_serial_number": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "site_country_code": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "attachments",
+    "authorized_context",
+    "body",
+    "channel",
+    "customer_country_code",
+    "id",
+    "is_synthetic",
+    "language_hint",
+    "occurred_at",
+    "purchase_proof_present",
+    "reported_error_code",
+    "reported_model",
+    "reported_serial_number",
+    "site_country_code",
+    "subject",
+    "submitted_at"
+  ],
+  "additionalProperties": false
+}

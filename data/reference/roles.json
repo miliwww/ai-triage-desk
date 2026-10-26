@@ -1,0 +1,58 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "customer",
+    "can": [
+      "view_own_tickets",
+      "submit",
+      "supplement",
+      "confirm_resolution"
+    ],
+    "cannot": [
+      "view_other_tenant"
+    ]
+  },
+  {
+    "is_synthetic": true,
+    "id": "service_agent",
+    "can": [
+      "review_ai",
+      "assign",
+      "reply",
+      "change_status"
+    ],
+    "cannot": [
+      "approve_compensation",
+      "control_device_without_authorization"
+    ]
+  },
+  {
+    "is_synthetic": true,
+    "id": "supervisor",
+    "can": [
+      "reassign",
+      "escalate",
+      "confirm_merge",
+      "approve_close"
+    ],
+    "cannot": [
+      "bypass_tenant_isolation"
+    ]
+  },
+  {
+    "is_synthetic": true,
+    "id": "ai_agent",
+    "can": [
+      "read_authorized_ticket_context",
+      "propose",
+      "draft",
+      "flag"
+    ],
+    "cannot": [
+      "final_warranty_decision",
+      "auto_close",
+      "auto_grant_access",
+      "remote_device_operation"
+    ]
+  }
+]

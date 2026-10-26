@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/attachments.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "availability": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "kind": {
+      "type": "string"
+    },
+    "message_id": {
+      "type": "string"
+    },
+    "mime_type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "ocr_status": {
+      "type": "string"
+    },
+    "relative_path": {
+      "type": "string"
+    },
+    "security_scan": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "availability",
+    "id",
+    "is_synthetic",
+    "kind",
+    "message_id",
+    "mime_type",
+    "name",
+    "note",
+    "ocr_status",
+    "relative_path",
+    "security_scan",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

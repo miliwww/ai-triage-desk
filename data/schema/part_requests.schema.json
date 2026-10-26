@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/part_requests.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "approved_by": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "part_id": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "requested_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "approved_by",
+    "id",
+    "is_synthetic",
+    "part_id",
+    "quantity",
+    "requested_at",
+    "status",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/customers.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "consent_to_service_contact": {
+      "type": "boolean"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "null"
+    },
+    "preferred_contact": {
+      "type": "string"
+    },
+    "preferred_language": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "consent_to_service_contact",
+    "contact_name",
+    "country_code",
+    "email",
+    "id",
+    "is_synthetic",
+    "name",
+    "phone",
+    "preferred_contact",
+    "preferred_language",
+    "tenant_id",
+    "type"
+  ],
+  "additionalProperties": false
+}

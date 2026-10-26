@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/agents.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "availability": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "integer"
+    },
+    "current_open_ticket_count": {
+      "type": "integer"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "role": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "team_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "availability",
+    "capacity",
+    "current_open_ticket_count",
+    "display_name",
+    "email",
+    "id",
+    "is_synthetic",
+    "languages",
+    "role",
+    "skills",
+    "team_id"
+  ],
+  "additionalProperties": false
+}

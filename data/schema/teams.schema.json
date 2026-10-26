@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reference/teams.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "country_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name_zh": {
+      "type": "string"
+    },
+    "requires_human_assignment_approval": {
+      "type": "boolean"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_segments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "country_codes",
+    "coverage",
+    "id",
+    "is_synthetic",
+    "languages",
+    "name_zh",
+    "requires_human_assignment_approval",
+    "skills",
+    "supported_segments"
+  ],
+  "additionalProperties": false
+}

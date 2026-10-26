@@ -1,0 +1,156 @@
+[
+  {
+    "id": "SRC-01",
+    "title": "沃太能源：企业简介",
+    "url": "https://www.alphaess.cn/company-profile",
+    "publisher": "AlphaESS",
+    "topic": "企业背景",
+    "summary_zh": "2012年成立；覆盖家庭、工商业和源网侧储能，具备BMS、EMS和云管理等能力。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-02",
+    "title": "沃太能源：产品目录",
+    "url": "https://www.alphaess.cn/products",
+    "publisher": "AlphaESS",
+    "topic": "产品目录",
+    "summary_zh": "公开列有户用SMILE、工商业STORION/StaX、储能柜、集装箱、充电桩和阳台储能产品。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-03",
+    "title": "AlphaESS Docs: Help and Support",
+    "url": "https://docs.alphaess.com/portals/portal-home-owners/vpp-apps-and-support/help-and-support.html",
+    "publisher": "AlphaESS",
+    "topic": "售后流程",
+    "summary_zh": "在线服务中心支持提交工单并跟踪；报修应提供SN、发生时间和现象，安装配置问题通常先联系安装商。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-04",
+    "title": "沃太能源2023年可持续发展报告",
+    "url": "https://www.alphaess.cn/Public/Uploads/uploadfile/files/20240703/AlphaESS_ESG_Report_CN_2023.pdf",
+    "publisher": "AlphaESS",
+    "topic": "历史服务背景",
+    "summary_zh": "报告描述AlphaCloud客诉渠道、服务过程跟踪和客户投诉及售后问题处理制度；仅作为2023年度历史资料。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-05",
+    "title": "SMILE-G3单相储能一体机",
+    "url": "https://www.alphaess.cn/smile-g3-3-6kw-5kw-residential-energy-storage-system",
+    "publisher": "AlphaESS",
+    "topic": "产品核对",
+    "summary_zh": "页面明确列出SMILE-G3-S5，额定功率5kW；不同电池配置容量不同。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-06",
+    "title": "StaX-M30/M50",
+    "url": "https://www.alphaess.cn/m30-m50",
+    "publisher": "AlphaESS",
+    "topic": "产品核对",
+    "summary_zh": "公开的工商业并离网光储产品系列，30kW/50kW。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-07",
+    "title": "曜方5000 2.0",
+    "url": "https://www.alphaess.cn/ylxt",
+    "publisher": "AlphaESS",
+    "topic": "产品核对",
+    "summary_zh": "公开的5MWh液冷储能系统。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-08",
+    "title": "星跃221/261",
+    "url": "https://www.alphaess.cn/lc-tb125",
+    "publisher": "AlphaESS",
+    "topic": "产品核对",
+    "summary_zh": "公开的221kWh/261kWh液冷户外储能柜系列。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-09",
+    "title": "Tesla: Troubleshooting Your Powerwall",
+    "url": "https://www.tesla.com/support/energy/powerwall/own/troubleshooting",
+    "publisher": "Tesla",
+    "topic": "服务对标",
+    "summary_zh": "按问题开展初步排查，未解决则转技术支持；危险迹象需要停止常规自助排查。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-10",
+    "title": "Tesla: What to Know About Scheduling Service",
+    "url": "https://www.tesla.com/support/energy/solar-panels/after-installation/what-to-know-about-scheduling-service",
+    "publisher": "Tesla",
+    "topic": "服务对标",
+    "summary_zh": "客户支持先协助排查；确认需现场服务后创建服务案例并安排预约。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-11",
+    "title": "BYD Battery-Box: Contact",
+    "url": "https://site.bydbatterybox.com/byd-contact",
+    "publisher": "BYD Battery-Box",
+    "topic": "服务对标",
+    "summary_zh": "通过本地服务合作伙伴提供区域支持。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-12",
+    "title": "BYD Battery-Box: Downloads",
+    "url": "https://bydbatterybox.com/downloads",
+    "publisher": "BYD Battery-Box",
+    "topic": "产品与服务对标",
+    "summary_zh": "公开提供服务检查表、应用指南以及按地区和版本区分的保修文件。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-13",
+    "title": "Sungrow: Installer Service Support",
+    "url": "https://www.sungrowpower.com/en/installer/service-support",
+    "publisher": "Sungrow",
+    "topic": "服务对标",
+    "summary_zh": "安装商服务入口提供文档、质保、技术支持、远程服务和现场服务等资源。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  },
+  {
+    "id": "SRC-14",
+    "title": "AlphaESS Europe: Contact",
+    "url": "https://eu.alphaess.com/pages/contact-us",
+    "publisher": "AlphaESS Europe",
+    "topic": "区域入口",
+    "summary_zh": "欧洲联系页面提示技术支持应使用工单系统。",
+    "accessed_on": "2026-10-24",
+    "source_type": "official_public",
+    "usage": "事实出处，不代表本数据集中的故障或客户真实存在"
+  }
+]

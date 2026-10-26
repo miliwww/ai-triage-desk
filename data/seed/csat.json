@@ -1,0 +1,282 @@
+[
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0006",
+    "ticket_id": "WO-0006",
+    "customer_id": "CUS-072",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-23T18:14:06Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0015",
+    "ticket_id": "WO-0015",
+    "customer_id": "CUS-071",
+    "score_1_to_5": 1,
+    "comment_zh": "回复及时",
+    "submitted_at": "2026-10-23T04:56:15Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0024",
+    "ticket_id": "WO-0024",
+    "customer_id": "CUS-072",
+    "score_1_to_5": 5,
+    "comment_zh": "仍需改进",
+    "submitted_at": "2026-10-22T15:38:24Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0033",
+    "ticket_id": "WO-0033",
+    "customer_id": "CUS-071",
+    "score_1_to_5": 4,
+    "comment_zh": "等待时间较长",
+    "submitted_at": "2026-10-22T02:20:33Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0042",
+    "ticket_id": "WO-0042",
+    "customer_id": "CUS-072",
+    "score_1_to_5": 3,
+    "comment_zh": "进度解释清楚",
+    "submitted_at": "2026-10-21T13:02:42Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0051",
+    "ticket_id": "WO-0051",
+    "customer_id": "CUS-071",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-20T23:44:51Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0060",
+    "ticket_id": "WO-0060",
+    "customer_id": "CUS-074",
+    "score_1_to_5": 1,
+    "comment_zh": "回复及时",
+    "submitted_at": "2026-10-20T10:27:00Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0070",
+    "ticket_id": "WO-0070",
+    "customer_id": "CUS-096",
+    "score_1_to_5": 1,
+    "comment_zh": "回复及时",
+    "submitted_at": "2026-10-19T19:40:30Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0078",
+    "ticket_id": "WO-0078",
+    "customer_id": "CUS-084",
+    "score_1_to_5": 4,
+    "comment_zh": "等待时间较长",
+    "submitted_at": "2026-10-19T07:51:18Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0087",
+    "ticket_id": "WO-0087",
+    "customer_id": "CUS-079",
+    "score_1_to_5": 3,
+    "comment_zh": "进度解释清楚",
+    "submitted_at": "2026-10-18T18:33:27Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0106",
+    "ticket_id": "WO-0106",
+    "customer_id": "CUS-092",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-17T14:29:06Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0114",
+    "ticket_id": "WO-0114",
+    "customer_id": "CUS-080",
+    "score_1_to_5": 5,
+    "comment_zh": "仍需改进",
+    "submitted_at": "2026-10-17T02:39:54Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0124",
+    "ticket_id": "WO-0124",
+    "customer_id": "CUS-094",
+    "score_1_to_5": 5,
+    "comment_zh": "仍需改进",
+    "submitted_at": "2026-10-16T11:53:24Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0151",
+    "ticket_id": "WO-0151",
+    "customer_id": "CUS-095",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-14T19:59:51Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0333",
+    "ticket_id": "WO-0333",
+    "customer_id": "CUS-047",
+    "score_1_to_5": 4,
+    "comment_zh": "等待时间较长",
+    "submitted_at": "2026-10-19T06:05:33Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0348",
+    "ticket_id": "WO-0348",
+    "customer_id": "CUS-018",
+    "score_1_to_5": 4,
+    "comment_zh": "等待时间较长",
+    "submitted_at": "2026-10-18T07:55:48Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0351",
+    "ticket_id": "WO-0351",
+    "customer_id": "CUS-047",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-18T03:29:51Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0366",
+    "ticket_id": "WO-0366",
+    "customer_id": "CUS-016",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-17T05:20:06Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0379",
+    "ticket_id": "WO-0379",
+    "customer_id": "CUS-071",
+    "score_1_to_5": 5,
+    "comment_zh": "仍需改进",
+    "submitted_at": "2026-10-16T10:07:39Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0388",
+    "ticket_id": "WO-0388",
+    "customer_id": "CUS-072",
+    "score_1_to_5": 4,
+    "comment_zh": "等待时间较长",
+    "submitted_at": "2026-10-15T20:49:48Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0397",
+    "ticket_id": "WO-0397",
+    "customer_id": "CUS-067",
+    "score_1_to_5": 3,
+    "comment_zh": "进度解释清楚",
+    "submitted_at": "2026-10-15T07:31:57Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0402",
+    "ticket_id": "WO-0402",
+    "customer_id": "CUS-018",
+    "score_1_to_5": 3,
+    "comment_zh": "进度解释清楚",
+    "submitted_at": "2026-10-15T00:08:42Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0411",
+    "ticket_id": "WO-0411",
+    "customer_id": "CUS-013",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-14T10:50:51Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0420",
+    "ticket_id": "WO-0420",
+    "customer_id": "CUS-036",
+    "score_1_to_5": 1,
+    "comment_zh": "回复及时",
+    "submitted_at": "2026-10-13T21:33:00Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0438",
+    "ticket_id": "WO-0438",
+    "customer_id": "CUS-026",
+    "score_1_to_5": 4,
+    "comment_zh": "等待时间较长",
+    "submitted_at": "2026-10-12T18:57:18Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0451",
+    "ticket_id": "WO-0451",
+    "customer_id": "CUS-071",
+    "score_1_to_5": 2,
+    "comment_zh": "希望减少重复提交资料",
+    "submitted_at": "2026-10-11T23:44:51Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0465",
+    "ticket_id": "WO-0465",
+    "customer_id": "CUS-029",
+    "score_1_to_5": 1,
+    "comment_zh": "回复及时",
+    "submitted_at": "2026-10-11T03:03:45Z",
+    "is_simulated_metric": true
+  },
+  {
+    "is_synthetic": true,
+    "id": "CSAT-0479",
+    "ticket_id": "WO-0479",
+    "customer_id": "CUS-095",
+    "score_1_to_5": 5,
+    "comment_zh": "仍需改进",
+    "submitted_at": "2026-10-10T06:22:39Z",
+    "is_simulated_metric": true
+  }
+]

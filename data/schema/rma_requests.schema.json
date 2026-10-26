@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/rma_requests.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "approved_by": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "decision": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "notice": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "approved_by",
+    "decision",
+    "id",
+    "is_synthetic",
+    "notice",
+    "status",
+    "ticket_id"
+  ],
+  "additionalProperties": false
+}

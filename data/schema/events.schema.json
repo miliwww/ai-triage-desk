@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed/events.json单条记录契约",
+  "type": "object",
+  "properties": {
+    "actor_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "actor_type": {
+      "type": "string"
+    },
+    "at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "from_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "reason_zh": {
+      "type": "string"
+    },
+    "ticket_id": {
+      "type": "string"
+    },
+    "to_status": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "actor_id",
+    "actor_type",
+    "at",
+    "correlation_id",
+    "from_status",
+    "id",
+    "is_synthetic",
+    "reason_zh",
+    "ticket_id",
+    "to_status",
+    "type"
+  ],
+  "additionalProperties": false
+}
