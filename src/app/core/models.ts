@@ -1,8 +1,18 @@
 export type Priority = 'P0' | 'P1' | 'P2' | 'P3';
 export type Status =
-  | 'new' | 'awaiting_review' | 'waiting_customer' | 'assigned' | 'in_progress'
-  | 'waiting_parts' | 'waiting_visit' | 'escalated' | 'resolved' | 'closed'
-  | 'cancelled' | 'merged' | 'reopened';
+  | 'new'
+  | 'awaiting_review'
+  | 'waiting_customer'
+  | 'assigned'
+  | 'in_progress'
+  | 'waiting_parts'
+  | 'waiting_visit'
+  | 'escalated'
+  | 'resolved'
+  | 'closed'
+  | 'cancelled'
+  | 'merged'
+  | 'reopened';
 export type MessageVisibility = 'customer' | 'internal';
 export type RiskStatus = 'queued' | 'taken_over' | 'mitigated';
 
@@ -343,7 +353,12 @@ export interface RawData {
   duplicates: DuplicateCandidate[];
   csat: Csat[];
   workflow: WorkflowConfig;
-  dashboardExpected: { total_tickets: number; open_count: number; unresolved_response_overdue_count: number; as_of: string };
+  dashboardExpected: {
+    total_tickets: number;
+    open_count: number;
+    unresolved_response_overdue_count: number;
+    as_of: string;
+  };
 }
 
 export interface TicketView extends Ticket {

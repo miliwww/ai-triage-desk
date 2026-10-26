@@ -23,8 +23,25 @@ import dashboardExpected from '../../../data/demo/dashboard_expected.json';
 /** Tests exercise the actual demo data; every test gets an isolated copy. */
 export function demoData(): RawData {
   return structuredClone({
-    tickets, suggestions, messages, events, assignments, teams, agents, customers,
-    sites, devices, products, categories, knowledge, regions, partRequests, visits,
-    duplicates, csat, workflow, dashboardExpected,
+    tickets,
+    suggestions,
+    messages,
+    events,
+    assignments,
+    teams,
+    agents,
+    customers,
+    sites,
+    devices,
+    products,
+    categories,
+    knowledge,
+    regions,
+    partRequests,
+    visits,
+    duplicates,
+    csat,
+    workflow,
+    dashboardExpected,
   }) as unknown as RawData;
 }

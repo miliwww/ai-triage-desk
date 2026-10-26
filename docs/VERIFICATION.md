@@ -4,14 +4,14 @@
 
 ## 自动检查
 
-| 检查 | 命令 | 结果 |
-| --- | --- | --- |
-| 应用测试 | `npm run test:ci` | 4 个测试文件，18 项通过 |
-| 模拟数据校验 | `npm run validate:data` | PASS，182,484 个断言，0 个错误 |
-| 生产构建 | `npm run build:pages` | 构建成功，输出 `dist/servicedesk/browser` |
-| 预览脚本语法 | `node --check scripts/preview.mjs` | 通过 |
-| 打包脚本语法 | `python -m py_compile scripts/package_release.py` | 通过 |
-| 源码包干净复现 | 解压源码包，`npm ci --offline --no-audit --no-fund` 后运行测试与构建 | 安装成功，18 项测试通过，生产构建成功 |
+| 检查           | 命令                                                                 | 结果                                      |
+| -------------- | -------------------------------------------------------------------- | ----------------------------------------- |
+| 应用测试       | `npm run test:ci`                                                    | 4 个测试文件，18 项通过                   |
+| 模拟数据校验   | `npm run validate:data`                                              | PASS，182,484 个断言，0 个错误            |
+| 生产构建       | `npm run build:pages`                                                | 构建成功，输出 `dist/servicedesk/browser` |
+| 预览脚本语法   | `node --check scripts/preview.mjs`                                   | 通过                                      |
+| 打包脚本语法   | `python -m py_compile scripts/package_release.py`                    | 通过                                      |
+| 源码包干净复现 | 解压源码包，`npm ci --offline --no-audit --no-fund` 后运行测试与构建 | 安装成功，18 项测试通过，生产构建成功     |
 
 分布图样式修复后的生产构建，初始 JS 与 CSS 原始体积合计 381.00 kB，构建器估算传输体积 104.69 kB。该数值不含 JSON 等后续请求，不等于完整页面加载量或真实访问速度。前一轮已在干净副本中完成安装、测试和构建，本次样式修复后再次构建通过。
 

@@ -3,14 +3,25 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Store } from '../../core/store';
 import { I18n } from '../../core/i18n';
-import { EmptyComponent, PriorityBadgeComponent, RiskBadgeComponent, StatusBadgeComponent } from '../../shared/badges';
+import {
+  EmptyComponent,
+  PriorityBadgeComponent,
+  RiskBadgeComponent,
+  StatusBadgeComponent,
+} from '../../shared/badges';
 import { fmtAgo, fmtDateTime, overdueMinutes, LANG_LABEL, STATUS_LABEL } from '../../core/format';
 
 type RiskView = 'risk' | 'pending' | 'first' | 'resolution';
 
 @Component({
   selector: 'app-risk',
-  imports: [RouterLink, StatusBadgeComponent, PriorityBadgeComponent, RiskBadgeComponent, EmptyComponent],
+  imports: [
+    RouterLink,
+    StatusBadgeComponent,
+    PriorityBadgeComponent,
+    RiskBadgeComponent,
+    EmptyComponent,
+  ],
   templateUrl: './risk.html',
   styleUrl: './risk.css',
 })
@@ -55,7 +66,11 @@ export class RiskPage {
   setView(v: RiskView): void {
     this.view.set(v);
     this.selectedId.set('');
-    this.router.navigate([], { relativeTo: this.route, queryParams: { view: v }, replaceUrl: true });
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { view: v },
+      replaceUrl: true,
+    });
   }
 
   select(id: string): void {
@@ -80,8 +95,14 @@ export class RiskPage {
 
   escalate(): void {
     const id = this.escalateId().trim().toUpperCase();
-    if (!id) { this.store.toast.set({ msg: '请输入工单编号，例如 WO-0251', error: true }); return; }
-    if (!this.store.view(id)) { this.store.toast.set({ msg: `未找到工单 ${id}`, error: true }); return; }
+    if (!id) {
+      this.store.toast.set({ msg: '请输入工单编号，例如 WO-0251', error: true });
+      return;
+    }
+    if (!this.store.view(id)) {
+      this.store.toast.set({ msg: `未找到工单 ${id}`, error: true });
+      return;
+    }
     const res = this.store.escalate(id, this.escalateReason(), this.escalateP0());
     if (res.ok) {
       this.escalateReason.set('');
@@ -94,8 +115,16 @@ export class RiskPage {
   evidence(ticketId: string): string {
     const t = this.store.view(ticketId);
     const first = this.store.messagesOf(ticketId)[0];
-    return first?.body_zh || first?.body || t?.reported.symptom_description?.split('\n')[0] || t?.summary_zh || '';
+    return (
+      first?.body_zh ||
+      first?.body ||
+      t?.reported.symptom_description?.split('\n')[0] ||
+      t?.summary_zh ||
+      ''
+    );
   }
 
-  open(id: string): void { this.router.navigate(['/tickets', id]); }
+  open(id: string): void {
+    this.router.navigate(['/tickets', id]);
+  }
 }

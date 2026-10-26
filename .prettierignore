@@ -1,0 +1,11 @@
+dist/
+.angular/
+node_modules/
+releases/
+package-lock.json
+
+# Generated dataset, schemas and long-lived PRD baselines are kept byte-stable.
+data/
+docs/prd/
+docs/archive/
+LICENSE

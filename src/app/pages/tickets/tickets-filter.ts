@@ -43,9 +43,18 @@ export class TicketsFilterState {
   }
 
   clear(): void {
-    this.q.set(''); this.status.set(''); this.priority.set(''); this.category.set('');
-    this.country.set(''); this.language.set(''); this.team.set(''); this.risk.set('');
-    this.overdue.set(''); this.scope.set(''); this.dispatch.set(''); this.overview.set('');
+    this.q.set('');
+    this.status.set('');
+    this.priority.set('');
+    this.category.set('');
+    this.country.set('');
+    this.language.set('');
+    this.team.set('');
+    this.risk.set('');
+    this.overdue.set('');
+    this.scope.set('');
+    this.dispatch.set('');
+    this.overview.set('');
     this.page.set(1);
   }
 }

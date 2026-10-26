@@ -20,7 +20,7 @@ npm run preview
 
 静态包需由 HTTP 服务提供，直接双击 HTML 无法可靠加载 JSON。解压后进入包含 `index.html` 的目录，可使用 `python -m http.server 4173 --bind 127.0.0.1`，再访问上述预览地址。
 
-源码包排除 node_modules、构建缓存、编辑器个人配置、本地技能、Python 缓存、私密环境文件和个人讨论/求职材料；完整目录中的原材料保留。本包暂未选择开源许可证，见 `NOTICE.md`。
+源码包排除 node_modules、构建缓存、编辑器个人配置、本地技能、Python 缓存、私密环境文件和个人讨论/求职材料；完整目录中的原材料保留。源代码采用 MIT 许可证，品牌与数据使用边界见 `LICENSE` 与 `NOTICE.md`。
 
 ## 路由与资源
 

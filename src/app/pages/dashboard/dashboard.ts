@@ -2,12 +2,23 @@ import { Component, computed, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Store } from '../../core/store';
 import { I18n } from '../../core/i18n';
-import { EmptyComponent, PriorityBadgeComponent, RiskBadgeComponent, StatusBadgeComponent } from '../../shared/badges';
+import {
+  EmptyComponent,
+  PriorityBadgeComponent,
+  RiskBadgeComponent,
+  StatusBadgeComponent,
+} from '../../shared/badges';
 import { duration, fmtAgo, fmtDateTime, LANG_LABEL, pct, STATUS_LABEL } from '../../core/format';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink, StatusBadgeComponent, PriorityBadgeComponent, RiskBadgeComponent, EmptyComponent],
+  imports: [
+    RouterLink,
+    StatusBadgeComponent,
+    PriorityBadgeComponent,
+    RiskBadgeComponent,
+    EmptyComponent,
+  ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -19,12 +30,21 @@ export class DashboardPage {
   readonly risks = computed(() => this.store.currentRisks().slice(0, 6));
   readonly todo = computed(() => this.store.myTodo().slice(0, 8));
   readonly oldest = computed(() =>
-    this.store.views().filter((v) => v.isUnresolved)
+    this.store
+      .views()
+      .filter((v) => v.isUnresolved)
       .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
       .slice(0, 6),
   );
   readonly maxCountry = computed(() => Math.max(1, ...this.stats().byCountry.map((c) => c.count)));
-  readonly maxCategory = computed(() => Math.max(1, ...this.stats().byCategory.slice(0, 9).map((c) => c.count)));
+  readonly maxCategory = computed(() =>
+    Math.max(
+      1,
+      ...this.stats()
+        .byCategory.slice(0, 9)
+        .map((c) => c.count),
+    ),
+  );
   readonly maxStatus = computed(() => Math.max(1, ...this.stats().byStatus.map((c) => c.count)));
   readonly priorityTotal = computed(() => this.stats().byPriority.reduce((s, p) => s + p.count, 0));
   readonly seedDrift = computed(() => {
@@ -48,14 +68,32 @@ export class DashboardPage {
   }
 
   priorityTone(p: string): string {
-    return p === 'P0' ? 'red' : p === 'P1' ? 'orange' : p === 'P2' ? 'blue' : p === 'P3' ? 'teal' : 'grey';
+    return p === 'P0'
+      ? 'red'
+      : p === 'P1'
+        ? 'orange'
+        : p === 'P2'
+          ? 'blue'
+          : p === 'P3'
+            ? 'teal'
+            : 'grey';
   }
 
   statusTone(status: string): string {
     const map: Record<string, string> = {
-      new: 'blue', awaiting_review: 'orange', waiting_customer: 'grey', assigned: 'blue',
-      in_progress: 'teal', waiting_parts: 'orange', waiting_visit: 'orange', escalated: 'red',
-      resolved: 'green', closed: 'grey', cancelled: 'grey', merged: 'grey', reopened: 'orange',
+      new: 'blue',
+      awaiting_review: 'orange',
+      waiting_customer: 'grey',
+      assigned: 'blue',
+      in_progress: 'teal',
+      waiting_parts: 'orange',
+      waiting_visit: 'orange',
+      escalated: 'red',
+      resolved: 'green',
+      closed: 'grey',
+      cancelled: 'grey',
+      merged: 'grey',
+      reopened: 'orange',
     };
     return map[status] ?? 'grey';
   }
@@ -69,6 +107,14 @@ export class DashboardPage {
   }
 
   priorityColor(p: string): string {
-    return p === 'P0' ? 'var(--red)' : p === 'P1' ? 'var(--orange)' : p === 'P2' ? 'var(--blue)' : p === 'P3' ? 'var(--teal)' : 'var(--line-strong)';
+    return p === 'P0'
+      ? 'var(--red)'
+      : p === 'P1'
+        ? 'var(--orange)'
+        : p === 'P2'
+          ? 'var(--blue)'
+          : p === 'P3'
+            ? 'var(--teal)'
+            : 'var(--line-strong)';
   }
 }

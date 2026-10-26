@@ -21,43 +21,83 @@ export const STATUS_LABEL: Record<Status, string> = {
 };
 
 export const STATUS_TONE: Record<Status, string> = {
-  new: 'blue', awaiting_review: 'orange', waiting_customer: 'grey', assigned: 'blue',
-  in_progress: 'teal', waiting_parts: 'orange', waiting_visit: 'orange', escalated: 'red',
-  resolved: 'green', closed: 'grey', cancelled: 'grey', merged: 'grey', reopened: 'orange',
+  new: 'blue',
+  awaiting_review: 'orange',
+  waiting_customer: 'grey',
+  assigned: 'blue',
+  in_progress: 'teal',
+  waiting_parts: 'orange',
+  waiting_visit: 'orange',
+  escalated: 'red',
+  resolved: 'green',
+  closed: 'grey',
+  cancelled: 'grey',
+  merged: 'grey',
+  reopened: 'orange',
 };
 
 export const PRIORITY_LABEL: Record<Priority, string> = {
-  P0: 'P0 安全紧急', P1: 'P1 高优先级', P2: 'P2 一般故障', P3: 'P3 普通咨询',
+  P0: 'P0 安全紧急',
+  P1: 'P1 高优先级',
+  P2: 'P2 一般故障',
+  P3: 'P3 普通咨询',
 };
 
 export const CATEGORY_LABEL_FALLBACK: Record<string, string> = {
-  connectivity: '设备联网与离线', charging: '无法充电或放电', monitoring: '数据展示与统计异常',
-  backup: '备用供电问题', commissioning: '安装与调试', alarm: '设备告警待排查',
-  performance: '运行效果与收益疑问', account: '账号与授权', warranty: '保修与退换咨询',
-  cooling: '工商业温控问题', dispatch: '项目通信与调度', ev: '充电桩问题',
-  safety: '安全风险报告', unknown: '无法判断，需要人工',
+  connectivity: '设备联网与离线',
+  charging: '无法充电或放电',
+  monitoring: '数据展示与统计异常',
+  backup: '备用供电问题',
+  commissioning: '安装与调试',
+  alarm: '设备告警待排查',
+  performance: '运行效果与收益疑问',
+  account: '账号与授权',
+  warranty: '保修与退换咨询',
+  cooling: '工商业温控问题',
+  dispatch: '项目通信与调度',
+  ev: '充电桩问题',
+  safety: '安全风险报告',
+  unknown: '无法判断，需要人工',
 };
 
 export const LANG_LABEL: Record<string, string> = {
-  de: '德语', nl: '荷兰语', es: '西班牙语', en: '英语', zh: '中文', fr: '法语', it: '意大利语',
+  de: '德语',
+  nl: '荷兰语',
+  es: '西班牙语',
+  en: '英语',
+  zh: '中文',
+  fr: '法语',
+  it: '意大利语',
 };
 
 export const CHANNEL_LABEL: Record<string, string> = {
-  email: '邮件', phone_transcript: '电话转写', installer_portal: '安装商门户',
-  app_feedback: 'App 反馈', online_service_center: '在线服务中心',
+  email: '邮件',
+  phone_transcript: '电话转写',
+  installer_portal: '安装商门户',
+  app_feedback: 'App 反馈',
+  online_service_center: '在线服务中心',
 };
 
 export const ROLE_LABEL: Record<string, string> = {
-  service_agent: '客服', technical_support: '技术支持', dispatcher: '服务调度', supervisor: '售后主管',
+  service_agent: '客服',
+  technical_support: '技术支持',
+  dispatcher: '服务调度',
+  supervisor: '售后主管',
 };
 
 export const TAKEOVER_LABEL: Record<string, string> = {
-  queued: '待人工接管', taken_over: '人工已接管', mitigated: '风险已记录缓解',
+  queued: '待人工接管',
+  taken_over: '人工已接管',
+  mitigated: '风险已记录缓解',
 };
 
 const dtf = new Intl.DateTimeFormat('zh-CN', {
-  timeZone: 'Asia/Shanghai', month: '2-digit', day: '2-digit',
-  hour: '2-digit', minute: '2-digit', hour12: false,
+  timeZone: 'Asia/Shanghai',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
 });
 
 export function fmtDateTime(iso: string | null | undefined): string {

@@ -6,75 +6,188 @@
     <p class="page-desc">{{ i18n.t('dash.desc') }}</p>
   </div>
   <div class="row gap-8">
-    <button class="btn" type="button" (click)="go({ risk: 'pending' })">{{ i18n.t('dash.viewRisk') }}</button>
-    <button class="btn primary" type="button" (click)="go({ status: 'awaiting_review' })">{{ i18n.t('dash.enterReview') }}</button>
+    <button class="btn" type="button" (click)="go({ risk: 'pending' })">
+      {{ i18n.t('dash.viewRisk') }}
+    </button>
+    <button class="btn primary" type="button" (click)="go({ status: 'awaiting_review' })">
+      {{ i18n.t('dash.enterReview') }}
+    </button>
   </div>
 </div>
 
 <section class="service-intro" aria-labelledby="service-intro-title">
   <div class="intro-copy">
-    <span class="intro-label"><span class="live-dot" aria-hidden="true"></span>{{ i18n.t('portfolio.collaboration') }}</span>
+    <span class="intro-label"
+      ><span class="live-dot" aria-hidden="true"></span
+      >{{ i18n.t('portfolio.collaboration') }}</span
+    >
     <h2 id="service-intro-title">{{ i18n.t('portfolio.headline') }}</h2>
     <p>{{ i18n.t('portfolio.description') }}</p>
-    <a class="btn primary intro-cta" routerLink="/tickets/WO-0047" [queryParams]="{ tab: 'review' }">{{ i18n.t('portfolio.start') }}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
+    <a class="btn primary intro-cta" routerLink="/tickets/WO-0047" [queryParams]="{ tab: 'review' }"
+      >{{ i18n.t('portfolio.start')
+      }}<svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        aria-hidden="true"
+      >
+        <path d="M4 10h12m-5-5 5 5-5 5" /></svg
+    ></a>
     <span class="intro-disclosure">{{ i18n.t('portfolio.preset') }}</span>
   </div>
   <div class="workflow-preview" role="img" [attr.aria-label]="i18n.t('portfolio.workflowAlt')">
-    <div class="incoming-signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg><span>ES</span><i></i><span>DE</span><i></i><span>EN</span><span class="signal-more">+4</span></div>
+    <div class="incoming-signal">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        aria-hidden="true"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="3" />
+        <path d="m3 7 9 6 9-6" /></svg
+      ><span>ES</span><i></i><span>DE</span><i></i><span>EN</span
+      ><span class="signal-more">+4</span>
+    </div>
     <div class="signal-line" aria-hidden="true"></div>
-    <div class="workflow-node suggest"><span class="node-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3L12 3Z"/></svg></span><div><b>{{ i18n.t('portfolio.suggest') }}</b><span>{{ i18n.t('portfolio.suggestSub') }}</span></div><span class="node-tag">{{ i18n.t('portfolio.presetShort') }}</span></div>
+    <div class="workflow-node suggest">
+      <span class="node-symbol" aria-hidden="true"
+        ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3L12 3Z" /></svg
+      ></span>
+      <div>
+        <b>{{ i18n.t('portfolio.suggest') }}</b
+        ><span>{{ i18n.t('portfolio.suggestSub') }}</span>
+      </div>
+      <span class="node-tag">{{ i18n.t('portfolio.presetShort') }}</span>
+    </div>
     <div class="workflow-connector" aria-hidden="true"><span></span><i></i><span></span></div>
-    <div class="workflow-node human"><span class="node-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><div><b>{{ i18n.t('portfolio.human') }}</b><span>{{ i18n.t('portfolio.humanSub') }}</span></div><span class="node-check" aria-hidden="true">✓</span></div>
+    <div class="workflow-node human">
+      <span class="node-symbol" aria-hidden="true"
+        ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21v-2a8 8 0 0 1 16 0v2" /></svg
+      ></span>
+      <div>
+        <b>{{ i18n.t('portfolio.human') }}</b
+        ><span>{{ i18n.t('portfolio.humanSub') }}</span>
+      </div>
+      <span class="node-check" aria-hidden="true">✓</span>
+    </div>
     <div class="workflow-result"><span></span>{{ i18n.t('portfolio.traceable') }}<span></span></div>
   </div>
 </section>
 
 <section class="scenario-section" aria-labelledby="scenario-title">
-  <div class="section-heading"><h2 id="scenario-title">{{ i18n.t('portfolio.scenarios') }}</h2><span>{{ i18n.t('portfolio.scenariosHint') }}</span></div>
+  <div class="section-heading">
+    <h2 id="scenario-title">{{ i18n.t('portfolio.scenarios') }}</h2>
+    <span>{{ i18n.t('portfolio.scenariosHint') }}</span>
+  </div>
   <div class="scenario-grid">
-    <a class="scenario scenario-standard" routerLink="/tickets/WO-0047" [queryParams]="{ tab: 'review' }">
-      <span class="scenario-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg></span>
-      <div><div class="scenario-topline"><span>WO-0047</span><span>{{ i18n.t('portfolio.standardTag') }}</span></div><h3>{{ i18n.t('portfolio.standardTitle') }}</h3><p>{{ i18n.t('portfolio.standardDesc') }}</p></div>
-      <svg class="scenario-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    <a
+      class="scenario scenario-standard"
+      routerLink="/tickets/WO-0047"
+      [queryParams]="{ tab: 'review' }"
+    >
+      <span class="scenario-icon" aria-hidden="true"
+        ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z" /></svg
+      ></span>
+      <div>
+        <div class="scenario-topline">
+          <span>WO-0047</span><span>{{ i18n.t('portfolio.standardTag') }}</span>
+        </div>
+        <h3>{{ i18n.t('portfolio.standardTitle') }}</h3>
+        <p>{{ i18n.t('portfolio.standardDesc') }}</p>
+      </div>
+      <svg
+        class="scenario-arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        aria-hidden="true"
+      >
+        <path d="m9 5 7 7-7 7" />
+      </svg>
     </a>
-    <a class="scenario scenario-risk" routerLink="/tickets/WO-0150" [queryParams]="{ tab: 'handling' }">
-      <span class="scenario-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m12 3 9 4v5c0 4-5 8-9 10-4-2-9-6-9-10V7l9-4Z"/><path d="M12 8v5m0 3v1"/></svg></span>
-      <div><div class="scenario-topline"><span>WO-0150</span><span>{{ i18n.t('portfolio.riskTag') }}</span></div><h3>{{ i18n.t('portfolio.riskTitle') }}</h3><p>{{ i18n.t('portfolio.riskDesc') }}</p></div>
-      <svg class="scenario-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    <a
+      class="scenario scenario-risk"
+      routerLink="/tickets/WO-0150"
+      [queryParams]="{ tab: 'handling' }"
+    >
+      <span class="scenario-icon" aria-hidden="true"
+        ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="m12 3 9 4v5c0 4-5 8-9 10-4-2-9-6-9-10V7l9-4Z" />
+          <path d="M12 8v5m0 3v1" /></svg
+      ></span>
+      <div>
+        <div class="scenario-topline">
+          <span>WO-0150</span><span>{{ i18n.t('portfolio.riskTag') }}</span>
+        </div>
+        <h3>{{ i18n.t('portfolio.riskTitle') }}</h3>
+        <p>{{ i18n.t('portfolio.riskDesc') }}</p>
+      </div>
+      <svg
+        class="scenario-arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        aria-hidden="true"
+      >
+        <path d="m9 5 7 7-7 7" />
+      </svg>
     </a>
   </div>
 </section>
 
-<div class="section-heading overview-heading"><h2>{{ i18n.t('portfolio.snapshot') }}</h2><span>{{ i18n.t('portfolio.snapshotHint') }}</span></div>
+<div class="section-heading overview-heading">
+  <h2>{{ i18n.t('portfolio.snapshot') }}</h2>
+  <span>{{ i18n.t('portfolio.snapshotHint') }}</span>
+</div>
 <div class="kpis mb-16">
   <button class="kpi" type="button" (click)="go({ reset: '1' })">
     <span class="kpi-label">{{ i18n.t('dash.total') }}</span>
-    <span class="kpi-value">{{ s.total }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span>
+    <span class="kpi-value"
+      >{{ s.total }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span
+    >
     <span class="kpi-foot">{{ i18n.t('dash.footTotal', { n: s.total }) }}</span>
   </button>
   <button class="kpi info" type="button" (click)="go({ scope: 'unresolved' })">
     <span class="kpi-label">{{ i18n.t('dash.unresolved') }}</span>
-    <span class="kpi-value">{{ s.unresolved }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span>
+    <span class="kpi-value"
+      >{{ s.unresolved }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span
+    >
     <span class="kpi-foot">{{ i18n.t('dash.footUnresolved') }}</span>
   </button>
   <button class="kpi danger" type="button" (click)="go({ risk: 'open' })">
     <span class="kpi-label">{{ i18n.t('dash.riskOpen') }}</span>
-    <span class="kpi-value">{{ s.riskOpen }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span>
+    <span class="kpi-value"
+      >{{ s.riskOpen }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span
+    >
     <span class="kpi-foot">{{ i18n.t('dash.footRisk', { n: s.riskPending }) }}</span>
   </button>
   <button class="kpi warn" type="button" (click)="go({ status: 'awaiting_review' })">
     <span class="kpi-label">{{ i18n.t('dash.review') }}</span>
-    <span class="kpi-value">{{ s.awaitingReview }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span>
+    <span class="kpi-value"
+      >{{ s.awaitingReview }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span
+    >
     <span class="kpi-foot">{{ i18n.t('dash.footReview') }}</span>
   </button>
   <button class="kpi warn" type="button" (click)="go({ overview: 'unassigned' })">
     <span class="kpi-label">{{ i18n.t('dash.unassigned') }}</span>
-    <span class="kpi-value">{{ s.unassigned }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span>
+    <span class="kpi-value"
+      >{{ s.unassigned }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span
+    >
     <span class="kpi-foot">{{ i18n.t('dash.footUnassigned') }}</span>
   </button>
   <button class="kpi danger" type="button" (click)="go({ overdue: 'first' })">
     <span class="kpi-label">{{ i18n.t('dash.firstOverdue') }}</span>
-    <span class="kpi-value">{{ s.overdueFirstResponse }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span>
+    <span class="kpi-value"
+      >{{ s.overdueFirstResponse }}<small>{{ i18n.t('portfolio.ticketUnit') }}</small></span
+    >
     <span class="kpi-foot">{{ i18n.t('dash.footOverdue') }}</span>
   </button>
 </div>
@@ -82,8 +195,12 @@
 <div class="grid-12">
   <section class="panel col-span-8">
     <div class="panel-head">
-      <div class="panel-title">{{ i18n.t('dash.riskTitle') }}<span class="panel-sub">{{ i18n.t('dash.riskSub') }}</span></div>
-      <button class="link-btn" type="button" (click)="go({ risk: 'open' })">{{ i18n.t('common.viewAll') }} {{ s.riskOpen }}</button>
+      <div class="panel-title">
+        {{ i18n.t('dash.riskTitle') }}<span class="panel-sub">{{ i18n.t('dash.riskSub') }}</span>
+      </div>
+      <button class="link-btn" type="button" (click)="go({ risk: 'open' })">
+        {{ i18n.t('common.viewAll') }} {{ s.riskOpen }}
+      </button>
     </div>
     <div class="panel-body flush">
       @if (risks().length === 0) {
@@ -93,28 +210,45 @@
           <table class="data compact">
             <thead>
               <tr>
-                <th style="width:96px">{{ i18n.t('col.ticket') }}</th>
+                <th style="width: 96px">{{ i18n.t('col.ticket') }}</th>
                 <th>{{ i18n.t('col.evidence') }}</th>
-                <th style="width:82px">{{ i18n.t('col.priority') }}</th>
-                <th style="width:92px">{{ i18n.t('col.status') }}</th>
-                <th style="width:112px">{{ i18n.t('col.takeover') }}</th>
-                <th style="width:104px">{{ i18n.t('col.detected') }}</th>
-                <th style="width:54px"></th>
+                <th style="width: 82px">{{ i18n.t('col.priority') }}</th>
+                <th style="width: 92px">{{ i18n.t('col.status') }}</th>
+                <th style="width: 112px">{{ i18n.t('col.takeover') }}</th>
+                <th style="width: 104px">{{ i18n.t('col.detected') }}</th>
+                <th style="width: 54px"></th>
               </tr>
             </thead>
             <tbody>
               @for (r of risks(); track r.risk.id) {
                 <tr class="risk-row clickable" (click)="open(r.ticket.id)">
-                  <td class="id">{{ r.ticket.id }}<span class="sub">{{ r.ticket.country_code }} · {{ i18n.languageName(r.ticket.language) }}</span></td>
+                  <td class="id">
+                    {{ r.ticket.id
+                    }}<span class="sub"
+                      >{{ r.ticket.country_code }} ·
+                      {{ i18n.languageName(r.ticket.language) }}</span
+                    >
+                  </td>
                   <td>
                     <div class="risk-evidence">{{ r.ticket.summary_zh }}</div>
-                    <span class="sub">{{ r.ticket.customer?.name }} · {{ r.ticket.site?.name }} · {{ r.ticket.country_code }}</span>
+                    <span class="sub"
+                      >{{ r.ticket.customer?.name }} · {{ r.ticket.site?.name }} ·
+                      {{ r.ticket.country_code }}</span
+                    >
                   </td>
                   <td><app-priority-badge [priority]="r.ticket.priority" /></td>
                   <td><app-status-badge [status]="r.ticket.status" /></td>
                   <td><app-risk-badge [status]="r.risk.status" /></td>
                   <td class="num">{{ i18n.ago(r.risk.detected_at) }}</td>
-                  <td><button class="link-btn" type="button" (click)="$event.stopPropagation(); open(r.ticket.id)">{{ i18n.t('common.process') }}</button></td>
+                  <td>
+                    <button
+                      class="link-btn"
+                      type="button"
+                      (click)="$event.stopPropagation(); open(r.ticket.id)"
+                    >
+                      {{ i18n.t('common.process') }}
+                    </button>
+                  </td>
                 </tr>
               }
             </tbody>
@@ -126,7 +260,9 @@
 
   <section class="panel col-span-4">
     <div class="panel-head">
-      <div class="panel-title">{{ i18n.t('dash.todoTitle') }}<span class="panel-sub">{{ i18n.t('dash.todoSub') }}</span></div>
+      <div class="panel-title">
+        {{ i18n.t('dash.todoTitle') }}<span class="panel-sub">{{ i18n.t('dash.todoSub') }}</span>
+      </div>
       <span class="badge grey">{{ todo().length }} {{ i18n.t('portfolio.ticketUnit') }}</span>
     </div>
     <div class="panel-body flush">
@@ -139,14 +275,22 @@
               <div class="todo-top">
                 <span class="mono tiny">{{ t.id }}</span>
                 <app-priority-badge [priority]="t.priority" />
-                @if (t.riskPending) { <span class="badge red"><i class="dot"></i>{{ i18n.t('risk.queued') }}</span> }
+                @if (t.riskPending) {
+                  <span class="badge red"><i class="dot"></i>{{ i18n.t('risk.queued') }}</span>
+                }
               </div>
-              <div class="todo-title"><a [routerLink]="['/tickets', t.id]" (click)="$event.stopPropagation()">{{ t.title }}</a></div>
+              <div class="todo-title">
+                <a [routerLink]="['/tickets', t.id]" (click)="$event.stopPropagation()">{{
+                  t.title
+                }}</a>
+              </div>
               <div class="todo-meta">
                 <app-status-badge [status]="t.status" />
                 <span class="faint">{{ i18n.ago(t.updated_at) }}</span>
               </div>
-              <div class="todo-next">{{ t.riskPending ? i18n.t('risk.queued') : i18n.status(t.status) }}</div>
+              <div class="todo-next">
+                {{ t.riskPending ? i18n.t('risk.queued') : i18n.status(t.status) }}
+              </div>
             </li>
           }
         </ul>
@@ -157,13 +301,28 @@
 
 <div class="grid-12 mt-16">
   <section class="panel col-span-4">
-    <div class="panel-head"><div class="panel-title">{{ i18n.t('dash.statusDist') }}</div></div>
+    <div class="panel-head">
+      <div class="panel-title">{{ i18n.t('dash.statusDist') }}</div>
+    </div>
     <div class="panel-body">
       <div class="bars">
         @for (row of s.byStatus; track row.status) {
           <button class="bar-row bar-click" type="button" (click)="go({ status: row.status })">
             <span class="bar-label">{{ i18n.status(row.status) }}</span>
-            <span class="bar-track"><span class="bar-fill" [class.teal]="row.status === 'in_progress'" [class.orange]="row.status === 'awaiting_review' || row.status === 'waiting_parts' || row.status === 'waiting_visit' || row.status === 'reopened'" [class.red]="row.status === 'escalated'" [style.width.%]="barWidth(row.count, maxStatus())"></span></span>
+            <span class="bar-track"
+              ><span
+                class="bar-fill"
+                [class.teal]="row.status === 'in_progress'"
+                [class.orange]="
+                  row.status === 'awaiting_review' ||
+                  row.status === 'waiting_parts' ||
+                  row.status === 'waiting_visit' ||
+                  row.status === 'reopened'
+                "
+                [class.red]="row.status === 'escalated'"
+                [style.width.%]="barWidth(row.count, maxStatus())"
+              ></span
+            ></span>
             <span class="bar-val">{{ row.count }}</span>
           </button>
         }
@@ -172,13 +331,17 @@
   </section>
 
   <section class="panel col-span-4">
-    <div class="panel-head"><div class="panel-title">{{ i18n.t('dash.countryDist') }}</div></div>
+    <div class="panel-head">
+      <div class="panel-title">{{ i18n.t('dash.countryDist') }}</div>
+    </div>
     <div class="panel-body">
       <div class="bars">
         @for (row of s.byCountry; track row.key) {
           <button class="bar-row bar-click" type="button" (click)="go({ country: row.key })">
             <span class="bar-label">{{ i18n.countryName(row.key) }} · {{ row.key }}</span>
-            <span class="bar-track"><span class="bar-fill" [style.width.%]="barWidth(row.count, maxCountry())"></span></span>
+            <span class="bar-track"
+              ><span class="bar-fill" [style.width.%]="barWidth(row.count, maxCountry())"></span
+            ></span>
             <span class="bar-val">{{ row.count }}</span>
           </button>
         }
@@ -187,13 +350,22 @@
   </section>
 
   <section class="panel col-span-4">
-    <div class="panel-head"><div class="panel-title">{{ i18n.t('dash.categoryDist') }}</div></div>
+    <div class="panel-head">
+      <div class="panel-title">{{ i18n.t('dash.categoryDist') }}</div>
+    </div>
     <div class="panel-body">
       <div class="bars">
         @for (row of s.byCategory.slice(0, 9); track row.id) {
           <button class="bar-row bar-click" type="button" (click)="go({ category: row.id })">
-            <span class="bar-label" [title]="row.name">{{ row.id === 'unconfirmed' ? i18n.t('dash.pending') : i18n.categoryName(row.id) }}</span>
-            <span class="bar-track"><span class="bar-fill teal" [style.width.%]="barWidth(row.count, maxCategory())"></span></span>
+            <span class="bar-label" [title]="row.name">{{
+              row.id === 'unconfirmed' ? i18n.t('dash.pending') : i18n.categoryName(row.id)
+            }}</span>
+            <span class="bar-track"
+              ><span
+                class="bar-fill teal"
+                [style.width.%]="barWidth(row.count, maxCategory())"
+              ></span
+            ></span>
             <span class="bar-val">{{ row.count }}</span>
           </button>
         }
@@ -206,17 +378,35 @@
   <section class="panel col-span-8">
     <div class="panel-head">
       <div class="panel-title">{{ i18n.t('dash.oldest') }}</div>
-      <button class="link-btn" type="button" (click)="go({ scope: 'unresolved' })">全部未解决</button>
+      <button class="link-btn" type="button" (click)="go({ scope: 'unresolved' })">
+        全部未解决
+      </button>
     </div>
     <div class="panel-body flush">
       <div class="table-wrap">
         <table class="data compact">
-          <thead><tr><th style="width:92px">{{ i18n.t('col.ticket') }}</th><th>{{ i18n.t('col.summary') }}</th><th style="width:88px">{{ i18n.t('col.countryLang') }}</th><th style="width:78px">{{ i18n.t('col.priority') }}</th><th style="width:96px">{{ i18n.t('col.status') }}</th><th style="width:96px">{{ i18n.t('col.owner') }}</th><th style="width:78px">{{ i18n.t('col.waiting') }}</th></tr></thead>
+          <thead>
+            <tr>
+              <th style="width: 92px">{{ i18n.t('col.ticket') }}</th>
+              <th>{{ i18n.t('col.summary') }}</th>
+              <th style="width: 88px">{{ i18n.t('col.countryLang') }}</th>
+              <th style="width: 78px">{{ i18n.t('col.priority') }}</th>
+              <th style="width: 96px">{{ i18n.t('col.status') }}</th>
+              <th style="width: 96px">{{ i18n.t('col.owner') }}</th>
+              <th style="width: 78px">{{ i18n.t('col.waiting') }}</th>
+            </tr>
+          </thead>
           <tbody>
             @for (t of oldest(); track t.id) {
               <tr class="clickable" (click)="open(t.id)">
-                <td class="id"><a [routerLink]="['/tickets', t.id]" (click)="$event.stopPropagation()">{{ t.id }}</a></td>
-                <td>{{ t.summary_zh }}<span class="sub">{{ t.title }}</span></td>
+                <td class="id">
+                  <a [routerLink]="['/tickets', t.id]" (click)="$event.stopPropagation()">{{
+                    t.id
+                  }}</a>
+                </td>
+                <td>
+                  {{ t.summary_zh }}<span class="sub">{{ t.title }}</span>
+                </td>
                 <td>{{ t.country_code }} · {{ i18n.languageName(t.language) }}</td>
                 <td><app-priority-badge [priority]="t.priority" /></td>
                 <td><app-status-badge [status]="t.status" /></td>
@@ -231,29 +421,57 @@
   </section>
 
   <section class="panel col-span-4">
-    <div class="panel-head"><div class="panel-title">{{ i18n.t('dash.sla') }}</div></div>
+    <div class="panel-head">
+      <div class="panel-title">{{ i18n.t('dash.sla') }}</div>
+    </div>
     <div class="panel-body">
-      <div class="metric-row"><span class="metric-label">首响超时（未解决）</span><span class="metric-val" style="color:var(--red)">{{ s.overdueFirstResponse }}</span></div>
-      <div class="metric-row"><span class="metric-label">普通解决目标超时</span><span class="metric-val" style="color:var(--orange)">{{ s.overdueResolution }}</span></div>
-      <div class="metric-row"><span class="metric-label">待客户补充</span><span class="metric-val">{{ s.waitingCustomer }}</span></div>
-      <div class="metric-row"><span class="metric-label">已复核待派工</span><span class="metric-val">{{ s.pendingDispatch }}</span></div>
-      <div class="metric-row"><span class="metric-label">已升级待处理</span><span class="metric-val">{{ s.escalated }}</span></div>
-      <div class="metric-row"><span class="metric-label">风险已接管 / 待接管</span><span class="metric-val">{{ s.riskTakenOver }} / {{ s.riskPending }}</span></div>
+      <div class="metric-row">
+        <span class="metric-label">首响超时（未解决）</span
+        ><span class="metric-val" style="color: var(--red)">{{ s.overdueFirstResponse }}</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">普通解决目标超时</span
+        ><span class="metric-val" style="color: var(--orange)">{{ s.overdueResolution }}</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">待客户补充</span
+        ><span class="metric-val">{{ s.waitingCustomer }}</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">已复核待派工</span
+        ><span class="metric-val">{{ s.pendingDispatch }}</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">已升级待处理</span
+        ><span class="metric-val">{{ s.escalated }}</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">风险已接管 / 待接管</span
+        ><span class="metric-val">{{ s.riskTakenOver }} / {{ s.riskPending }}</span>
+      </div>
 
       <div class="mt-12 label">优先级分布（待判定单列）</div>
       <div class="stacked mt-4">
         @for (p of s.byPriority; track p.priority) {
-          <span [style.width.%]="stackedWidth(p.count)" [style.background]="priorityColor(p.priority)" [title]="p.priority + ': ' + p.count"></span>
+          <span
+            [style.width.%]="stackedWidth(p.count)"
+            [style.background]="priorityColor(p.priority)"
+            [title]="p.priority + ': ' + p.count"
+          ></span>
         }
       </div>
       <div class="legend">
         @for (p of s.byPriority; track p.priority) {
-          <span><i [style.background]="priorityColor(p.priority)"></i>{{ p.priority === 'none' ? i18n.t('dash.pending') : p.priority }} {{ p.count }}</span>
+          <span
+            ><i [style.background]="priorityColor(p.priority)"></i
+            >{{ p.priority === 'none' ? i18n.t('dash.pending') : p.priority }} {{ p.count }}</span
+          >
         }
       </div>
 
       <div class="note mt-12">
-        P0 不参与普通解决目标达成率；“预设演示建议”不代表真实模型准确率。种子基线：全量 492、未解决 397、未首响超时 87。
+        P0 不参与普通解决目标达成率；“预设演示建议”不代表真实模型准确率。种子基线：全量 492、未解决
+        397、未首响超时 87。
       </div>
     </div>
   </section>

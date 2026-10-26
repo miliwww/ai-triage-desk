@@ -8,7 +8,9 @@ describe('Service workflow with the shipped dataset', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      providers: [{ provide: DataService, useValue: { load: vi.fn().mockResolvedValue(demoData()) } }],
+      providers: [
+        { provide: DataService, useValue: { load: vi.fn().mockResolvedValue(demoData()) } },
+      ],
     });
     store = TestBed.inject(Store);
     // Reading derived reference data before loading must not cache empty arrays forever.
@@ -38,7 +40,12 @@ describe('Service workflow with the shipped dataset', () => {
   it('matches the published baseline and resolves reference relationships', () => {
     expect(store.ready()).toBe(true);
     expect(store.loading()).toBe(false);
-    expect(store.stats()).toMatchObject({ total: 492, unresolved: 397, overdueFirstResponse: 87, riskOpen: 30 });
+    expect(store.stats()).toMatchObject({
+      total: 492,
+      unresolved: 397,
+      overdueFirstResponse: 87,
+      riskOpen: 30,
+    });
     expect(store.teams()).toHaveLength(27);
     expect(store.view('WO-0047')?.customer?.id).toBeTruthy();
     expect(store.view('WO-0047')?.product?.id).toBeTruthy();
@@ -51,11 +58,19 @@ describe('Service workflow with the shipped dataset', () => {
 
   it('requires a reason for a correction and preserves the original proposal', () => {
     const before = structuredClone(store.suggestionOf('WO-0047')!);
-    const input = { categoryId: before.proposal.category_id, priority: 'P2' as const,
-      teamId: before.proposal.team_id, missingFields: [], note: '', mode: 'corrected' as const };
+    const input = {
+      categoryId: before.proposal.category_id,
+      priority: 'P2' as const,
+      teamId: before.proposal.team_id,
+      missingFields: [],
+      note: '',
+      mode: 'corrected' as const,
+    };
     expect(store.reviewSuggestion('WO-0047', input).ok).toBe(false);
     expect(store.suggestionOf('WO-0047')).toEqual(before);
-    expect(store.reviewSuggestion('WO-0047', { ...input, note: '客户已恢复供电，调整跟进优先级。' }).ok).toBe(true);
+    expect(
+      store.reviewSuggestion('WO-0047', { ...input, note: '客户已恢复供电，调整跟进优先级。' }).ok,
+    ).toBe(true);
     expect(store.suggestionOf('WO-0047')?.proposal).toEqual(before.proposal);
     expect(store.suggestionOf('WO-0047')?.review.status).toBe('corrected');
     expect(store.view('WO-0047')?.priority).toBe('P2');
@@ -72,15 +87,23 @@ describe('Service workflow with the shipped dataset', () => {
     const original = structuredClone(store.suggestionOf('WO-0047')?.proposal);
     expect(assign().ok).toBe(true);
     expect(store.startProgress('WO-0047', '核对客户提供的运行记录。').ok).toBe(true);
-    expect(store.resolve('WO-0047', '演示处理结果：客户确认备用照明恢复。', '客户回访记录。').ok).toBe(true);
+    expect(
+      store.resolve('WO-0047', '演示处理结果：客户确认备用照明恢复。', '客户回访记录。').ok,
+    ).toBe(true);
     expect(store.close('WO-0047', '').ok).toBe(false);
     expect(store.close('WO-0047', '客户回访确认，无新增问题。').ok).toBe(true);
     expect(store.view('WO-0047')?.status).toBe('closed');
     expect(store.suggestionOf('WO-0047')?.proposal).toEqual(original);
     expect(store.outcomeOf('WO-0047')?.closeBasisZh).toContain('客户回访');
-    expect(store.eventsOf('WO-0047').map((event) => event.type)).toEqual(expect.arrayContaining([
-      'ai_review_confirmed', 'assigned', 'progress_started', 'resolved', 'closed',
-    ]));
+    expect(store.eventsOf('WO-0047').map((event) => event.type)).toEqual(
+      expect.arrayContaining([
+        'ai_review_confirmed',
+        'assigned',
+        'progress_started',
+        'resolved',
+        'closed',
+      ]),
+    );
   });
 
   it('keeps risk queued until takeover and mitigation are explicitly recorded', () => {
@@ -94,7 +117,9 @@ describe('Service workflow with the shipped dataset', () => {
     expect(store.view('WO-0150')?.nextActionZh).not.toContain('确认接管');
     expect(store.resolve('WO-0150', '直接结案。', '').ok).toBe(false);
     expect(store.takeOverRisk('WO-0150', '重复接管。', 4).ok).toBe(false);
-    expect(store.mitigateRisk('WO-0150', '已记录现场负责人提供的缓解依据，继续服务跟进。').ok).toBe(true);
+    expect(store.mitigateRisk('WO-0150', '已记录现场负责人提供的缓解依据，继续服务跟进。').ok).toBe(
+      true,
+    );
     expect(store.stats().riskOpen).toBe(29);
     expect(store.view('WO-0150')?.status).toBe('escalated');
     expect(store.view('WO-0150')?.nextActionZh).toContain('继续服务处理');

@@ -5,45 +5,91 @@
     <p class="page-desc">{{ i18n.t('riskPage.desc') }}</p>
   </div>
   <div class="row gap-8">
-    <button class="btn" type="button" (click)="showEscalate.set(!showEscalate())">{{ i18n.t('detail.escalate') }}</button>
-    <a class="btn" routerLink="/tickets" [queryParams]="{ overdue: 'first' }">{{ i18n.t('riskPage.viewFirst') }}</a>
+    <button class="btn" type="button" (click)="showEscalate.set(!showEscalate())">
+      {{ i18n.t('detail.escalate') }}
+    </button>
+    <a class="btn" routerLink="/tickets" [queryParams]="{ overdue: 'first' }">{{
+      i18n.t('riskPage.viewFirst')
+    }}</a>
   </div>
 </div>
 
 @if (showEscalate()) {
   <section class="panel mb-16 escalate-panel">
     <div class="panel-head">
-      <div class="panel-title">{{ i18n.t('riskPage.manualTitle') }}<span class="panel-sub">任意未终止工单均可直接升级，缺资料不阻塞</span></div>
+      <div class="panel-title">
+        {{ i18n.t('riskPage.manualTitle')
+        }}<span class="panel-sub">任意未终止工单均可直接升级，缺资料不阻塞</span>
+      </div>
       <button class="link-btn" type="button" (click)="showEscalate.set(false)">收起</button>
     </div>
     <div class="panel-body">
       <div class="form-grid">
         <div class="field">
           <label>工单编号</label>
-          <input class="input" [value]="escalateId()" (input)="escalateId.set($any($event.target).value)" name="escalate-ticket" aria-label="工单编号" placeholder="例如 WO-0001" />
+          <input
+            class="input"
+            [value]="escalateId()"
+            (input)="escalateId.set($any($event.target).value)"
+            name="escalate-ticket"
+            aria-label="工单编号"
+            placeholder="例如 WO-0001"
+          />
         </div>
         <div class="field">
           <label>处理口径</label>
-          <label class="check"><input type="checkbox" [checked]="escalateP0()" (change)="escalateP0.set($any($event.target).checked)" /> 按 P0 安全紧急处理</label>
+          <label class="check"
+            ><input
+              type="checkbox"
+              [checked]="escalateP0()"
+              (change)="escalateP0.set($any($event.target).checked)"
+            />
+            按 P0 安全紧急处理</label
+          >
         </div>
         <div class="field full">
           <label>{{ i18n.t('riskPage.manualReason') }}</label>
-          <textarea class="textarea" rows="2" [value]="escalateReason()" (input)="escalateReason.set($any($event.target).value)" name="escalate-reason" aria-label="升级原因" placeholder="例如：客户补充设备附近有焦糊味，人员已远离设备。"></textarea>
+          <textarea
+            class="textarea"
+            rows="2"
+            [value]="escalateReason()"
+            (input)="escalateReason.set($any($event.target).value)"
+            name="escalate-reason"
+            aria-label="升级原因"
+            placeholder="例如：客户补充设备附近有焦糊味，人员已远离设备。"
+          ></textarea>
         </div>
       </div>
       <div class="row-between mt-8">
-        <span class="hint">升级只会进入待接管队列，不会自动显示“已接管”，也不会给出拆机或带电操作步骤。</span>
-        <button class="btn danger" type="button" [disabled]="!escalateId().trim() || !escalateReason().trim()" (click)="escalate()">{{ i18n.t('riskPage.manualSubmit') }}</button>
+        <span class="hint"
+          >升级只会进入待接管队列，不会自动显示“已接管”，也不会给出拆机或带电操作步骤。</span
+        >
+        <button
+          class="btn danger"
+          type="button"
+          [disabled]="!escalateId().trim() || !escalateReason().trim()"
+          (click)="escalate()"
+        >
+          {{ i18n.t('riskPage.manualSubmit') }}
+        </button>
       </div>
     </div>
   </section>
 }
 
 <div class="pill-tabs mb-16">
-  <button type="button" [class.on]="view() === 'risk'" (click)="setView('risk')">{{ i18n.t('riskPage.viewRisk') }} <span class="c">{{ risks().length }}</span></button>
-  <button type="button" [class.on]="view() === 'pending'" (click)="setView('pending')">{{ i18n.t('riskPage.viewPending') }} <span class="c">{{ pending().length }}</span></button>
-  <button type="button" [class.on]="view() === 'first'" (click)="setView('first')">{{ i18n.t('riskPage.viewFirst') }} <span class="c">{{ firstOverdue().length }}</span></button>
-  <button type="button" [class.on]="view() === 'resolution'" (click)="setView('resolution')">{{ i18n.t('riskPage.viewResolution') }} <span class="c">{{ resolutionOverdue().length }}</span></button>
+  <button type="button" [class.on]="view() === 'risk'" (click)="setView('risk')">
+    {{ i18n.t('riskPage.viewRisk') }} <span class="c">{{ risks().length }}</span>
+  </button>
+  <button type="button" [class.on]="view() === 'pending'" (click)="setView('pending')">
+    {{ i18n.t('riskPage.viewPending') }} <span class="c">{{ pending().length }}</span>
+  </button>
+  <button type="button" [class.on]="view() === 'first'" (click)="setView('first')">
+    {{ i18n.t('riskPage.viewFirst') }} <span class="c">{{ firstOverdue().length }}</span>
+  </button>
+  <button type="button" [class.on]="view() === 'resolution'" (click)="setView('resolution')">
+    {{ i18n.t('riskPage.viewResolution') }} <span class="c">{{ resolutionOverdue().length }}</span>
+  </button>
 </div>
 
 @switch (view()) {
@@ -51,8 +97,13 @@
     <div class="risk-layout">
       <section class="panel">
         <div class="panel-head">
-          <div class="panel-title">{{ i18n.t('riskPage.listTitle') }}<span class="panel-sub">{{ i18n.t('riskPage.listSub') }}</span></div>
-          <span class="badge red"><i class="dot"></i>{{ i18n.t('risk.queued') }} {{ pending().length }}</span>
+          <div class="panel-title">
+            {{ i18n.t('riskPage.listTitle')
+            }}<span class="panel-sub">{{ i18n.t('riskPage.listSub') }}</span>
+          </div>
+          <span class="badge red"
+            ><i class="dot"></i>{{ i18n.t('risk.queued') }} {{ pending().length }}</span
+          >
         </div>
         <div class="panel-body flush">
           @if (risks().length === 0) {
@@ -61,12 +112,26 @@
             <div class="table-wrap">
               <table class="data risk-table">
                 <thead>
-                  <tr><th style="width:92px">{{ i18n.t('col.ticket') }}</th><th>{{ i18n.t('col.evidence') }}</th><th style="width:64px">{{ i18n.t('col.priority') }}</th><th style="width:96px">{{ i18n.t('col.status') }}</th><th style="width:104px">{{ i18n.t('col.takeover') }}</th><th style="width:96px">{{ i18n.t('col.detected') }}</th><th style="width:54px"></th></tr>
+                  <tr>
+                    <th style="width: 92px">{{ i18n.t('col.ticket') }}</th>
+                    <th>{{ i18n.t('col.evidence') }}</th>
+                    <th style="width: 64px">{{ i18n.t('col.priority') }}</th>
+                    <th style="width: 96px">{{ i18n.t('col.status') }}</th>
+                    <th style="width: 104px">{{ i18n.t('col.takeover') }}</th>
+                    <th style="width: 96px">{{ i18n.t('col.detected') }}</th>
+                    <th style="width: 54px"></th>
+                  </tr>
                 </thead>
                 <tbody>
                   @for (r of risks(); track r.risk.id) {
-                    <tr class="clickable risk-row" [class.selected]="selected()?.ticket?.id === r.ticket.id" (click)="select(r.ticket.id)">
-                      <td class="id">{{ r.ticket.id }}<span class="sub">{{ r.ticket.country_code }}</span></td>
+                    <tr
+                      class="clickable risk-row"
+                      [class.selected]="selected()?.ticket?.id === r.ticket.id"
+                      (click)="select(r.ticket.id)"
+                    >
+                      <td class="id">
+                        {{ r.ticket.id }}<span class="sub">{{ r.ticket.country_code }}</span>
+                      </td>
                       <td>
                         <div class="risk-evidence">{{ r.ticket.summary_zh }}</div>
                         <span class="sub">{{ evidence(r.ticket.id) }}</span>
@@ -75,7 +140,15 @@
                       <td><app-status-badge [status]="r.ticket.status" /></td>
                       <td><app-risk-badge [status]="r.risk.status" /></td>
                       <td class="num">{{ i18n.ago(r.risk.detected_at) }}</td>
-                      <td><button class="link-btn" type="button" (click)="$event.stopPropagation(); open(r.ticket.id)">{{ i18n.t('common.detail') }}</button></td>
+                      <td>
+                        <button
+                          class="link-btn"
+                          type="button"
+                          (click)="$event.stopPropagation(); open(r.ticket.id)"
+                        >
+                          {{ i18n.t('common.detail') }}
+                        </button>
+                      </td>
                     </tr>
                   }
                 </tbody>
@@ -89,7 +162,10 @@
         @if (selected(); as sel) {
           <section class="panel">
             <div class="panel-head">
-              <div class="panel-title">{{ i18n.t('riskPage.panelTitle') }}<span class="panel-sub">{{ sel.ticket.id }}</span></div>
+              <div class="panel-title">
+                {{ i18n.t('riskPage.panelTitle')
+                }}<span class="panel-sub">{{ sel.ticket.id }}</span>
+              </div>
               <app-risk-badge [status]="sel.risk.status" />
             </div>
             <div class="panel-body">
@@ -101,13 +177,53 @@
               </div>
 
               <dl class="kv mt-12">
-                <dt>{{ i18n.t('riskPage.ticket') }}</dt><dd><a [routerLink]="['/tickets', sel.ticket.id]">{{ sel.ticket.id }}</a> · {{ sel.ticket.summary_zh }}</dd>
-                <dt>{{ i18n.t('riskPage.customerSite') }}</dt><dd>{{ sel.ticket.customer?.name }}<span class="sub">{{ sel.ticket.site?.name }} · {{ i18n.countryName(sel.ticket.country_code) }}</span></dd>
-                <dt>{{ i18n.t('riskPage.device') }}</dt><dd>{{ sel.ticket.product?.model }}<span class="sub mono">{{ sel.ticket.device?.serial_number ?? 'SN 未提供（不阻塞）' }}</span></dd>
-                <dt>{{ i18n.t('riskPage.team') }}</dt><dd>{{ sel.team?.name_zh ?? '未确认' }}<span class="sub">{{ sel.agent?.display_name ?? '负责人待确认' }}</span></dd>
-                <dt>{{ i18n.t('riskPage.detected') }}</dt><dd>{{ fmtDateTime(sel.risk.detected_at) }}<span class="sub">{{ i18n.t('riskPage.source') }}: {{ sel.risk.source === 'seed_flag' ? i18n.t('riskPage.sourceSeed') : i18n.t('riskPage.sourceManual') }}</span></dd>
-                <dt>{{ i18n.t('riskPage.takeoverTime') }}</dt><dd>{{ sel.risk.taken_over_at ? fmtDateTime(sel.risk.taken_over_at) : i18n.t('riskPage.notTakenOver') }}</dd>
-                <dt>{{ i18n.t('riskPage.nextUpdate') }}</dt><dd>{{ fmtDateTime(sel.risk.next_update_at) }}</dd>
+                <dt>{{ i18n.t('riskPage.ticket') }}</dt>
+                <dd>
+                  <a [routerLink]="['/tickets', sel.ticket.id]">{{ sel.ticket.id }}</a> ·
+                  {{ sel.ticket.summary_zh }}
+                </dd>
+                <dt>{{ i18n.t('riskPage.customerSite') }}</dt>
+                <dd>
+                  {{ sel.ticket.customer?.name
+                  }}<span class="sub"
+                    >{{ sel.ticket.site?.name }} ·
+                    {{ i18n.countryName(sel.ticket.country_code) }}</span
+                  >
+                </dd>
+                <dt>{{ i18n.t('riskPage.device') }}</dt>
+                <dd>
+                  {{ sel.ticket.product?.model
+                  }}<span class="sub mono">{{
+                    sel.ticket.device?.serial_number ?? 'SN 未提供（不阻塞）'
+                  }}</span>
+                </dd>
+                <dt>{{ i18n.t('riskPage.team') }}</dt>
+                <dd>
+                  {{ sel.team?.name_zh ?? '未确认'
+                  }}<span class="sub">{{ sel.agent?.display_name ?? '负责人待确认' }}</span>
+                </dd>
+                <dt>{{ i18n.t('riskPage.detected') }}</dt>
+                <dd>
+                  {{ fmtDateTime(sel.risk.detected_at)
+                  }}<span class="sub"
+                    >{{ i18n.t('riskPage.source') }}:
+                    {{
+                      sel.risk.source === 'seed_flag'
+                        ? i18n.t('riskPage.sourceSeed')
+                        : i18n.t('riskPage.sourceManual')
+                    }}</span
+                  >
+                </dd>
+                <dt>{{ i18n.t('riskPage.takeoverTime') }}</dt>
+                <dd>
+                  {{
+                    sel.risk.taken_over_at
+                      ? fmtDateTime(sel.risk.taken_over_at)
+                      : i18n.t('riskPage.notTakenOver')
+                  }}
+                </dd>
+                <dt>{{ i18n.t('riskPage.nextUpdate') }}</dt>
+                <dd>{{ fmtDateTime(sel.risk.next_update_at) }}</dd>
               </dl>
 
               <div class="label mt-12">{{ i18n.t('riskPage.originalDesc') }}</div>
@@ -115,26 +231,74 @@
 
               @if (sel.risk.status === 'queued') {
                 <div class="label mt-12">{{ i18n.t('riskPage.takeoverNote') }}</div>
-                <textarea class="textarea mt-4" rows="3" [value]="takeoverNote()" (input)="takeoverNote.set($any($event.target).value)" name="takeover-note" aria-label="接管说明" placeholder="例如：已电话联系现场确认人员安全并远离设备；安排当地服务商上门，记录风险后续。"></textarea>
+                <textarea
+                  class="textarea mt-4"
+                  rows="3"
+                  [value]="takeoverNote()"
+                  (input)="takeoverNote.set($any($event.target).value)"
+                  name="takeover-note"
+                  aria-label="接管说明"
+                  placeholder="例如：已电话联系现场确认人员安全并远离设备；安排当地服务商上门，记录风险后续。"
+                ></textarea>
                 <div class="row gap-8 mt-8">
-                  <select class="select" name="next-update-hours" aria-label="下次更新时间" [value]="nextUpdateHours()" (change)="nextUpdateHours.set(+$any($event.target).value)">
+                  <select
+                    class="select"
+                    name="next-update-hours"
+                    aria-label="下次更新时间"
+                    [value]="nextUpdateHours()"
+                    (change)="nextUpdateHours.set(+$any($event.target).value)"
+                  >
                     <option [value]="1" [selected]="nextUpdateHours() === 1">1 小时内更新</option>
                     <option [value]="4" [selected]="nextUpdateHours() === 4">4 小时内更新</option>
-                    <option [value]="24" [selected]="nextUpdateHours() === 24">24 小时内更新</option>
+                    <option [value]="24" [selected]="nextUpdateHours() === 24">
+                      24 小时内更新
+                    </option>
                   </select>
-                  <button class="btn danger" type="button" [disabled]="!takeoverNote().trim()" (click)="takeOver()">{{ i18n.t('riskPage.confirmTakeover') }}</button>
+                  <button
+                    class="btn danger"
+                    type="button"
+                    [disabled]="!takeoverNote().trim()"
+                    (click)="takeOver()"
+                  >
+                    {{ i18n.t('riskPage.confirmTakeover') }}
+                  </button>
                 </div>
-                <div class="hint mt-8">接管记录服务责任，不等于事故已排除或设备已修复，不提供维修和带电操作步骤。</div>
+                <div class="hint mt-8">
+                  接管记录服务责任，不等于事故已排除或设备已修复，不提供维修和带电操作步骤。
+                </div>
               } @else if (sel.risk.status === 'taken_over') {
-                <div class="note mt-12">{{ i18n.t('riskPage.takenOverBy') }}: {{ store.agentName(sel.risk.taken_over_by) }} · {{ fmtDateTime(sel.risk.taken_over_at) }}<br />{{ sel.risk.takeover_note_zh }}<br />{{ i18n.t('riskPage.nextUpdate') }}: {{ fmtDateTime(sel.risk.next_update_at) }}</div>
+                <div class="note mt-12">
+                  {{ i18n.t('riskPage.takenOverBy') }}:
+                  {{ store.agentName(sel.risk.taken_over_by) }} ·
+                  {{ fmtDateTime(sel.risk.taken_over_at) }}<br />{{ sel.risk.takeover_note_zh
+                  }}<br />{{ i18n.t('riskPage.nextUpdate') }}:
+                  {{ fmtDateTime(sel.risk.next_update_at) }}
+                </div>
                 <div class="label mt-12">{{ i18n.t('riskPage.mitigateNote') }}</div>
-                <textarea class="textarea mt-4" rows="3" [value]="mitigateNote()" (input)="mitigateNote.set($any($event.target).value)" name="mitigate-note" aria-label="风险缓解依据" placeholder="例如：现场确认无烟雾异味，已断开设备并隔离，等待服务商检查。"></textarea>
-                <button class="btn teal mt-8" type="button" [disabled]="!mitigateNote().trim()" (click)="mitigate()">{{ i18n.t('riskPage.recordMitigation') }}</button>
+                <textarea
+                  class="textarea mt-4"
+                  rows="3"
+                  [value]="mitigateNote()"
+                  (input)="mitigateNote.set($any($event.target).value)"
+                  name="mitigate-note"
+                  aria-label="风险缓解依据"
+                  placeholder="例如：现场确认无烟雾异味，已断开设备并隔离，等待服务商检查。"
+                ></textarea>
+                <button
+                  class="btn teal mt-8"
+                  type="button"
+                  [disabled]="!mitigateNote().trim()"
+                  (click)="mitigate()"
+                >
+                  {{ i18n.t('riskPage.recordMitigation') }}
+                </button>
               }
             </div>
           </section>
         } @else {
-          <section class="panel"><app-empty title="暂无风险工单" hint="可在右上角手工升级任意未终止工单。" /></section>
+          <section class="panel">
+            <app-empty title="暂无风险工单" hint="可在右上角手工升级任意未终止工单。" />
+          </section>
         }
       </aside>
     </div>
@@ -142,24 +306,56 @@
 
   @case ('pending') {
     <section class="panel">
-      <div class="panel-head"><div class="panel-title">待人工接管<span class="panel-sub">“已入队”不等于“已接管”</span></div><span class="badge red"><i class="dot"></i>{{ pending().length }} 条</span></div>
+      <div class="panel-head">
+        <div class="panel-title">
+          待人工接管<span class="panel-sub">“已入队”不等于“已接管”</span>
+        </div>
+        <span class="badge red"><i class="dot"></i>{{ pending().length }} 条</span>
+      </div>
       <div class="panel-body flush">
         @if (pending().length === 0) {
           <app-empty title="没有待接管风险" hint="已全部确认接管或风险已记录缓解。" />
         } @else {
           <div class="table-wrap">
             <table class="data">
-              <thead><tr><th style="width:92px">{{ i18n.t('col.ticket') }}</th><th>{{ i18n.t('col.summary') }}</th><th style="width:110px">{{ i18n.t('col.customer') }} / {{ i18n.t('common.country') }}</th><th style="width:66px">{{ i18n.t('col.priority') }}</th><th style="width:100px">{{ i18n.t('col.responsibleTeam') }}</th><th style="width:92px">{{ i18n.t('col.detected') }}</th><th style="width:90px">{{ i18n.t('col.action') }}</th></tr></thead>
+              <thead>
+                <tr>
+                  <th style="width: 92px">{{ i18n.t('col.ticket') }}</th>
+                  <th>{{ i18n.t('col.summary') }}</th>
+                  <th style="width: 110px">
+                    {{ i18n.t('col.customer') }} / {{ i18n.t('common.country') }}
+                  </th>
+                  <th style="width: 66px">{{ i18n.t('col.priority') }}</th>
+                  <th style="width: 100px">{{ i18n.t('col.responsibleTeam') }}</th>
+                  <th style="width: 92px">{{ i18n.t('col.detected') }}</th>
+                  <th style="width: 90px">{{ i18n.t('col.action') }}</th>
+                </tr>
+              </thead>
               <tbody>
                 @for (r of pending(); track r.risk.id) {
                   <tr class="risk-row">
                     <td class="id">{{ r.ticket.id }}</td>
-                    <td>{{ r.ticket.summary_zh }}<span class="sub">{{ evidence(r.ticket.id) }}</span></td>
-                    <td>{{ r.ticket.customer?.name }}<span class="sub">{{ r.ticket.country_code }} · {{ LANG_LABEL[r.ticket.language] }}</span></td>
+                    <td>
+                      {{ r.ticket.summary_zh }}<span class="sub">{{ evidence(r.ticket.id) }}</span>
+                    </td>
+                    <td>
+                      {{ r.ticket.customer?.name
+                      }}<span class="sub"
+                        >{{ r.ticket.country_code }} · {{ LANG_LABEL[r.ticket.language] }}</span
+                      >
+                    </td>
                     <td><app-priority-badge [priority]="r.ticket.priority" /></td>
                     <td>{{ r.team?.name_zh ?? '未确认' }}</td>
                     <td class="num">{{ i18n.ago(r.risk.detected_at) }}</td>
-                    <td><button class="btn sm danger" type="button" (click)="setView('risk'); select(r.ticket.id)">{{ i18n.t('common.process') }}</button></td>
+                    <td>
+                      <button
+                        class="btn sm danger"
+                        type="button"
+                        (click)="setView('risk'); select(r.ticket.id)"
+                      >
+                        {{ i18n.t('common.process') }}
+                      </button>
+                    </td>
                   </tr>
                 }
               </tbody>
@@ -172,25 +368,59 @@
 
   @case ('first') {
     <section class="panel">
-      <div class="panel-head"><div class="panel-title">待首响超时<span class="panel-sub">未解决且尚无客户可见人工回复</span></div><span class="badge red"><i class="dot"></i>{{ firstOverdue().length }} 条</span></div>
+      <div class="panel-head">
+        <div class="panel-title">
+          待首响超时<span class="panel-sub">未解决且尚无客户可见人工回复</span>
+        </div>
+        <span class="badge red"><i class="dot"></i>{{ firstOverdue().length }} 条</span>
+      </div>
       <div class="panel-body flush">
         <div class="table-wrap">
           <table class="data">
-            <thead><tr><th style="width:92px">{{ i18n.t('col.ticket') }}</th><th>{{ i18n.t('col.summary') }}</th><th style="width:110px">{{ i18n.t('col.countryLang') }}</th><th style="width:66px">{{ i18n.t('col.priority') }}</th><th style="width:104px">{{ i18n.t('col.status') }}</th><th style="width:112px">{{ i18n.t('col.firstResponse') }}</th><th style="width:100px">{{ i18n.t('col.overdue') }}</th><th style="width:54px"></th></tr></thead>
+            <thead>
+              <tr>
+                <th style="width: 92px">{{ i18n.t('col.ticket') }}</th>
+                <th>{{ i18n.t('col.summary') }}</th>
+                <th style="width: 110px">{{ i18n.t('col.countryLang') }}</th>
+                <th style="width: 66px">{{ i18n.t('col.priority') }}</th>
+                <th style="width: 104px">{{ i18n.t('col.status') }}</th>
+                <th style="width: 112px">{{ i18n.t('col.firstResponse') }}</th>
+                <th style="width: 100px">{{ i18n.t('col.overdue') }}</th>
+                <th style="width: 54px"></th>
+              </tr>
+            </thead>
             <tbody>
               @for (t of firstOverdue(); track t.id) {
                 <tr class="clickable" (click)="open(t.id)">
                   <td class="id">{{ t.id }}</td>
-                  <td>{{ t.summary_zh }}<span class="sub">{{ t.title }}</span></td>
+                  <td>
+                    {{ t.summary_zh }}<span class="sub">{{ t.title }}</span>
+                  </td>
                   <td>{{ t.country_code }} · {{ LANG_LABEL[t.language] }}</td>
                   <td><app-priority-badge [priority]="t.priority" /></td>
                   <td><app-status-badge [status]="t.status" /></td>
                   <td class="num">{{ fmtDateTime(t.sla.first_response_due_at) }}</td>
-                  <td><span class="badge red"><i class="dot"></i>{{ overdueMinutes(t.sla.first_response_due_at) }} 分</span></td>
-                  <td><button class="link-btn" type="button" (click)="$event.stopPropagation(); open(t.id)">处理</button></td>
+                  <td>
+                    <span class="badge red"
+                      ><i class="dot"></i>{{ overdueMinutes(t.sla.first_response_due_at) }} 分</span
+                    >
+                  </td>
+                  <td>
+                    <button
+                      class="link-btn"
+                      type="button"
+                      (click)="$event.stopPropagation(); open(t.id)"
+                    >
+                      处理
+                    </button>
+                  </td>
                 </tr>
               } @empty {
-                <tr><td colspan="8"><app-empty title="没有首响超时工单" hint="超时按严格大于到期时间计算。" /></td></tr>
+                <tr>
+                  <td colspan="8">
+                    <app-empty title="没有首响超时工单" hint="超时按严格大于到期时间计算。" />
+                  </td>
+                </tr>
               }
             </tbody>
           </table>
@@ -201,25 +431,62 @@
 
   @case ('resolution') {
     <section class="panel">
-      <div class="panel-head"><div class="panel-title">普通解决目标超时<span class="panel-sub">P0 不参与普通解决达成率</span></div><span class="badge orange"><i class="dot"></i>{{ resolutionOverdue().length }} 条</span></div>
+      <div class="panel-head">
+        <div class="panel-title">
+          普通解决目标超时<span class="panel-sub">P0 不参与普通解决达成率</span>
+        </div>
+        <span class="badge orange"><i class="dot"></i>{{ resolutionOverdue().length }} 条</span>
+      </div>
       <div class="panel-body flush">
         <div class="table-wrap">
           <table class="data">
-            <thead><tr><th style="width:92px">{{ i18n.t('col.ticket') }}</th><th>{{ i18n.t('col.summary') }}</th><th style="width:110px">{{ i18n.t('col.countryLang') }}</th><th style="width:66px">{{ i18n.t('col.priority') }}</th><th style="width:104px">{{ i18n.t('col.status') }}</th><th style="width:112px">解决到期</th><th style="width:100px">{{ i18n.t('col.overdue') }}</th><th style="width:54px"></th></tr></thead>
+            <thead>
+              <tr>
+                <th style="width: 92px">{{ i18n.t('col.ticket') }}</th>
+                <th>{{ i18n.t('col.summary') }}</th>
+                <th style="width: 110px">{{ i18n.t('col.countryLang') }}</th>
+                <th style="width: 66px">{{ i18n.t('col.priority') }}</th>
+                <th style="width: 104px">{{ i18n.t('col.status') }}</th>
+                <th style="width: 112px">解决到期</th>
+                <th style="width: 100px">{{ i18n.t('col.overdue') }}</th>
+                <th style="width: 54px"></th>
+              </tr>
+            </thead>
             <tbody>
               @for (t of resolutionOverdue(); track t.id) {
                 <tr class="clickable" (click)="open(t.id)">
                   <td class="id">{{ t.id }}</td>
-                  <td>{{ t.summary_zh }}<span class="sub">{{ t.title }}</span></td>
+                  <td>
+                    {{ t.summary_zh }}<span class="sub">{{ t.title }}</span>
+                  </td>
                   <td>{{ t.country_code }} · {{ LANG_LABEL[t.language] }}</td>
                   <td><app-priority-badge [priority]="t.priority" /></td>
                   <td><app-status-badge [status]="t.status" /></td>
                   <td class="num">{{ fmtDateTime(t.sla.resolution_due_at) }}</td>
-                  <td><span class="badge orange"><i class="dot"></i>{{ overdueMinutes(t.sla.resolution_due_at) }} 分</span></td>
-                  <td><button class="link-btn" type="button" (click)="$event.stopPropagation(); open(t.id)">处理</button></td>
+                  <td>
+                    <span class="badge orange"
+                      ><i class="dot"></i>{{ overdueMinutes(t.sla.resolution_due_at) }} 分</span
+                    >
+                  </td>
+                  <td>
+                    <button
+                      class="link-btn"
+                      type="button"
+                      (click)="$event.stopPropagation(); open(t.id)"
+                    >
+                      处理
+                    </button>
+                  </td>
                 </tr>
               } @empty {
-                <tr><td colspan="8"><app-empty title="没有解决目标超时" hint="已解决、关闭、取消与合并工单不计入当前列表。" /></td></tr>
+                <tr>
+                  <td colspan="8">
+                    <app-empty
+                      title="没有解决目标超时"
+                      hint="已解决、关闭、取消与合并工单不计入当前列表。"
+                    />
+                  </td>
+                </tr>
               }
             </tbody>
           </table>

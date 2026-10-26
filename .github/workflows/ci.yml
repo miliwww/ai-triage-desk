@@ -6,12 +6,13 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - run: npm run format:check
       - run: npm run test:ci
       - run: python3 data/scripts/validate_dataset.py
       - run: npm run build:pages

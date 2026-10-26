@@ -12,16 +12,16 @@
 
 ## 模块职责
 
-| 文件 | 职责 |
-| --- | --- |
-| `src/app/core/models.ts` | 工单、建议、复核、SLA、人员、风险和动作结果的数据契约 |
-| `src/app/core/data.service.ts` | 资源路径、并发加载、成功缓存和失败恢复 |
-| `src/app/core/store.ts` | 状态、业务动作、关系关联与指标派生 |
-| `src/app/core/format.ts` | 冻结时钟、SLA 判定、显示格式和状态基础映射 |
-| `src/app/shared/workflow-guide.ts` | 根据业务状态显示当前步骤，触发对应页签导航 |
-| `src/app/pages/tickets/tickets-filter.ts` | 列表筛选状态与查询参数转换 |
-| `src/app/core/i18n.ts` | 原有 7 种界面语言 |
-| `src/app/core/portfolio-copy.ts` | 新增作品入口与流程引导的中英文本，其他语言回退英文 |
+| 文件                                      | 职责                                                              |
+| ----------------------------------------- | ----------------------------------------------------------------- |
+| `src/app/core/models.ts`                  | 工单、建议、复核、SLA、人员、风险和动作结果的数据契约             |
+| `src/app/core/data.service.ts`            | 资源路径、并发加载、成功缓存和失败恢复                            |
+| `src/app/core/store.ts`                   | 状态、业务动作、关系关联与指标派生                                |
+| `src/app/core/format.ts`                  | 冻结时钟、SLA 判定、显示格式和状态基础映射                        |
+| `src/app/shared/workflow-guide.ts`        | 根据业务状态显示当前步骤，触发对应页签导航                        |
+| `src/app/pages/tickets/tickets-filter.ts` | 列表筛选状态与查询参数转换                                        |
+| `src/app/core/i18n.ts`                    | 原有 7 种界面语言                                                 |
+| `src/app/core/portfolio-copy.ts`          | 作品入口、案例卡与流程引导的 7 种语言文本，由类型强制每门语言齐全 |
 
 Store 是当前规模下的集中实现；若增加服务端和模型接入，可按分诊、派工、风险、统计逐步拆分。当前没有为展示架构层数进行全量重构。
 

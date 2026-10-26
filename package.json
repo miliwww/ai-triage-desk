@@ -8,6 +8,8 @@
     "build:pages": "ng build --base-href ./",
     "preview": "node scripts/preview.mjs",
     "test:ci": "ng test --watch=false",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "validate:data": "python data/scripts/validate_dataset.py",
     "package": "python scripts/package_release.py",
     "release": "npm run test:ci && npm run validate:data && npm run build:pages && npm run package",
@@ -15,6 +17,7 @@
     "test": "ng test"
   },
   "private": true,
+  "license": "MIT",
   "packageManager": "npm@11.20.0",
   "engines": {
     "node": "^22.22.3 || ^24.15.0 || >=26.0.0"

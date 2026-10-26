@@ -15,7 +15,8 @@ export const routes: Routes = [
   {
     path: 'tickets/:id',
     title: '工单详情 · 沃太售后服务工作台',
-    loadComponent: () => import('./pages/ticket-detail/ticket-detail').then((m) => m.TicketDetailPage),
+    loadComponent: () =>
+      import('./pages/ticket-detail/ticket-detail').then((m) => m.TicketDetailPage),
   },
   {
     path: 'risk',
